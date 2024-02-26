@@ -1,0 +1,829 @@
+<script>
+	import ProjectCard from '../components/ProjectCard.svelte';
+	import SkillContainer from '../components/SkillContainer.svelte';
+	import { projects } from '../projects.js';
+</script>
+
+<main>
+	<div class="main-container">
+		<article class="landing-article deep-1">
+			<div class="photo-container">
+				<img src="Mwa.webp" alt="Luc Arnould" title="Moi" />
+			</div>
+			<div class="description-container">
+				<h1 class="landing-title">Développeur</h1>
+				<div class="content-slider">
+					<div class="slider">
+						<div class="mask">
+							<ul>
+								<li class="anim1">
+									<h1 class="landing-title"><span class="gradient-text">Fullstack</span>.</h1>
+								</li>
+								<li class="anim2">
+									<h1 class="landing-title"><span class="gradient-text">Logiciel</span>.</h1>
+								</li>
+								<li class="anim3">
+									<h1 class="landing-title"><span class="gradient-text">Gameplay</span>.</h1>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p class="landing-paragraph">
+					Vous êtes à la recherche d'un
+					<span class="important-text">professionnel du développement web</span>, passionné par son
+					métier ? Vous souhaitez collaborer avec quelqu'un qui
+					<span class="important-text">comprend vraiment vos besoins</span> pour créer un site web
+					<span class="important-text">à votre image</span>
+					? Avec mon expertise dans le <span class="important-text">développement web</span> et le
+					<span class="important-text">software engineering</span>, je suis là pour vous offrir une
+					solution sur mesure qui répond
+					<span class="important-text"> parfaitement à vos attentes</span>.
+				</p>
+				<button class="contact-button">
+					<i class="ri-chat-3-line"></i>
+					<span>Un projet à réaliser ? Parlons-en !</span>
+				</button>
+			</div>
+		</article>
+		<div class="deep-0">
+			<div class="wave">
+				<img src="title-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+			</div>
+		</div>
+		<article
+			class="deep-0"
+			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+		>
+			<div
+				class="deep-1"
+				style="display: flex; flex-direction: row; justify-content: space-between;"
+			>
+				<div style="width: 47%;">
+					<h2 class="question-title important-text">Qui je suis</h2>
+					<p class="question-paragraph">
+						Je m'appelle <span class="important-text">Luc</span>, je suis un jeune développeur
+						passionné par le <span class="important-text">jeu vidéo</span> et le
+						<span class="important-text">web</span>.<br />
+						Doté de compétences solides en <span class="important-text">C#</span>,
+						<span class="important-text">C++</span>
+						et <span class="important-text">Javascript</span>, je me suis impliqué dans divers
+						projets de jeux, où j'ai allié développement de
+						<span class="important-text">gameplay</span>
+						et conception d'<span class="important-text">outils</span>. Mon intérêt ne se limite pas
+						au domaine ludique: je suis également attiré par le
+						<span class="important-text">développement web</span>, ce qui enrichit ma polyvalence et
+						ma compréhension des technologies numériques.<br />
+						Toujours en quête de nouvelles compétences, je m'efforce de rester à la pointe dans l'industrie
+						du jeu vidéo et du web. Je suis actuellement Software Engineer chez
+						<span
+							><a
+								class="important-text"
+								target="_blank"
+								href="https://www.virtuosgames.com/virtuos-labs-montpellier/">Virtuos France</a
+							></span
+						> où je travaille sur des projets de AAA.
+					</p>
+				</div>
+				<div style="width: 47%; margin-top:15rem">
+					<h2 class="question-title important-text">Ce que je fais</h2>
+					<p class="question-paragraph">
+						Je me spécialise en <span class="important-text">développement logiciel</span>, avec un
+						accent particulier sur le <span class="important-text">gameplay</span>, l'<span
+							class="important-text">ingénierie logicielle</span
+						>
+						et le <span class="important-text">développement full-stack</span>. Je suis apte à
+						travailler aussi bien sur des projets de gameplay qu'à la mise en place de
+						<span class="important-text">structures de données</span>
+						et d'<span class="important-text">architectures complexes</span>, ou encore au
+						développement de <span class="important-text">sites web</span> utilisant les derniers
+						frameworks JavaScript. Ma passion pour le développement me pousse constamment à explorer
+						de <span class="important-text">nouveaux domaines</span> et à
+						<span class="important-text">élargir mon champ de compétences</span>.
+					</p>
+				</div>
+			</div>
+		</article>
+		<div class="deep-0">
+			<div class="subwave">
+				<img src="wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+			</div>
+		</div>
+		<article class="deep-0" style="align-items: center; display:flex; flex-direction: column;">
+			<div
+				class="deep-1"
+				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
+			>
+				<h2 class="question-title important-text" style="text-align: center;">
+					Mes compétences web
+				</h2>
+				<div style="display: flex; justify-content: space-between; width: 100%; margin-top: 2rem;">
+					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+						<h3 class="skill-category-title important-text">Front End</h3>
+						<ul class="skill-list">
+							<li>
+								<SkillContainer
+									img="./skills-icons/svelte.png"
+									alt="Svelte Logo"
+									title="Svelte.js"
+								/>
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/react.png" alt="React Logo" title="React.js" />
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/vue.png" alt="Vue Logo" title="Vue.js" />
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/blazor.png" alt="Blazor Logo" title="Blazor" />
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/bootstrap.png"
+									alt="Bootstrap Logo"
+									title="Bootstrap"
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/tailwind.png"
+									alt="Tailwind Logo"
+									title="Tailwind"
+								/>
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/vite.png" alt="Vite Logo" title="Vite" />
+							</li>
+						</ul>
+					</div>
+					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+						<h3 class="skill-category-title important-text">Back End</h3>
+						<ul class="skill-list">
+							<li>
+								<SkillContainer img="./skills-icons/node.png" alt="Node.js Logo" title="Node.js" />
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/mongodb.png"
+									alt="MongoDB Logo"
+									title="MongoDB"
+								/>
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/mysql.png" alt="MySQL Logo" title="MySQL" />
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/graphql.png"
+									alt="GraphQL Logo"
+									title="GraphQL"
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/firebase.png"
+									alt="Firebase Logo"
+									title="Firebase"
+								/>
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/azure.png" alt="Azure Logo" title="Azure" />
+							</li>
+							<li>
+								<SkillContainer img="./skills-icons/docker.png" alt="Docker Logo" title="Docker" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</article>
+		<div class="deep-0">
+			<div class="wave">
+				<img src="skill-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+			</div>
+		</div>
+		<article
+			class="deep-0"
+			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+		>
+			<div
+				class="deep-1"
+				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
+			>
+				<h2 class="question-title important-text" style="text-align: center;">
+					Mes compétences software
+				</h2>
+				<div style="display: flex; justify-content: space-between; width: 100%; margin-top: 2rem;">
+					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+						<h3 class="skill-category-title important-text">Technologies</h3>
+						<ul class="skill-list">
+							<li>
+								<SkillContainer
+									img="./skills-icons/wpf.png"
+									alt="WPF Logo"
+									title="WPF"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/dotnet.png"
+									alt=".NET Logo"
+									title=".NET"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/aspdotnet.png"
+									alt="ASP.NET Logo"
+									title="ASP.NET"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/forms.png"
+									alt="Windows Forms Logo"
+									title="Windows Forms"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/restapi.png"
+									alt="REST API Logo"
+									title="REST API"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/qt.png"
+									alt="Qt Logo"
+									title="Qt"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/csharp.png"
+									alt="C# Logo"
+									title="C#"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/cpp.png"
+									alt="C++ Logo"
+									title="C++"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/c.png"
+									alt="C Logo"
+									title="C"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/lua.png"
+									alt="Lua Logo"
+									title="Lua"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/java.png"
+									alt="Java Logo"
+									title="Java"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/js.png"
+									alt="JavaScript Logo"
+									title="JavaScript"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/python.png"
+									alt="Python Logo"
+									title="Python"
+									invertColor={true}
+								/>
+							</li>
+						</ul>
+					</div>
+					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+						<h3 class="skill-category-title important-text">Outils</h3>
+						<ul class="skill-list">
+							<li>
+								<SkillContainer
+									img="./skills-icons/figma.png"
+									alt="Figma Logo"
+									title="Figma"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/git.png"
+									alt="Git Logo"
+									title="Git"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/p4.png"
+									alt="Perforce Logo"
+									title="Perforce"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/vs.png"
+									alt="Visual Studio Logo"
+									title="Visual Studio"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/rider.png"
+									alt="Rider Logo"
+									title="Rider"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/idea.png"
+									alt="IntelliJ Idea Logo"
+									title="IntelliJ Idea"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/dottrace.png"
+									alt="DotTrace Logo"
+									title="DotTrace"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/teamcity.png"
+									alt="TeamCity Logo"
+									title="TeamCity"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/superluminal.png"
+									alt="Superluminal Logo"
+									title="Superluminal"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/postman.png"
+									alt="Postman Logo"
+									title="Postman"
+									invertColor={true}
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									img="./skills-icons/photoshop.png"
+									alt="Photoshop Logo"
+									title="Photoshop"
+									invertColor={true}
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</article>
+		<div class="deep-0">
+			<div class="subwave">
+				<img src="skill-subwave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+			</div>
+		</div>
+		<article class="deep-0" style="align-items: center; display:flex; flex-direction: column;">
+			<div
+				class="deep-1"
+				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
+			>
+				<h2 class="question-title important-text" style="text-align: center;">
+					Mes compétences jeux
+				</h2>
+				<div
+					style="display: flex; justify-content: space-between; width: 100%; margin-top: 2rem; flex-direction: column; align-items: center;"
+				>
+					<h3 class="skill-category-title important-text">Moteurs et outils</h3>
+					<ul class="skill-list">
+						<li>
+							<SkillContainer img="./skills-icons/unity.png" alt="Unity Logo" title="Unity" />
+						</li>
+						<li>
+							<SkillContainer
+								img="./skills-icons/unreal.png"
+								alt="Unreal Engine Logo"
+								title="Unreal Engine"
+							/>
+						</li>
+						<li>
+							<SkillContainer img="./skills-icons/sfml.png" alt="SFML Logo" title="SFML" />
+						</li>
+						<li>
+							<SkillContainer img="./skills-icons/love2d.png" alt="Löve2D Logo" title="Löve2D" />
+						</li>
+						<li>
+							<SkillContainer
+								img="./skills-icons/substance.png"
+								alt="Substance Logo"
+								title="Suite Substance"
+							/>
+						</li>
+						<li>
+							<SkillContainer img="./skills-icons/blender.png" alt="Blender Logo" title="Blender" />
+						</li>
+						<li>
+							<SkillContainer img="./skills-icons/maya.png" alt="Maya Logo" title="Maya" />
+						</li>
+						<li>
+							<SkillContainer img="./skills-icons/wwise.png" alt="Wwise Logo" title="Wwise" />
+						</li>
+						<li>
+							<SkillContainer img="./skills-icons/fmod.png" alt="Fmod Logo" title="Fmod" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</article>
+		<div class="deep-0" style="margin-top: 2rem;">
+			<div class="wave">
+				<img src="exp-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+			</div>
+		</div>
+		<article
+			class="deep-0"
+			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+		>
+			<div
+				class="deep-1"
+				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
+			>
+				<h2 class="question-title important-text">Mes projets</h2>
+				<div class="grid-container">
+					{#each projects as project}
+						<ProjectCard {project} />
+					{/each}
+				</div>
+			</div>
+		</article>
+		<div class="deep-0">
+			<div class="subwave">
+				<img src="exp-subwave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+			</div>
+		</div>
+		<article class="deep-0" style="display:flex; align-items: center; flex-direction: column;">
+			<div class="deep-1">
+				<div class="alternating-container">
+					<div class="alternating-content"></div>
+				</div>
+				<div class="alternating-container">
+					<div class="alternating-content"></div>
+				</div>
+				<div class="alternating-container">
+					<div class="alternating-content"></div>
+				</div>
+			</div>
+		</article>
+	</div>
+</main>
+
+<style>
+	main {
+		display: flex;
+		justify-content: center;
+
+		background-image: var(--background-image);
+		background-repeat: repeat;
+		background-size: 50vw;
+	}
+
+	.main-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.deep-0 {
+		overflow: hidden;
+		width: 100vw;
+		padding: 0;
+	}
+
+	.deep-1 {
+		overflow: hidden;
+		max-width: 80rem;
+		padding-inline: 5rem;
+	}
+
+	.skill-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 25px;
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.skill-list li {
+		content: '';
+	}
+
+	.landing-article {
+		height: 100vh;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.photo-container {
+		width: 30%;
+	}
+
+	.photo-container img {
+		object-fit: cover;
+		border-radius: 1rem;
+		height: 500px;
+		width: 100%;
+		filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.3));
+		border: var(--primary) solid 3px;
+	}
+
+	.description-container {
+		width: 60%;
+		flex-direction: column;
+		align-items: baseline;
+	}
+
+	.contact-button {
+		color: #fff;
+		background: var(--primary);
+		padding: 10px 25px;
+		border: none;
+		box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+		border-radius: 8px;
+		transition: background 0.15s ease-in-out;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-top: 4rem;
+	}
+
+	.contact-button i {
+		margin-left: 0.5rem;
+		font-size: 1rem;
+	}
+
+	.contact-button:hover {
+		background: var(--primary-light);
+	}
+
+	.landing-title {
+		font-size: clamp(3rem, 8vw, 6rem);
+		color: var(--black);
+		text-size-adjust: 100%;
+	}
+
+	.question-title {
+		font-size: clamp(2rem, 5vw, 4rem);
+		color: var(--black);
+		text-size-adjust: 100%;
+	}
+
+	.skill-category-title {
+		font-size: clamp(1rem, 4vw, 3rem);
+		color: var(--black);
+		text-size-adjust: 100%;
+		text-align: center;
+	}
+
+	.landing-paragraph {
+		font-size: clamp(0.75rem, 3vw, 1.25rem);
+		color: var(--black);
+		margin-top: 2rem;
+		text-align: justify;
+		transition: color 0.15s ease-in-out;
+	}
+
+	.important-text {
+		color: var(--primary-light);
+		font-weight: 600;
+	}
+
+	.content-slider {
+		height: clamp(4rem, 10vw, 7rem);
+	}
+
+	.slider {
+		height: clamp(4rem, 10vw, 7rem);
+		overflow: visible;
+		position: relative;
+	}
+
+	.mask {
+		overflow: hidden;
+		height: clamp(4rem, 10vw, 7rem);
+	}
+
+	.slider ul {
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+
+	.slider li {
+		height: clamp(4rem, 10vw, 7rem);
+		position: absolute;
+		top: -150px;
+		list-style: none;
+	}
+
+	.slider li.anim1 {
+		animation: cycle 10s linear infinite;
+	}
+
+	.slider li.anim2 {
+		animation: cycle2 10s linear infinite;
+	}
+
+	.slider li.anim3 {
+		animation: cycle3 10s linear infinite;
+	}
+
+	@keyframes cycle {
+		0% {
+			top: -150px;
+			opacity: 0;
+		}
+		4% {
+			top: 0px;
+			opacity: 1;
+		}
+		29% {
+			top: 0px;
+			opacity: 1;
+		}
+		33% {
+			top: 150px;
+			opacity: 0;
+		}
+		34% {
+			top: -150px;
+			opacity: 0;
+		}
+		100% {
+			top: -150px;
+			opacity: 0;
+		}
+	}
+
+	@keyframes cycle2 {
+		0% {
+			top: -150px;
+			opacity: 0;
+		}
+		29% {
+			top: -150px;
+			opacity: 1;
+		}
+		33% {
+			top: 0px;
+			opacity: 1;
+		}
+		62% {
+			top: 0px;
+			opacity: 1;
+		}
+		66% {
+			top: 150px;
+			opacity: 0;
+		}
+		67% {
+			top: -150px;
+			opacity: 0;
+		}
+		100% {
+			top: -150px;
+			opacity: 0;
+		}
+	}
+
+	@keyframes cycle3 {
+		0% {
+			top: -150px;
+			opacity: 0;
+		}
+		62% {
+			top: -150px;
+			opacity: 1;
+		}
+		66% {
+			top: 0px;
+			opacity: 1;
+		}
+		96% {
+			top: 0px;
+			opacity: 1;
+		}
+		100% {
+			top: 150px;
+			opacity: 0;
+		}
+	}
+
+	.question-paragraph {
+		font-size: clamp(0.75rem, 3vw, 1.25rem);
+		color: var(--light);
+		margin-top: 2rem;
+		text-align: justify;
+		transition: color 0.15s ease-in-out;
+	}
+
+	.subwave {
+		width: 100%;
+		font-size: 0;
+		line-height: 0;
+		transform: translateY(-2px);
+	}
+
+	.wave {
+		width: 100%;
+		font-size: 0;
+		line-height: 0;
+		transform: translateY(2px);
+	}
+
+	.gradient-text {
+		background: #db0f13;
+		background: -webkit-linear-gradient(to right, #d85f13, #db0f13);
+		background: linear-gradient(to right, #d85f13, #db0f13);
+		background-size: 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-text-fill-color: transparent;
+	}
+
+	.grid-container {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-column-gap: 2rem;
+		grid-row-gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.alternating-container {
+		background-color: red;
+		width: 100%;
+		display: flex;
+	}
+
+	.alternating-container:nth-child(odd) {
+		justify-content: flex-start;
+	}
+
+	.alternating-container:nth-child(even) {
+		justify-content: flex-end;
+	}
+
+	.alternating-content {
+		background-color: green;
+		width: 47%;
+		height: 430px;
+	}
+</style>
