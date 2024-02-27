@@ -1,5 +1,6 @@
 <script>
 	import ProjectCard from '../components/ProjectCard.svelte';
+	import Separator from '../components/Separator.svelte';
 	import SkillContainer from '../components/SkillContainer.svelte';
 	import { projects } from '../projects.js';
 </script>
@@ -54,6 +55,7 @@
 		<article
 			class="deep-0"
 			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+			id="presentation"
 		>
 			<div
 				class="deep-1"
@@ -109,7 +111,11 @@
 				<img src="wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
 			</div>
 		</div>
-		<article class="deep-0" style="align-items: center; display:flex; flex-direction: column;">
+		<article
+			class="deep-0"
+			style="align-items: center; display:flex; flex-direction: column;"
+			id="web-skills"
+		>
 			<div
 				class="deep-1"
 				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
@@ -205,6 +211,7 @@
 		<article
 			class="deep-0"
 			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+			id="software-skills"
 		>
 			<div
 				class="deep-1"
@@ -428,6 +435,7 @@
 			<div
 				class="deep-1"
 				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
+				id="game-skills"
 			>
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences jeux
@@ -484,6 +492,7 @@
 		<article
 			class="deep-0"
 			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+			id="projects"
 		>
 			<div
 				class="deep-1"
@@ -503,15 +512,380 @@
 			</div>
 		</div>
 		<article class="deep-0" style="display:flex; align-items: center; flex-direction: column;">
-			<div class="deep-1">
-				<div class="alternating-container">
-					<div class="alternating-content"></div>
-				</div>
-				<div class="alternating-container">
-					<div class="alternating-content"></div>
-				</div>
-				<div class="alternating-container">
-					<div class="alternating-content"></div>
+			<div
+				class="deep-1"
+				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
+				id="experience"
+			>
+				<h2 class="question-title important-text">Mon parcours</h2>
+				<div style="margin-top: 2rem;">
+					<div class="alternating-container">
+						<div class="alternating-content">
+							<div class="cv-card">
+								<div style="padding: 2rem;">
+									<h5 class="cv-title">Software Engineer - Virtuos</h5>
+									<p class="cv-date">10/2023 - Maintenant</p>
+									<p class="cv-description">
+										Travail actuel, software engineering.<br /><br />
+
+										Ingénieur logiciel chez Virtuos Labs à Montpellier, je navigue entre diverses
+										responsabilités techniques, soumises à la confidentialité due à des accords de
+										non-divulgation.<br /><br />
+										Mon expertise s'étend principalement autour de WPF pour le développement, l'optimisation,
+										et la maintenance de logiciels, tout en enrichissant mon savoir-faire avec ASP.NET,
+										API REST, et les outils de CI/CD comme TeamCity.<br /><br />
+										Agile et SCRUM guident mes méthodes de travail, me permettant d'ajuster dynamiquement
+										mes contributions aux projets face aux changements imprévus.
+									</p>
+									<Separator />
+									<div class="cv-skill-container">
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/wpf.png"
+											alt="WPF Logo"
+											imgTitle="WPF"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/dotnet.png"
+											alt=".NET Logo"
+											imgTitle=".NET"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/aspdotnet.png"
+											alt="ASP.NET Logo"
+											imgTitle="ASP.NET"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/forms.png"
+											alt="Windows Forms Logo"
+											imgTitle="Windows Forms"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/restapi.png"
+											alt="REST API Logo"
+											imgTitle="REST API"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/csharp.png"
+											alt="C# Logo"
+											imgTitle="C#"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/cpp.png"
+											alt="C++ Logo"
+											imgTitle="C++"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/js.png"
+											alt="JavaScript Logo"
+											imgTitle="JavaScript"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/python.png"
+											alt="Python Logo"
+											imgTitle="Python"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/p4.png"
+											alt="Perforce Logo"
+											imgTitle="Perforce"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/vs.png"
+											alt="Visual Studio Logo"
+											imgTitle="Visual Studio"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/rider.png"
+											alt="Rider Logo"
+											imgTitle="Rider"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/dottrace.png"
+											alt="DotTrace Logo"
+											imgTitle="DotTrace"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/teamcity.png"
+											alt="TeamCity Logo"
+											imgTitle="TeamCity"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/superluminal.png"
+											alt="Superluminal Logo"
+											imgTitle="Superluminal"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/postman.png"
+											alt="Postman Logo"
+											imgTitle="Postman"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alternating-container">
+						<div class="alternating-content">
+							<div class="cv-card">
+								<div style="padding: 2rem;">
+									<h5 class="cv-title">Eritaj - Gaya Player</h5>
+									<p class="cv-date">04/2023 - 08/2023</p>
+									<p class="cv-description">
+										Stage de fin d'études, développeur Gameplay / UI.<br /><br />
+										Chez Eritaj Studio, j'ai contribué à plusieurs projets, avec deux réalisations majeures.<br
+										/><br />
+										Portage sur Unity de Gaya Explorer, initialement développé en React Native. Mon rôle
+										a englobé la programmation UI, Gameplay et d'outils.<br /><br />
+										Amélioration du jeu initial, avec le développement de nouvelles fonctionnalités en
+										React Native.
+									</p>
+									<Separator />
+									<div class="cv-skill-container">
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/unity.png"
+											alt="Unity Logo"
+											imgTitle="Unity"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/react.png"
+											alt="React Logo"
+											imgTitle="React"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/git.png"
+											alt="Git Logo"
+											imgTitle="Git"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/vite.png"
+											alt="Vite Logo"
+											imgTitle="Vite"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/js.png"
+											alt="JavaScript Logo"
+											imgTitle="JavaScript"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/csharp.png"
+											alt="C# Logo"
+											imgTitle="C#"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/node.png"
+											alt="Node.js Logo"
+											imgTitle="Node.js"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/firebase.png"
+											alt="Firebase Logo"
+											imgTitle="Firebase"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/figma.png"
+											alt="Figma Logo"
+											imgTitle="Figma"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/photoshop.png"
+											alt="Photoshop Logo"
+											imgTitle="Photoshop"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alternating-container">
+						<div class="alternating-content">
+							<div class="cv-card">
+								<div style="padding: 2rem;">
+									<h5 class="cv-title">Creajeux - Formation Programmeur Jeu Vidéo (RNCP 6)</h5>
+									<p class="cv-date">2019 - 2023</p>
+
+									<p class="cv-description">
+										Études supérieures en développement de jeux vidéo.<br /><br />
+										Ces 4 années ont été cruciales pour l'acquisition de mes compétences en programmation.<br
+										/><br />
+										La formation m'a appris à maîtriser divers moteurs de jeu, comme Unity et Unreal
+										Engine, et à comprendre les méthodologies de création de jeux et de programmes.<br
+										/><br />
+										J'ai aussi acquis des connaissances en graphisme (Photoshop, Blender, Substance)
+										et en intégration sonore (Wwise, FMOD).<br /><br />
+										J'ai réalisé plusieurs projets, tant individuels qu'en équipe, dont certains sont
+										présentés dans la section Projets de ce portfolio.
+									</p>
+									<Separator />
+									<div class="cv-skill-container">
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/unity.png"
+											alt="Unity Logo"
+											imgTitle="Unity"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/unreal.png"
+											alt="Unreal Engine Logo"
+											imgTitle="Unreal Engine"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/sfml.png"
+											alt="SFML Logo"
+											imgTitle="SFML"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/love2d.png"
+											alt="Löve2D Logo"
+											imgTitle="Löve2D"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/substance.png"
+											alt="Substance Logo"
+											imgTitle="Substance"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/blender.png"
+											alt="Blender Logo"
+											imgTitle="Blender"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/maya.png"
+											alt="Maya Logo"
+											imgTitle="Maya"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/wwise.png"
+											alt="Wwise Logo"
+											imgTitle="Wwise"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/fmod.png"
+											alt="Fmod Logo"
+											imgTitle="Fmod"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/photoshop.png"
+											alt="Photoshop Logo"
+											imgTitle="Photoshop"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/postman.png"
+											alt="Postman Logo"
+											imgTitle="Postman"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/rider.png"
+											alt="Rider Logo"
+											imgTitle="Rider"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/vs.png"
+											alt="Visual Studio Logo"
+											imgTitle="Visual Studio"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/git.png"
+											alt="Git Logo"
+											imgTitle="Git"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/python.png"
+											alt="Python Logo"
+											imgTitle="Python"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/lua.png"
+											alt="Lua Logo"
+											imgTitle="Lua"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/c.png"
+											alt="C Logo"
+											imgTitle="C"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/cpp.png"
+											alt="C++ Logo"
+											imgTitle="C++"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/csharp.png"
+											alt="C# Logo"
+											imgTitle="C#"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/qt.png"
+											alt="Qt Logo"
+											imgTitle="Qt"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/restapi.png"
+											alt="REST API Logo"
+											imgTitle="REST API"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/forms.png"
+											alt="Windows Forms Logo"
+											imgTitle="Windows Forms"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/wpf.png"
+											alt="WPF Logo"
+											imgTitle="WPF"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</article>
@@ -803,27 +1177,73 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-column-gap: 2rem;
-		grid-row-gap: 2rem;
+		grid-row-gap: 1rem;
 		margin-top: 2rem;
 	}
 
 	.alternating-container {
-		background-color: red;
 		width: 100%;
 		display: flex;
 	}
 
 	.alternating-container:nth-child(odd) {
 		justify-content: flex-start;
+		text-align: start;
 	}
 
 	.alternating-container:nth-child(even) {
 		justify-content: flex-end;
+		text-align: end;
 	}
 
 	.alternating-content {
-		background-color: green;
 		width: 47%;
-		height: 430px;
+	}
+
+	.cv-card {
+		border: var(--primary) solid 3px;
+		border-radius: 1rem;
+		-webkit-box-shadow: 5px 5px 13px 4px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 13px 4px rgba(0, 0, 0, 0.5);
+		overflow: hidden;
+		transition: box-shadow 0.3s;
+		width: 100%;
+
+		background-color: var(--light);
+	}
+
+	.cv-title {
+		font-size: 1.5rem;
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		color: var(--primary);
+		text-size-adjust: 100%;
+		font-weight: bold;
+	}
+
+	.cv-date {
+		font-size: 1rem;
+		font-size: clamp(1rem, 3vw, 2rem);
+		color: var(--primary-light);
+		text-size-adjust: 100%;
+		font-weight: bold;
+	}
+
+	.cv-description {
+		font-size: 0.75rem;
+		font-size: clamp(0.75rem, 3vw, 1.25rem);
+		margin-top: 2rem;
+		color: var(--black);
+		text-size-adjust: 100%;
+	}
+
+	.cv-skill-container {
+		gap: 15px;
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 0.75rem;
 	}
 </style>

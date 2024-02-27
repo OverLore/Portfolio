@@ -2,6 +2,7 @@
 	export let img = './skills-icons/react.png';
 	export let alt = '';
 	export let title = '';
+	export let imgTitle = '';
 	export let invertColor = false;
 	export let size = '100px';
 </script>
@@ -9,7 +10,7 @@
 <main class="container">
 	<div style="width: {size}; height: {size};">
 		<div class="skill-logo-container">
-			<img src={img} {alt} />
+			<img src={img} {alt} title={title.length == 0 ? imgTitle : title} />
 		</div>
 	</div>
 	{#if title.length > 0}

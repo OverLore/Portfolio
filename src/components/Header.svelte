@@ -1,9 +1,34 @@
 <script>
 	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { scrollToSection } from '../scrollUtils';
 
 	let darkMode = true;
+	let activeSection = '/';
+
+	let remSize = 16;
+	let offset = 3.5 * remSize;
+
+	const links = [
+		{ title: 'Accueil', id: '/', href: '/' },
+		{ title: 'Presentation', id: '/presentation', href: '#presentation' },
+		{ title: 'Web', id: '/web-skills', href: '#web-skills' },
+		{ title: 'Software', id: '/software-skills', href: '#software-skills' },
+		{ title: 'Jeux', id: '/game-skills', href: '#game-skills' },
+		{ title: 'Projects', id: '/projects', href: '#projects' },
+		{ title: 'Parcours', id: '/experience', href: '#experience' }
+	];
+
+	const socialLinks = [
+		{ href: 'https://www.linkedin.com/in/luc-arnould/', iconClass: 'ri-linkedin-box-line' },
+		{ href: 'https://github.com/OverLore/', iconClass: 'ri-github-line' },
+		{ href: 'https://www.tiktok.com/@_scottii/', iconClass: 'ri-tiktok-line' },
+		{
+			href: 'https://www.youtube.com/channel/UCYaQhULOHO684SKERsnf9nw/',
+			iconClass: 'ri-youtube-line'
+		},
+		{ href: 'https://www.instagram.com/lucarnould/', iconClass: 'ri-instagram-line' }
+	];
 
 	function handleSwitchDarkMode() {
 		darkMode = !darkMode;
@@ -13,6 +38,15 @@
 		darkMode
 			? document.documentElement.classList.add('dark')
 			: document.documentElement.classList.remove('dark');
+	}
+
+	/**
+	 * @param {{ preventDefault: () => void; }} event
+	 * @param {string|null=} sectionId
+	 */
+	function handleLinkClick(event, sectionId) {
+		event.preventDefault();
+		scrollToSection(sectionId);
 	}
 
 	if (browser) {
@@ -27,12 +61,48 @@
 			darkMode = false;
 		}
 	}
+
+	onMount(() => {
+		function checkIfSectionReached() {
+			remSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+			offset = 3.5 * remSize;
+
+			const sections = links
+				.slice(1)
+				.map((link) => ({ id: link.id.substring(1), route: link.id }))
+				.reverse();
+
+			activeSection = '/';
+
+			for (let section of sections) {
+				const sectionElement = document.getElementById(section.id);
+				if (sectionElement) {
+					const sectionTop = sectionElement.getBoundingClientRect().top + window.scrollY - offset;
+					if (window.scrollY >= sectionTop - 1) {
+						activeSection = section.route;
+						break;
+					}
+				}
+			}
+		}
+
+		window.addEventListener('scroll', checkIfSectionReached);
+		checkIfSectionReached();
+
+		return () => {
+			window.removeEventListener('scroll', checkIfSectionReached);
+		};
+	});
 </script>
 
 <header>
 	<nav>
 		<div class="links-container">
-			<a class="logo-container" href="/">
+			<a
+				class="logo-container"
+				href="/"
+				on:click|preventDefault={(event) => handleLinkClick(event)}
+			>
 				<svg
 					version="1.2"
 					xmlns="http://www.w3.org/2000/svg"
@@ -68,37 +138,28 @@
 				<span class="logo-text">Luc Arnould</span>
 			</a>
 			<ul class="main-link-list roboto-medium">
-				<li><a href="/" class:active={$page.url.pathname === '/'}>Accueil</a></li>
-				<li><a href="/projets" class:active={$page.url.pathname === '/projets'}>Projets</a></li>
+				{#each links as { title, id, href }}
+					<li>
+						<a
+							{href}
+							class:active={activeSection === id}
+							on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
+						>
+							{title}
+						</a>
+					</li>
+				{/each}
 			</ul>
 		</div>
 		<div class="social-container">
 			<ul class="main-social-list">
-				<li>
-					<a href="https://www.linkedin.com/in/luc-arnould/" target="_blank">
-						<i class="ri-linkedin-box-line"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://github.com/OverLore/" target="_blank">
-						<i class="ri-github-line"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://www.tiktok.com/@_scottii/" target="_blank">
-						<i class="ri-tiktok-line"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://www.youtube.com/channel/UCYaQhULOHO684SKERsnf9nw/" target="_blank">
-						<i class="ri-youtube-line"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://www.instagram.com/lucarnould/" target="_blank">
-						<i class="ri-instagram-line"></i>
-					</a>
-				</li>
+				{#each socialLinks as { href, iconClass }}
+					<li>
+						<a {href} target="_blank">
+							<i class={iconClass}></i>
+						</a>
+					</li>
+				{/each}
 				<li>
 					<button
 						class="theme-button"
@@ -112,10 +173,10 @@
 					<i class="ri-separator separator"></i>
 				</li>
 				<li>
-					<button class="contact-button">
+					<a class="contact-button" href="/CV.pdf" download="CV ARNOULD Luc.pdf">
 						<i class="ri-download-2-line"></i>
 						<span style="font-size: 1rem;">CV</span>
-					</button>
+					</a>
 				</li>
 			</ul>
 		</div>

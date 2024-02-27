@@ -56,19 +56,30 @@
 	.custom-card {
 		border: var(--primary) solid 3px;
 		border-radius: 1rem;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0 13px 4px rgba(0, 0, 0, 0.5);
+		box-shadow: 5px 5px 13px 4px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
-		transition: box-shadow 0.3s;
+		transition:
+			border 0.2s ease-in-out,
+			transform 0.2s ease-in-out,
+			--test 0.2s ease-in-out;
 		width: 100%;
 
-		background-color: var(--light);
-		background-image: var(--background-image);
+		background-color: var(--background-color-contrast);
+		background-image: var(--background-image-contrast);
 		background-repeat: repeat;
 		background-size: 50vw;
+
+		--test: var(--primary);
+
+		margin-bottom: 1rem;
 	}
 
 	.custom-card:hover {
-		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+		border: var(--primary-darken) solid 3px;
+		-webkit-transform: scale(1.02, 1.02);
+		transform: scale(1.02, 1.02);
+		--test: var(--primary-darken);
 	}
 
 	.custom-bg-image {
@@ -95,13 +106,13 @@
 		font-weight: bold;
 		margin-bottom: 0.75rem;
 		text-align: center;
-		color: var(--black);
+		color: var(--light);
 	}
 
 	.custom-card-text {
 		margin-bottom: 1rem;
 		text-align: center;
-		color: var(--black);
+		color: var(--light);
 		font-size: clamp(0.75rem, 3vw, 1.25rem);
 	}
 
@@ -111,7 +122,7 @@
 		font-size: 1rem;
 		font-weight: bold;
 		border: none;
-		background-color: var(--primary);
+		background-color: var(--test);
 		color: #fff;
 		border-radius: 0.5rem;
 		cursor: pointer;

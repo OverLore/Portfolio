@@ -54,6 +54,7 @@ body{
 
     --background-image: url('Back2.png');
     --background-image-contrast: url('Back.png');
+    --background-color-contrast: #151111;
 
     --header-background-color: rgba(255, 255, 255, 0.36);
 }
@@ -78,6 +79,8 @@ body{
 
     --background-image: url('Back.png');
     --background-image-contrast: url('Back2.png');
+    --background-color-contrast: #F5F3F4;
+
     --header-background-color: rgba(255, 255, 255, 0);
 }
 
