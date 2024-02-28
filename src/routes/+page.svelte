@@ -3,6 +3,11 @@
 	import Separator from '../components/Separator.svelte';
 	import SkillContainer from '../components/SkillContainer.svelte';
 	import { projects } from '../projects.js';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		document.title = 'Luc Arnould - Développeur';
+	});
 </script>
 
 <main>

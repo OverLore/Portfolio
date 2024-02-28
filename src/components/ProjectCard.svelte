@@ -38,7 +38,9 @@
 					<SkillContainer size="50px" img="./skills-icons/{skill}.png" alt="{skill} logo" />
 				{/each}
 			</div>
-			<a href="project/{project.id}" class="custom-btn">Voir le projet</a>
+			<a href="projects/{project.id}" data-sveltekit-preload-data class="custom-btn"
+				>Voir le projet</a
+			>
 		</div>
 	</div>
 </main>
