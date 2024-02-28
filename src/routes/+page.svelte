@@ -1,4 +1,5 @@
 <script>
+	import Header from '../components/Header.svelte';
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import Separator from '../components/Separator.svelte';
 	import SkillContainer from '../components/SkillContainer.svelte';
@@ -10,6 +11,7 @@
 	});
 </script>
 
+<Header />
 <main>
 	<div class="main-container">
 		<article class="landing-article deep-1">

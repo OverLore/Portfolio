@@ -1,11 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
+	import ErrorHeader from '../../../components/ErrorHeader.svelte';
 
 	onMount(() => {
 		document.title = 'Projet introuvable';
 	});
 </script>
 
+<ErrorHeader />
 <main>
 	<div class="main-container">
 		<div class="content">

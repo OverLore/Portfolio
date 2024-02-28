@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import Header from '../../../components/Header.svelte';
 
 	export let data;
 	const { project, pageTitle } = data;
@@ -9,6 +10,7 @@
 	});
 </script>
 
+<Header />
 <main>
 	<div class="main-container">
 		<h1 class="gradient-text">{project?.name}</h1>

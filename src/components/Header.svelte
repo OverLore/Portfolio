@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { scrollToSection } from '../scrollUtils';
 
@@ -9,7 +10,7 @@
 	let remSize = 16;
 	let offset = 3.5 * remSize;
 
-	const links = [
+	let links = [
 		{ title: 'Accueil', id: '/', href: '/' },
 		{ title: 'Presentation', id: '/presentation', href: '#presentation' },
 		{ title: 'Web', id: '/web-skills', href: '#web-skills' },
@@ -86,11 +87,15 @@
 			}
 		}
 
-		window.addEventListener('scroll', checkIfSectionReached);
-		checkIfSectionReached();
+		if ($page.url.pathname === '/') {
+			window.addEventListener('scroll', checkIfSectionReached);
+			checkIfSectionReached();
+		}
 
 		return () => {
-			window.removeEventListener('scroll', checkIfSectionReached);
+			if ($page.url.pathname === '/') {
+				window.removeEventListener('scroll', checkIfSectionReached);
+			}
 		};
 	});
 </script>
