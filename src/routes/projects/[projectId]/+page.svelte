@@ -11,7 +11,9 @@
 </script>
 
 <Header />
-<main>
+<main
+	style="background-image: linear-gradient(rgba(0, 0, 0, {project.opacity}), rgba(0, 0, 0, {project.opacity})), url('/{project.image}');"
+>
 	<div class="main-container">
 		<h1 class="gradient-text">{project?.name}</h1>
 		<p>{project?.description}</p>
@@ -20,17 +22,18 @@
 
 <style>
 	main {
-		padding-top: 3.5rem;
-
 		display: flex;
 		justify-content: center;
-
-		background-image: var(--background-image);
-		background-repeat: repeat;
-		background-size: 50vw;
+		background-color: rgba(0, 0, 0, 0);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+		min-height: 100vh;
 	}
 
 	.main-container {
+		margin-top: 3.5rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
