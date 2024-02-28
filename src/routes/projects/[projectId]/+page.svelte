@@ -11,9 +11,11 @@
 </script>
 
 <Header />
-<main
+<div
+	class="background-blur"
 	style="background-image: linear-gradient(rgba(0, 0, 0, {project.opacity}), rgba(0, 0, 0, {project.opacity})), url('/{project.image}');"
->
+/>
+<main>
 	<div class="main-container">
 		<h1 class="gradient-text">{project?.name}</h1>
 		<p>{project?.description}</p>
@@ -22,14 +24,11 @@
 
 <style>
 	main {
+		position: relative;
 		display: flex;
 		justify-content: center;
-		background-color: rgba(0, 0, 0, 0);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-attachment: fixed;
-		background-size: cover;
 		min-height: 100vh;
+		z-index: 1;
 	}
 
 	.main-container {
@@ -59,5 +58,18 @@
 	p {
 		color: var(--black);
 		font-size: 80;
+	}
+
+	.background-blur {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-image: url('/{project.image}');
+		background-size: cover;
+		background-position: center;
+		filter: blur(10px);
+		z-index: -1;
 	}
 </style>
