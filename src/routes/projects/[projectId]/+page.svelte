@@ -17,8 +17,13 @@
 />
 <main>
 	<div class="main-container">
-		<h1 class="gradient-text">{project?.name}</h1>
-		<p>{project?.description}</p>
+		<div style="width: 100%;">
+			<h1 class="gradient-text">{project?.name}</h1>
+			<div class="display">
+				<div class="carousel"></div>
+				<div class="description"></div>
+			</div>
+		</div>
 	</div>
 </main>
 
@@ -36,6 +41,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
+		max-width: 80rem;
+		width: 100%;
 	}
 
 	.gradient-text {
@@ -71,5 +79,23 @@
 		background-position: center;
 		filter: blur(10px);
 		z-index: -1;
+		background-color: black;
+	}
+
+	.display {
+		height: 400px;
+		width: 100%;
+		background-color: aliceblue;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-column-gap: 1rem;
+	}
+
+	.carousel {
+		background-color: red;
+	}
+
+	.description {
+		background-color: blue;
 	}
 </style>
