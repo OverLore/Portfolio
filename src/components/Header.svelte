@@ -3,8 +3,8 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { scrollToSection } from '../scrollUtils';
+	import { darkMode } from '../ThemeStore';
 
-	let darkMode = true;
 	let activeSection = '/';
 
 	let remSize = 16;
@@ -32,11 +32,11 @@
 	];
 
 	function handleSwitchDarkMode() {
-		darkMode = !darkMode;
+		$darkMode = !$darkMode;
 
-		localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+		localStorage.setItem('theme', $darkMode ? 'dark' : 'light');
 
-		darkMode
+		$darkMode
 			? document.documentElement.classList.add('dark')
 			: document.documentElement.classList.remove('dark');
 	}
@@ -56,10 +56,10 @@
 			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark');
-			darkMode = true;
+			$darkMode = true;
 		} else {
 			document.documentElement.classList.remove('dark');
-			darkMode = false;
+			$darkMode = false;
 		}
 	}
 
@@ -171,7 +171,7 @@
 						style="margin-left: 1rem;"
 						on:click={() => handleSwitchDarkMode()}
 					>
-						<i class={darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
+						<i class={$darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
 					</button>
 				</li>
 				<li>

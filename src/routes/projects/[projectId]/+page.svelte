@@ -1,5 +1,7 @@
 <script>
+	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import { darkMode } from '../../../ThemeStore';
 	import Header from '../../../components/Header.svelte';
 
 	export let data;
@@ -13,14 +15,38 @@
 <Header />
 <div
 	class="background-blur"
-	style="background-image: linear-gradient(rgba(0, 0, 0, {project.opacity}), rgba(0, 0, 0, {project.opacity})), url('/{project.image}');"
+	style="background-image: linear-gradient(rgba({$darkMode ? 0 : 255}, {$darkMode
+		? 0
+		: 255}, {$darkMode ? 0 : 255}, {project.opacity}), rgba({$darkMode ? 0 : 255}, {$darkMode
+		? 0
+		: 255}, {$darkMode ? 0 : 255}, {project.opacity})), url('/{project.image}');"
 />
 <main>
 	<div class="main-container">
 		<div style="width: 100%;">
 			<h1 class="gradient-text">{project?.name}</h1>
-			<div class="display">
-				<div class="carousel"></div>
+			<div
+				class="display"
+				style="background: linear-gradient(rgba({$darkMode ? 0 : 255}, {$darkMode
+					? 0
+					: 255}, {$darkMode ? 0 : 255}, 0), rgba({$darkMode ? 0 : 255}, {$darkMode
+					? 0
+					: 255}, {$darkMode ? 0 : 255}, 255));"
+			>
+				<div class="carousel">
+					<img src="/{project.image}" style="width: 100%; aspect-ratio: 16/9" />
+					<div class="div-scroll">
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+					</div>
+				</div>
 				<div class="description"></div>
 			</div>
 		</div>
@@ -79,23 +105,72 @@
 		background-position: center;
 		filter: blur(10px);
 		z-index: -1;
-		background-color: black;
+		background-color: var(--light);
+	}
+
+	.div-scroll {
+		display: flex;
+		flex-direction: row;
+		gap: 5px;
+		height: 100px;
+		overflow-x: scroll;
+		width: 100%;
+		white-space: nowrap;
+	}
+
+	.div-scroll::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, transparent 0%, red 100%);
 	}
 
 	.display {
-		height: 400px;
 		width: 100%;
-		background-color: aliceblue;
 		display: grid;
 		grid-template-columns: 2fr 1fr;
 		grid-column-gap: 1rem;
 	}
 
 	.carousel {
-		background-color: red;
+		max-width: 100%;
+		overflow: auto;
 	}
 
 	.description {
-		background-color: blue;
+	}
+
+	*::-webkit-scrollbar {
+		height: 10px;
+		width: 10px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background-color: var(--light);
+		transition: all 0.3s ease-in-out;
+	}
+
+	*::-webkit-scrollbar-track:hover {
+		background-color: var(--light);
+	}
+
+	*::-webkit-scrollbar-track:active {
+		background-color: var(--light);
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: var(--primary);
+		transition: all 0.3s ease-in-out;
+	}
+
+	*::-webkit-scrollbar-thumb:hover {
+		background-color: var(--primary-light);
+	}
+
+	*::-webkit-scrollbar-thumb:active {
+		background-color: var(--primary-darken);
 	}
 </style>

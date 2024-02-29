@@ -1,7 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
+	import { darkMode } from '../ThemeStore';
 
-	let darkMode = true;
 	let activeSection = '/';
 
 	const socialLinks = [
@@ -16,11 +16,11 @@
 	];
 
 	function handleSwitchDarkMode() {
-		darkMode = !darkMode;
+		$darkMode = !$darkMode;
 
-		localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+		localStorage.setItem('theme', $darkMode ? 'dark' : 'light');
 
-		darkMode
+		$darkMode
 			? document.documentElement.classList.add('dark')
 			: document.documentElement.classList.remove('dark');
 	}
@@ -31,10 +31,10 @@
 			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark');
-			darkMode = true;
+			$darkMode = true;
 		} else {
 			document.documentElement.classList.remove('dark');
-			darkMode = false;
+			$darkMode = false;
 		}
 	}
 </script>
