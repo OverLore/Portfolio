@@ -5,11 +5,16 @@
 	import Header from '../../../components/Header.svelte';
 
 	export let data;
+	let selected = 0;
 	const { project, pageTitle } = data;
 
 	onMount(() => {
 		document.title = pageTitle;
 	});
+
+	const selectImage = (index) => {
+		selected = index;
+	};
 </script>
 
 <Header />
@@ -34,20 +39,31 @@
 					: 255}, {$darkMode ? 0 : 255}, 255));"
 			>
 				<div class="carousel">
-					<img src="/{project.image}" style="width: 100%; aspect-ratio: 16/9" />
+					<img src="/{project.screenshots[selected]}" style="width: 100%; aspect-ratio: 16/9" />
 					<div class="div-scroll">
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
-						<img src="/{project.image}" style="height: 100%; aspect-ratio: 16/9" />
+						{#each project.screenshots as screenshot, index (index)}
+							<button
+								class="carousel-image"
+								on:click={() => {
+									selectImage(index);
+								}}
+							>
+								<img
+									src="/{screenshot}"
+									alt="{project.id} logo"
+									style="width: 100%; height: 100%; aspect-ratio: 16 / 9;"
+								/>
+								{#if index == selected}
+									<div class="overlay" style="margin: 0;" />
+								{/if}
+							</button>
+						{/each}
 					</div>
 				</div>
-				<div class="description"></div>
+				<div class="description">
+					<img src="/{project.image}" style="width: 100%; aspect-ratio: 16/9" />
+					<p>{project.description}</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -60,6 +76,28 @@
 		justify-content: center;
 		min-height: 100vh;
 		z-index: 1;
+	}
+
+	.overlay {
+		position: absolute;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5);
+		background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(130, 0, 0, 0.8) 100%);
+		color: #f1f1f1;
+		width: 100%;
+		height: 100%;
+		transition: 0.5s ease;
+		color: white;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.carousel-image {
+		height: 100%;
+		aspect-ratio: 16/9;
+		cursor: pointer;
+		position: relative;
+		border: 0px;
 	}
 
 	.main-container {
@@ -86,12 +124,16 @@
 
 	h1 {
 		color: var(--primary);
-		font-size: 80;
+		font-size: clamp(1rem, 4vw, 3rem);
+		display: inline-block;
+		margin-bottom: 1rem;
 	}
 
 	p {
+		margin-top: 0.75rem;
 		color: var(--black);
-		font-size: 80;
+		font-size: 0.75rem;
+		font-size: clamp(0.75rem, 3vw, 1.25rem);
 	}
 
 	.background-blur {
@@ -114,18 +156,9 @@
 		gap: 5px;
 		height: 100px;
 		overflow-x: scroll;
+		overflow-y: hidden;
 		width: 100%;
 		white-space: nowrap;
-	}
-
-	.div-scroll::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(to bottom, transparent 0%, red 100%);
 	}
 
 	.display {

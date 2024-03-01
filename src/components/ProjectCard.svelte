@@ -2,7 +2,7 @@
 	import SkillContainer from './SkillContainer.svelte';
 
 	/**
-	 * @type {{ id:string; type: string; name: string; description: string; image:string; stack: string[] }}
+	 * @type {{ id:string; type: string; name: string; description: string; image:string; stack: string[]; screenshots: string[] }}
 	 */
 	export let project;
 </script>

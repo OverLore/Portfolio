@@ -77,6 +77,7 @@ export const projects = [
 			'Flappy Clone est une copie du jeu iconique Flappy Bird jouable en solo sur android réalisée avec la libraire Löve2D.',
 		image: 'projects/flappy-clone/preview.png',
 		stack: ['love2d', 'lua', 'photoshop'],
+		screenshots: ['projects/flappy-clone/preview.png','projects/cookie-maker/preview.png','projects/flappy-clone/preview.png','projects/flappy-clone/preview.png','projects/flappy-clone/preview.png','projects/flappy-clone/preview.png','projects/flappy-clone/preview.png',],
 		opacity: 0.85
 	},
 	{
