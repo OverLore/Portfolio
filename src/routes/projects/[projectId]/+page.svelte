@@ -89,19 +89,17 @@
 			>
 				<div class="carousel">
 					<div class="carousel-main-image-container">
-						{#if selected == 0}
+						{#if project.screenshots[selected].type === 'video'}
 							<iframe
 								title="oui"
-								width="420"
-								height="315"
 								class="carousel-main-image"
-								src="https://www.youtube.com/embed/k-Gnb1XvS5k"
+								src="https://www.youtube.com/embed/{project.screenshots[selected].link}"
 							>
 							</iframe>
 						{:else}
 							{#key selected}
 								<img
-									src="/{project.screenshots[selected]}"
+									src="/{project.screenshots[selected].link}"
 									class="carousel-main-image"
 									alt="Logo du jeu"
 									transition:fade={{ duration: 300 }}
@@ -117,21 +115,19 @@
 									selectImage(index);
 								}}
 							>
-								{#if index == 0}
+								{#if screenshot.type === 'video'}
 									<img
-										src="https://img.youtube.com/vi/k-Gnb1XvS5k/0.jpg"
+										src="https://img.youtube.com/vi/{screenshot.link}/0.jpg"
 										alt="{project.id} logo"
 										style="width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover;"
 									/>
 
-									{#if index == 0}
-										<div class="icon-overlay" style="margin: 0;">
-											<i class="ri-play-fill"></i>
-										</div>
-									{/if}
+									<div class="icon-overlay" style="margin: 0;">
+										<i class="ri-play-fill"></i>
+									</div>
 								{:else}
 									<img
-										src="/{screenshot}"
+										src="/{screenshot.link}"
 										alt="{project.id} logo"
 										style="width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover;"
 									/>
