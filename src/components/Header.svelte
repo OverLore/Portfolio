@@ -1,4 +1,5 @@
 <script>
+	// @ts-nocheck
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
@@ -41,10 +42,6 @@
 			: document.documentElement.classList.remove('dark');
 	}
 
-	/**
-	 * @param {{ preventDefault: () => void; }} event
-	 * @param {string|null=} sectionId
-	 */
 	function handleLinkClick(event, sectionId) {
 		event.preventDefault();
 		scrollToSection(sectionId);

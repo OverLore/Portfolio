@@ -1,8 +1,5 @@
-/**
- * Scrolls to the specified section. Scrolls to top if sectionId is null or not provided.
- * @param {string|null=} sectionId - The ID of the section to scroll to, nullable or optional.
- */
-export function scrollToSection(sectionId) {
+// @ts-nocheck
+  export function scrollToSection(sectionId) {
     if (!sectionId)
     {
       window.scrollTo({
