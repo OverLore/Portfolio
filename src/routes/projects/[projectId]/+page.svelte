@@ -5,11 +5,15 @@
 	import { darkMode } from '../../../ThemeStore';
 	import Header from '../../../components/Header.svelte';
 	import { fade } from 'svelte/transition';
+	import Separator from '../../../components/Separator.svelte';
+	import SkillContainer from '../../../components/SkillContainer.svelte';
 
 	export let data;
 	let selected = 0;
 	let carouselScroll = null;
 	const { project, pageTitle } = data;
+
+	let links = [{ title: 'Accueil', id: '', href: '/', type: 'redirect' }];
 
 	function updateCarouselHeight() {
 		const carousel = document.querySelector('.carousel-main-image-container');
@@ -66,7 +70,7 @@
 	};
 </script>
 
-<Header />
+<Header {links} mainButtonType="redirect" />
 <div
 	class="background-blur"
 	style="background-image: linear-gradient(rgba({$darkMode ? 0 : 255}, {$darkMode
@@ -147,10 +151,48 @@
 						alt="{project.name} title"
 					/>
 					<div class="description-description">
-						<p>{project.description}</p>
-						<p>{project.description}</p>
-						<p>{project.description}</p>
-						<p>{project.description}</p>
+						<h5>{project.name}</h5>
+						<Separator marginTop="0.5rem" width="70%" />
+						<p style="margin-top: 0.5rem;">{project.description}</p>
+						<Separator marginTop="0.5rem" width="2%" />
+						<h6 style="text-align: center; margin-top: 0.5rem;">Informations</h6>
+						{#each project.infos as info, index (index)}
+							<div class="projet-info" style={index == 0 ? 'margin-top: 0.25rem;' : ''}>
+								<h6>{info.title}</h6>
+								<p>{info.value}</p>
+							</div>
+						{/each}
+						<Separator marginTop="0.5rem" width="2%" />
+						<div
+							style="display: flex; align-items: center; justify-content: center; margin-top: 0.5rem; flex-direction: column;"
+						>
+							<h6>Crédits</h6>
+							<ul style="margin-top: 0.25rem">
+								{#each project.credits as credit}
+									<li class={credit.linkedin === '' ? 'credit' : ''}>
+										{#if credit.linkedin === ''}
+											<span class="credit-name">{credit.name}</span> - {credit.role}
+										{:else}
+											<a href={credit.linkedin} target="_blank" title="Voir sur LinkedIn"
+												><i class="ri-linkedin-box-fill"></i> {credit.name}</a
+											>
+											- {credit.role}
+										{/if}
+									</li>
+								{/each}
+							</ul>
+						</div>
+						<Separator marginTop="2rem" width="2%" />
+						<h6 style="text-align: center; margin-top: 0.5rem;">Compétences travaillées</h6>
+						<div class="techlist">
+							{#each project.stack as skill}
+								<SkillContainer
+									size="40px"
+									img="../../../skills-icons/{skill}.png"
+									alt="{skill} logo"
+								/>
+							{/each}
+						</div>
 					</div>
 					<a class="download-button" href="/CV.pdf">
 						<i class="ri-download-2-line"></i>
@@ -169,6 +211,69 @@
 		justify-content: center;
 		min-height: 100vh;
 		z-index: 1;
+	}
+
+	.techlist {
+		margin-top: 0.25rem;
+		display: flex;
+		gap: 10px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 0.75rem;
+	}
+
+	.projet-info {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.description p {
+		color: var(--black);
+		font-size: 0.5rem;
+		font-size: clamp(0.5rem, 2.5vw, 1rem);
+	}
+
+	.description h5 {
+		color: var(--black);
+		font-size: 1rem;
+		font-size: clamp(1rem, 4vw, 1.5rem);
+	}
+
+	.description h6 {
+		color: var(--black);
+		font-size: 0.5rem;
+		font-size: clamp(0.5rem, 2.5vw, 1rem);
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+	}
+
+	li {
+		text-align: center;
+		display: inline-block;
+		color: var(--black);
+		font-size: 0.3rem;
+		font-size: clamp(0.3rem, 2vw, 0.85rem);
+		margin-top: 0.15rem;
+	}
+
+	.credit {
+		margin-top: 0.25rem;
+	}
+
+	.credit-name,
+	li a {
+		color: var(--primary);
+		font-weight: bold;
+	}
+
+	li a i {
+		font-size: 0.5rem;
+		font-size: clamp(0.5rem, 2.5vw, 1rem);
 	}
 
 	.overlay {
@@ -270,12 +375,6 @@
 		width: 100%; /* Assurez-vous que la largeur correspond à vos besoins */
 	}
 
-	.description p {
-		color: var(--black);
-		font-size: 0.75rem;
-		font-size: clamp(0.75rem, 3vw, 1.25rem);
-	}
-
 	.carousel-main-image-container {
 		width: 100%;
 		aspect-ratio: 16/9;
@@ -353,6 +452,7 @@
 		margin-top: 0.75rem;
 		flex: 1;
 		overflow: auto;
+		padding-right: 1rem;
 	}
 
 	iframe {

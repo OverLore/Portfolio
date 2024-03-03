@@ -11,15 +11,8 @@
 	let remSize = 16;
 	let offset = 3.5 * remSize;
 
-	let links = [
-		{ title: 'Accueil', id: '/', href: '/' },
-		{ title: 'Presentation', id: '/presentation', href: '#presentation' },
-		{ title: 'Web', id: '/web-skills', href: '#web-skills' },
-		{ title: 'Software', id: '/software-skills', href: '#software-skills' },
-		{ title: 'Jeux', id: '/game-skills', href: '#game-skills' },
-		{ title: 'Projects', id: '/projects', href: '#projects' },
-		{ title: 'Parcours', id: '/experience', href: '#experience' }
-	];
+	export let mainButtonType;
+	export let links = [];
 
 	const socialLinks = [
 		{ href: 'https://www.linkedin.com/in/luc-arnould/', iconClass: 'ri-linkedin-box-line' },
@@ -100,55 +93,99 @@
 <header>
 	<nav>
 		<div class="links-container">
-			<a
-				class="logo-container"
-				href="/"
-				on:click|preventDefault={(event) => handleLinkClick(event)}
-			>
-				<svg
-					version="1.2"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 994 911"
-					width="36"
-					height="36"
-					class="icon"
-					style={'color: var(--black)'}
+			{#if mainButtonType == 'scroll'}
+				<a
+					class="logo-container"
+					href="/"
+					on:click|preventDefault={(event) => handleLinkClick(event)}
 				>
-					<title>arnould_poll_logo-svg</title>
-					<path
-						id="Layer"
-						fill-rule="evenodd"
-						class="title-svg"
-						style={'fill: var(--black)'}
-						d="m853.9 717.2c-43.4-63-169-87-274-84-395.8 52.4-356 269-491 275-37.4 3-86.5-21.6-88-104-3-109.5 89.8-329.5 661-316 150 14.9 186 145 192 229z"
-					/>
-					<path
-						id="Layer"
-						fill-rule="evenodd"
-						class="title-svg"
-						style={'fill: var(--black)'}
-						d="m394.9 0.2c51 0 50-1 104 2 132 10.5 175 151 175 151 0 0 83 242 146 398-61.4-82.5-150-83.5-171-85-21-1.5-93 1-93 1l-105-260c0 0-108.5 258-119 285-184 40-246 96-295 153 6.4-19.7 187-493 187-493 0 0 34.6-149 171-152z"
-					/>
-					<path
-						id="Layer"
-						fill-rule="evenodd"
-						class="title-svg"
-						style={'fill: var(--primary)'}
-						d="m632.9 656.2c163 7 212.5 63.5 250 153-2.5-76.5-6.5-99.5-11-130 61.5 170 122 230 122 230 0 0-81.5 1-189 1-99-11-112-80-112-80 0 0-52.5-149.5-60-174z"
-					/>
-				</svg>
-				<span class="logo-text">Luc Arnould</span>
-			</a>
+					<svg
+						version="1.2"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 994 911"
+						width="36"
+						height="36"
+						class="icon"
+						style={'color: var(--black)'}
+					>
+						<title>arnould_poll_logo-svg</title>
+						<path
+							id="Layer"
+							fill-rule="evenodd"
+							class="title-svg"
+							style={'fill: var(--black)'}
+							d="m853.9 717.2c-43.4-63-169-87-274-84-395.8 52.4-356 269-491 275-37.4 3-86.5-21.6-88-104-3-109.5 89.8-329.5 661-316 150 14.9 186 145 192 229z"
+						/>
+						<path
+							id="Layer"
+							fill-rule="evenodd"
+							class="title-svg"
+							style={'fill: var(--black)'}
+							d="m394.9 0.2c51 0 50-1 104 2 132 10.5 175 151 175 151 0 0 83 242 146 398-61.4-82.5-150-83.5-171-85-21-1.5-93 1-93 1l-105-260c0 0-108.5 258-119 285-184 40-246 96-295 153 6.4-19.7 187-493 187-493 0 0 34.6-149 171-152z"
+						/>
+						<path
+							id="Layer"
+							fill-rule="evenodd"
+							class="title-svg"
+							style={'fill: var(--primary)'}
+							d="m632.9 656.2c163 7 212.5 63.5 250 153-2.5-76.5-6.5-99.5-11-130 61.5 170 122 230 122 230 0 0-81.5 1-189 1-99-11-112-80-112-80 0 0-52.5-149.5-60-174z"
+						/>
+					</svg>
+					<span class="logo-text">Luc Arnould</span>
+				</a>
+			{:else}
+				<a class="logo-container" href="/">
+					<svg
+						version="1.2"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 994 911"
+						width="36"
+						height="36"
+						class="icon"
+						style={'color: var(--black)'}
+					>
+						<title>arnould_poll_logo-svg</title>
+						<path
+							id="Layer"
+							fill-rule="evenodd"
+							class="title-svg"
+							style={'fill: var(--black)'}
+							d="m853.9 717.2c-43.4-63-169-87-274-84-395.8 52.4-356 269-491 275-37.4 3-86.5-21.6-88-104-3-109.5 89.8-329.5 661-316 150 14.9 186 145 192 229z"
+						/>
+						<path
+							id="Layer"
+							fill-rule="evenodd"
+							class="title-svg"
+							style={'fill: var(--black)'}
+							d="m394.9 0.2c51 0 50-1 104 2 132 10.5 175 151 175 151 0 0 83 242 146 398-61.4-82.5-150-83.5-171-85-21-1.5-93 1-93 1l-105-260c0 0-108.5 258-119 285-184 40-246 96-295 153 6.4-19.7 187-493 187-493 0 0 34.6-149 171-152z"
+						/>
+						<path
+							id="Layer"
+							fill-rule="evenodd"
+							class="title-svg"
+							style={'fill: var(--primary)'}
+							d="m632.9 656.2c163 7 212.5 63.5 250 153-2.5-76.5-6.5-99.5-11-130 61.5 170 122 230 122 230 0 0-81.5 1-189 1-99-11-112-80-112-80 0 0-52.5-149.5-60-174z"
+						/>
+					</svg>
+					<span class="logo-text">Luc Arnould</span>
+				</a>
+			{/if}
 			<ul class="main-link-list roboto-medium">
-				{#each links as { title, id, href }}
+				{#each links as { title, id, href, type }}
 					<li>
-						<a
-							{href}
-							class:active={activeSection === id}
-							on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
-						>
-							{title}
-						</a>
+						{#if type === 'scroll'}
+							<a
+								{href}
+								class:active={activeSection === id}
+								on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
+							>
+								{title}
+							</a>
+						{:else}
+							<a {href} class:active={activeSection === id}>
+								{title}
+							</a>
+						{/if}
 					</li>
 				{/each}
 			</ul>

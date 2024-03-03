@@ -6,12 +6,22 @@
 	import { projects } from '../projects.js';
 	import { onMount } from 'svelte';
 
+	let links = [
+		{ title: 'Accueil', id: '/', href: '/', type: 'scroll' },
+		{ title: 'Presentation', id: '/presentation', href: '#presentation', type: 'scroll' },
+		{ title: 'Web', id: '/web-skills', href: '#web-skills', type: 'scroll' },
+		{ title: 'Software', id: '/software-skills', href: '#software-skills', type: 'scroll' },
+		{ title: 'Jeux', id: '/game-skills', href: '#game-skills', type: 'scroll' },
+		{ title: 'Projects', id: '/projects', href: '#projects', type: 'scroll' },
+		{ title: 'Parcours', id: '/experience', href: '#experience', type: 'scroll' }
+	];
+
 	onMount(() => {
 		document.title = 'Luc Arnould - Développeur';
 	});
 </script>
 
-<Header />
+<Header {links} mainButtonType="scroll" />
 <main>
 	<div class="main-container">
 		<article class="landing-article deep-1">
