@@ -65,8 +65,8 @@
 			--test 0.2s ease-in-out;
 		width: 100%;
 
-		background-color: var(--background-color-contrast);
-		background-image: var(--background-image-contrast);
+		background-color: var(--background-color);
+		background-image: var(--background-image);
 		background-repeat: repeat;
 		background-size: 50vw;
 
@@ -106,13 +106,13 @@
 		font-weight: bold;
 		margin-bottom: 0.75rem;
 		text-align: center;
-		color: var(--light);
+		color: var(--black);
 	}
 
 	.custom-card-text {
 		margin-bottom: 1rem;
 		text-align: center;
-		color: var(--light);
+		color: var(--black);
 		font-size: clamp(0.75rem, 3vw, 1.25rem);
 	}
 

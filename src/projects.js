@@ -81,7 +81,80 @@ export const projects = [
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
 		],
-		opacity: 0.85
+		infos: [
+			{ title: 'Plateforme', value: 'PC' },
+			{ title: 'Genre', value: 'Survie / FPS' },
+			{ title: 'Durée de production', value: '8 semaines' },
+			{ title: 'Langues', value: 'Anglais / Français' }
+		],
+		credits: [
+			{
+				name: 'Luc Arnould',
+				linkedin: 'https://www.linkedin.com/in/luc-arnould/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Evan Batsik',
+				linkedin: 'https://www.linkedin.com/in/evanbatsik/',
+				role: 'Programmation, Son'
+			},
+			{
+				name: 'Nathan Falourd',
+				linkedin: 'https://www.linkedin.com/in/nathan-falourd-09ab70255/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Rémy Guillo',
+				linkedin: 'https://www.linkedin.com/in/remy-guillo-20b830240/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Mathis Lagardère',
+				linkedin: 'https://www.linkedin.com/in/mathis-lagardere/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Denis Lochet',
+				linkedin: 'https://www.linkedin.com/in/denislochet/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Alan Paradis',
+				linkedin: 'https://www.linkedin.com/in/alan-paradis/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Jules Baud',
+				linkedin: 'https://www.linkedin.com/in/julesbaud/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Ludivine Brun',
+				linkedin: 'https://www.linkedin.com/in/ludivine-brun/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Christopher Chaplain-Dumontier',
+				linkedin: 'https://www.linkedin.com/in/christopher-cd/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Tanguy Desgranges',
+				linkedin: 'https://www.linkedin.com/in/tanguymonkey/',
+				role: 'Infographie, Son'
+			},
+			{
+				name: 'Loreena (Kitsu) Faucher',
+				linkedin: 'https://www.linkedin.com/in/loreena-faucher-74a917194/',
+				role: 'Infographie, Son'
+			},
+			{
+				name: 'Nathan Laguna',
+				linkedin: 'https://www.linkedin.com/in/nathanlaguna/',
+				role: 'Infographie'
+			}
+		],
+		opacity: 0.5
 	},
 	{
 		id: 'kurage',
