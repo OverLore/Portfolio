@@ -58,8 +58,8 @@ export const projects = [
 				role: 'Infographie, Son'
 			},
 			{
-				name: 'Nathan Laguna',
-				linkedin: 'https://www.linkedin.com/in/nathanlaguna/',
+				name: 'Romain Espinosa',
+				linkedin: 'https://www.linkedin.com/in/romain-espinosa/',
 				role: 'Infographie'
 			}
 		],
