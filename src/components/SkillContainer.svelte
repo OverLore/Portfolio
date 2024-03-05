@@ -44,7 +44,7 @@
 	}
 
 	.inverted {
-		color: var(--light);
+		color: var(--black);
 		font-size: 1rem;
 	}
 

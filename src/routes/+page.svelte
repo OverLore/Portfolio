@@ -71,7 +71,7 @@
 		</div>
 		<article
 			class="deep-0"
-			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="presentation"
 		>
 			<div
@@ -227,7 +227,7 @@
 		</div>
 		<article
 			class="deep-0"
-			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="software-skills"
 		>
 			<div
@@ -508,7 +508,7 @@
 		</div>
 		<article
 			class="deep-0"
-			style="align-items: center; background-color: var(--black); display:flex; flex-direction: column;"
+			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="projects"
 		>
 			<div
@@ -1158,7 +1158,7 @@
 
 	.question-paragraph {
 		font-size: clamp(0.75rem, 3vw, 1.25rem);
-		color: var(--light);
+		color: var(--black);
 		margin-top: 2rem;
 		text-align: justify;
 		transition: color 0.15s ease-in-out;

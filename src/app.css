@@ -37,7 +37,8 @@ body {
 	--AXIS: 'AXIS', sans-serif;
 	--Gilroy: 'Gilroy', sans-serif;
 
-	--black: #0b090a;
+	--black: #000;
+	--black-background: #ebebeb;
 	--black-light: #161a1d;
 
 	--primary: #db0f13;
@@ -52,8 +53,7 @@ body {
 	--light-dark: #b1a7a6;
 
 	--nav-filter: blur(15px) brightness(1.09) grayscale(20%) saturate(51%) sepia(5%);
-	--svg-filter: invert(2%) sepia(2%) saturate(4313%) hue-rotate(278deg) brightness(92%)
-		contrast(96%);
+	--svg-filter: invert(92%);
 
 	--background-image: url($lib/Back2.png);
 	--background-image-contrast: url($lib/Back.png);
@@ -63,7 +63,8 @@ body {
 }
 
 :root.dark {
-	--black: #ffffff;
+	--black: #ffff;
+	--black-background: #1c1c1c;
 	--black-light: #f5f3f4;
 
 	--primary: #db0f13;
@@ -78,7 +79,7 @@ body {
 	--light-dark: #060505;
 
 	--nav-filter: blur(15px) brightness(0.7) grayscale(20%) saturate(51%) sepia(5%);
-	--svg-filter: invert(100%);
+	--svg-filter: invert(11%);
 
 	--background-image: url($lib/Back.png);
 	--background-image-contrast: url($lib/Back2.png);
