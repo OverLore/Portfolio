@@ -103,7 +103,7 @@
 						{:else}
 							{#key selected}
 								<img
-									src="/{project.screenshots[selected].link}"
+									src={project.screenshots[selected].link}
 									class="carousel-main-image"
 									alt="Logo du jeu"
 									transition:fade={{ duration: 300 }}
@@ -131,7 +131,7 @@
 									</div>
 								{:else}
 									<img
-										src="/{screenshot.link}"
+										src={screenshot.link}
 										alt="{project.id} logo"
 										style="width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover;"
 									/>

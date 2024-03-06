@@ -8,12 +8,13 @@ export const projects = [
 		image: 'projects/kunai-fu/preview.png',
 		stack: ['unreal', 'cpp', 'photoshop'],
 		screenshots: [
-			{ type: 'video', link: 'bd6cfoGb1p0' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
+			{ type: 'video', link: '7eBQQ-Wvbis' },
+			{ type: 'image', link: 'projects/kunai-fu/1.png' },
+			{ type: 'image', link: 'projects/kunai-fu/2.png' },
+			{ type: 'image', link: 'projects/kunai-fu/3.png' },
+			{ type: 'image', link: 'projects/kunai-fu/4.png' },
+			{ type: 'image', link: 'projects/kunai-fu/5.png' },
+			{ type: 'image', link: 'projects/kunai-fu/preview.png' }
 		],
 		infos: [
 			{ title: 'Plateforme', value: 'PC (Multijoueur)' },
@@ -74,12 +75,13 @@ export const projects = [
 		image: 'projects/ligne13/preview.png',
 		stack: ['unity', 'csharp', 'photoshop', 'substance', 'blender', 'wwise', 'git'],
 		screenshots: [
-			{ type: 'video', link: 'bd6cfoGb1p0' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
+			{ type: 'video', link: '9ql-30FD55I' },
+			{ type: 'image', link: 'ligne13/1.webp' },
+			{ type: 'image', link: 'ligne13/2.webp' },
+			{ type: 'image', link: 'ligne13/3.webp' },
+			{ type: 'image', link: 'ligne13/4.webp' },
+			{ type: 'image', link: 'ligne13/5.webp' },
+			{ type: 'image', link: 'ligne13/preview.png' }
 		],
 		infos: [
 			{ title: 'Plateforme', value: 'PC' },
@@ -165,12 +167,64 @@ export const projects = [
 		image: 'projects/kurage/preview.png',
 		stack: ['unity', 'csharp', 'photoshop', 'git'],
 		screenshots: [
-			{ type: 'video', link: 'bd6cfoGb1p0' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
+			{ type: 'image', link: 'kurage/2.webp' },
+			{ type: 'image', link: 'kurage/3.webp' },
+			{ type: 'image', link: 'kurage/4.webp' },
+			{ type: 'image', link: 'kurage/5.webp' },
+			{ type: 'image', link: 'kurage/preview.png' }
+		],
+		infos: [
+			{ title: 'Plateforme', value: 'PC' },
+			{ title: 'Genre', value: 'Survie / FPS' },
+			{ title: 'Durée de production', value: '8 semaines' },
+			{ title: 'Langues', value: 'Anglais / Français' }
+		],
+		credits: [
+			{
+				name: 'Luc Arnould',
+				linkedin: 'https://www.linkedin.com/in/luc-arnould/',
+				role: 'Programmation, Son'
+			},
+			{
+				name: 'Evan Batsik',
+				linkedin: 'https://www.linkedin.com/in/evanbatsik/',
+				role: 'Programmation, Son'
+			},
+			{
+				name: 'Mathis Lagardère',
+				linkedin: 'https://www.linkedin.com/in/mathis-lagardere/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Denis Lochet',
+				linkedin: 'https://www.linkedin.com/in/denislochet/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Alan Paradis',
+				linkedin: 'https://www.linkedin.com/in/alan-paradis/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Jules Baud',
+				linkedin: 'https://www.linkedin.com/in/julesbaud/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Tanguy Desgranges',
+				linkedin: 'https://www.linkedin.com/in/tanguymonkey/',
+				role: 'Infographie, Son'
+			},
+			{
+				name: 'Loreena (Kitsu) Faucher',
+				linkedin: 'https://www.linkedin.com/in/loreena-faucher-74a917194/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Marie Berthet',
+				linkedin: 'https://www.linkedin.com/in/marieberthet/',
+				role: 'Infographie'
+			}
 		],
 		opacity: 0.85
 	},
@@ -183,12 +237,85 @@ export const projects = [
 		image: 'projects/naukar/preview.png',
 		stack: ['sfml', 'c', 'photoshop'],
 		screenshots: [
-			{ type: 'video', link: 'bd6cfoGb1p0' },
+			{ type: 'video', link: 'igblL_L4au0' },
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
 			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
+		],
+		infos: [
+			{ title: 'Plateforme', value: 'PC' },
+			{ title: 'Genre', value: 'Survie / FPS' },
+			{ title: 'Durée de production', value: '8 semaines' },
+			{ title: 'Langues', value: 'Anglais / Français' }
+		],
+		credits: [
+			{
+				name: 'Luc Arnould',
+				linkedin: 'https://www.linkedin.com/in/luc-arnould/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Evan Batsik',
+				linkedin: 'https://www.linkedin.com/in/evanbatsik/',
+				role: 'Programmation, Son'
+			},
+			{
+				name: 'Nathan Falourd',
+				linkedin: 'https://www.linkedin.com/in/nathan-falourd-09ab70255/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Rémy Guillo',
+				linkedin: 'https://www.linkedin.com/in/remy-guillo-20b830240/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Mathis Lagardère',
+				linkedin: 'https://www.linkedin.com/in/mathis-lagardere/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Denis Lochet',
+				linkedin: 'https://www.linkedin.com/in/denislochet/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Alan Paradis',
+				linkedin: 'https://www.linkedin.com/in/alan-paradis/',
+				role: 'Programmation'
+			},
+			{
+				name: 'Jules Baud',
+				linkedin: 'https://www.linkedin.com/in/julesbaud/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Ludivine Brun',
+				linkedin: 'https://www.linkedin.com/in/ludivine-brun/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Christopher Chaplain-Dumontier',
+				linkedin: 'https://www.linkedin.com/in/christopher-cd/',
+				role: 'Infographie'
+			},
+			{
+				name: 'Tanguy Desgranges',
+				linkedin: 'https://www.linkedin.com/in/tanguymonkey/',
+				role: 'Infographie, Son'
+			},
+			{
+				name: 'Loreena (Kitsu) Faucher',
+				linkedin: 'https://www.linkedin.com/in/loreena-faucher-74a917194/',
+				role: 'Infographie, Son'
+			},
+			{
+				name: 'Nathan Laguna',
+				linkedin: 'https://www.linkedin.com/in/nathanlaguna/',
+				role: 'Infographie'
+			}
 		],
 		opacity: 0.85
 	},
