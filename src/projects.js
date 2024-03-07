@@ -238,38 +238,46 @@ export const projects = [
 		stack: ['sfml', 'c', 'photoshop'],
 		screenshots: [
 			{ type: 'video', link: 'igblL_L4au0' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
+			{ type: 'image', link: 'naukar/0.png' },
+			{ type: 'image', link: 'naukar/1.png' },
+			{ type: 'image', link: 'naukar/1-2.png' },
+			{ type: 'image', link: 'naukar/1-3.png' },
+			{ type: 'image', link: 'naukar/2.png' },
+			{ type: 'image', link: 'naukar/3.png' },
+			{ type: 'image', link: 'naukar/4.png' },
+			{ type: 'image', link: 'naukar/4-2.png' },
+			{ type: 'image', link: 'naukar/5.png' },
+			{ type: 'image', link: 'naukar/6.png' },
+			{ type: 'image', link: 'naukar/7.png' },
+			{ type: 'image', link: 'naukar/8.png' },
+			{ type: 'image', link: 'naukar/10.png' },
+			{ type: 'image', link: 'naukar/11.png' },
+			{ type: 'image', link: 'naukar/12.png' },
+			{ type: 'image', link: 'naukar/14.png' },
+			{ type: 'image', link: 'naukar/15.png' },
+			{ type: 'image', link: 'naukar/16.png' },
+			{ type: 'image', link: 'naukar/17.png' },
+			{ type: 'image', link: 'naukar/17-2.jpg' },
+			{ type: 'image', link: 'naukar/19.png' },
+			{ type: 'image', link: 'naukar/20.jpg' },
+			{ type: 'image', link: 'naukar/preview.png' }
 		],
 		infos: [
 			{ title: 'Plateforme', value: 'PC' },
-			{ title: 'Genre', value: 'Survie / FPS' },
+			{ title: 'Genre', value: 'Roguelite' },
 			{ title: 'Durée de production', value: '8 semaines' },
-			{ title: 'Langues', value: 'Anglais / Français' }
+			{ title: 'Langues', value: 'Français' }
 		],
 		credits: [
 			{
 				name: 'Luc Arnould',
 				linkedin: 'https://www.linkedin.com/in/luc-arnould/',
-				role: 'Programmation'
+				role: 'Programmation, Son'
 			},
 			{
 				name: 'Evan Batsik',
 				linkedin: 'https://www.linkedin.com/in/evanbatsik/',
 				role: 'Programmation, Son'
-			},
-			{
-				name: 'Nathan Falourd',
-				linkedin: 'https://www.linkedin.com/in/nathan-falourd-09ab70255/',
-				role: 'Programmation'
-			},
-			{
-				name: 'Rémy Guillo',
-				linkedin: 'https://www.linkedin.com/in/remy-guillo-20b830240/',
-				role: 'Programmation'
 			},
 			{
 				name: 'Mathis Lagardère',
@@ -292,13 +300,8 @@ export const projects = [
 				role: 'Infographie'
 			},
 			{
-				name: 'Ludivine Brun',
-				linkedin: 'https://www.linkedin.com/in/ludivine-brun/',
-				role: 'Infographie'
-			},
-			{
-				name: 'Christopher Chaplain-Dumontier',
-				linkedin: 'https://www.linkedin.com/in/christopher-cd/',
+				name: 'Marie Berthet',
+				linkedin: 'https://www.linkedin.com/in/marieberthet/',
 				role: 'Infographie'
 			},
 			{
