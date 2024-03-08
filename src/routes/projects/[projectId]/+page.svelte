@@ -155,34 +155,38 @@
 						<Separator marginTop="0.5rem" width="70%" />
 						<p style="margin-top: 0.5rem;">{project.description}</p>
 						<Separator marginTop="0.5rem" width="2%" />
-						<h6 style="text-align: center; margin-top: 0.5rem;">Informations</h6>
-						{#each project.infos as info, index (index)}
-							<div class="projet-info" style={index == 0 ? 'margin-top: 0.25rem;' : ''}>
-								<h6>{info.title}</h6>
-								<p>{info.value}</p>
+						{#if project.infos != null}
+							<h6 style="text-align: center; margin-top: 0.5rem;">Informations</h6>
+							{#each project.infos as info, index (index)}
+								<div class="projet-info" style={index == 0 ? 'margin-top: 0.25rem;' : ''}>
+									<h6>{info.title}</h6>
+									<p>{info.value}</p>
+								</div>
+							{/each}
+							<Separator marginTop="0.5rem" width="2%" />
+						{/if}
+						{#if project.credits != null}
+							<div
+								style="display: flex; align-items: center; justify-content: center; margin-top: 0.5rem; flex-direction: column;"
+							>
+								<h6>Crédits</h6>
+								<ul style="margin-top: 0.25rem">
+									{#each project.credits as credit}
+										<li class={credit.linkedin === '' ? 'credit' : ''}>
+											{#if credit.linkedin === ''}
+												<span class="credit-name">{credit.name}</span> - {credit.role}
+											{:else}
+												<a href={credit.linkedin} target="_blank" title="Voir sur LinkedIn"
+													><i class="ri-linkedin-box-fill"></i> {credit.name}</a
+												>
+												- {credit.role}
+											{/if}
+										</li>
+									{/each}
+								</ul>
 							</div>
-						{/each}
-						<Separator marginTop="0.5rem" width="2%" />
-						<div
-							style="display: flex; align-items: center; justify-content: center; margin-top: 0.5rem; flex-direction: column;"
-						>
-							<h6>Crédits</h6>
-							<ul style="margin-top: 0.25rem">
-								{#each project.credits as credit}
-									<li class={credit.linkedin === '' ? 'credit' : ''}>
-										{#if credit.linkedin === ''}
-											<span class="credit-name">{credit.name}</span> - {credit.role}
-										{:else}
-											<a href={credit.linkedin} target="_blank" title="Voir sur LinkedIn"
-												><i class="ri-linkedin-box-fill"></i> {credit.name}</a
-											>
-											- {credit.role}
-										{/if}
-									</li>
-								{/each}
-							</ul>
-						</div>
-						<Separator marginTop="2rem" width="2%" />
+							<Separator marginTop="2rem" width="2%" />
+						{/if}
 						<h6 style="text-align: center; margin-top: 0.5rem;">Compétences travaillées</h6>
 						<div class="techlist">
 							{#each project.stack as skill}

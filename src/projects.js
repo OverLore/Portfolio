@@ -174,10 +174,10 @@ export const projects = [
 			{ type: 'image', link: 'kurage/preview.png' }
 		],
 		infos: [
-			{ title: 'Plateforme', value: 'PC' },
-			{ title: 'Genre', value: 'Survie / FPS' },
-			{ title: 'Durée de production', value: '8 semaines' },
-			{ title: 'Langues', value: 'Anglais / Français' }
+			{ title: 'Plateforme', value: 'Android' },
+			{ title: 'Genre', value: "Shoot'em Up" },
+			{ title: 'Durée de production', value: '4 semaines' },
+			{ title: 'Langues', value: 'Français' }
 		],
 		credits: [
 			{
@@ -375,10 +375,10 @@ export const projects = [
 			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
 		],
 		infos: [
-			{ title: 'Plateforme', value: 'PC' },
-			{ title: 'Genre', value: 'Survie / FPS' },
-			{ title: 'Durée de production', value: '8 semaines' },
-			{ title: 'Langues', value: 'Anglais / Français' }
+			{ title: 'Plateforme', value: 'Android' },
+			{ title: 'Genre', value: 'Hyper-Casual' },
+			{ title: 'Durée de production', value: '3 heures' },
+			{ title: 'Langues', value: 'Français' }
 		],
 		credits: [
 			{
@@ -458,85 +458,19 @@ export const projects = [
 		image: 'projects/flappy-clone/preview.png',
 		stack: ['love2d', 'lua', 'photoshop'],
 		screenshots: [
-			{ type: 'video', link: 'bd6cfoGb1p0' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
+			{ type: 'image', link: 'flappy-clone/1.webp' },
+			{ type: 'image', link: 'flappy-clone/2.webp' },
+			{ type: 'image', link: 'flappy-clone/3.webp' },
+			{ type: 'image', link: 'flappy-clone/4.webp' },
+			{ type: 'image', link: 'flappy-clone/5.webp' },
+			{ type: 'image', link: 'flappy-clone/6.webp' },
+			{ type: 'image', link: 'flappy-clone/preview.png' }
 		],
 		infos: [
-			{ title: 'Plateforme', value: 'PC' },
-			{ title: 'Genre', value: 'Survie / FPS' },
-			{ title: 'Durée de production', value: '8 semaines' },
-			{ title: 'Langues', value: 'Anglais / Français' }
-		],
-		credits: [
-			{
-				name: 'Luc Arnould',
-				linkedin: 'https://www.linkedin.com/in/luc-arnould/',
-				role: 'Programmation'
-			},
-			{
-				name: 'Evan Batsik',
-				linkedin: 'https://www.linkedin.com/in/evanbatsik/',
-				role: 'Programmation, Son'
-			},
-			{
-				name: 'Nathan Falourd',
-				linkedin: '',
-				role: 'Programmation'
-			},
-			{
-				name: 'Rémy Guillo',
-				linkedin: 'https://www.linkedin.com/in/remy-guillo-20b830240/',
-				role: 'Programmation'
-			},
-			{
-				name: 'Mathis Lagardère',
-				linkedin: 'https://www.linkedin.com/in/mathis-lagardere/',
-				role: 'Programmation'
-			},
-			{
-				name: 'Denis Lochet',
-				linkedin: 'https://www.linkedin.com/in/denislochet/',
-				role: 'Programmation'
-			},
-			{
-				name: 'Alan Paradis',
-				linkedin: 'https://www.linkedin.com/in/alan-paradis/',
-				role: 'Programmation'
-			},
-			{
-				name: 'Jules Baud',
-				linkedin: 'https://www.linkedin.com/in/julesbaud/',
-				role: 'Infographie'
-			},
-			{
-				name: 'Ludivine Brun',
-				linkedin: 'https://www.linkedin.com/in/ludivine-brun/',
-				role: 'Infographie'
-			},
-			{
-				name: 'Christopher Chaplain-Dumontier',
-				linkedin: 'https://www.linkedin.com/in/christopher-cd/',
-				role: 'Infographie'
-			},
-			{
-				name: 'Tanguy Desgranges',
-				linkedin: 'https://www.linkedin.com/in/tanguymonkey/',
-				role: 'Infographie, Son'
-			},
-			{
-				name: 'Loreena (Kitsu) Faucher',
-				linkedin: 'https://www.linkedin.com/in/loreena-faucher-74a917194/',
-				role: 'Infographie, Son'
-			},
-			{
-				name: 'Nathan Laguna',
-				linkedin: 'https://www.linkedin.com/in/nathanlaguna/',
-				role: 'Infographie'
-			}
+			{ title: 'Plateforme', value: 'Android' },
+			{ title: 'Genre', value: 'Casual' },
+			{ title: 'Durée de production', value: '2 semaines' },
+			{ title: 'Langues', value: 'Anglais' }
 		],
 		opacity: 0.85
 	},
@@ -581,14 +515,7 @@ export const projects = [
 			'azure',
 			'p4'
 		],
-		screenshots: [
-			{ type: 'video', link: 'bd6cfoGb1p0' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/cookie-maker/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' },
-			{ type: 'image', link: 'projects/flappy-clone/preview.png' }
-		],
+		screenshots: [{ type: 'image', link: 'virtuos/preview.png' }],
 		opacity: 0.85
 	}
 ];
