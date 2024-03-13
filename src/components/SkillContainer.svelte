@@ -1,5 +1,5 @@
 <script>
-	export let img = './skills-icons/react.png';
+	export let img = './skills-icons/react.webp';
 	export let alt = '';
 	export let title = '';
 	export let imgTitle = '';
@@ -14,7 +14,7 @@
 		</div>
 	</div>
 	{#if title.length > 0}
-		<h5 class="title" class:inverted={invertColor}>{title}</h5>
+		<h4 class="title" class:inverted={invertColor}>{title}</h4>
 	{/if}
 </main>
 

@@ -25,15 +25,15 @@
 		</div>
 
 		<div class="custom-card-body">
-			<h5 class="custom-card-title">
+			<h3 class="custom-card-title">
 				{project.name}
-			</h5>
+			</h3>
 			<p class="custom-card-text">
 				{project.description}
 			</p>
 			<div class="techlist">
 				{#each project.stack as skill}
-					<SkillContainer size="50px" img="./skills-icons/{skill}.png" alt="{skill} logo" />
+					<SkillContainer size="50px" img="./skills-icons/{skill}.webp" alt="{skill} logo" />
 				{/each}
 			</div>
 			<a href="projects/{project.id}" data-sveltekit-preload-data class="custom-btn"

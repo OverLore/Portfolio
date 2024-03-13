@@ -15,14 +15,23 @@
 	export let links = [];
 
 	const socialLinks = [
-		{ href: 'https://www.linkedin.com/in/luc-arnould/', iconClass: 'ri-linkedin-box-line' },
-		{ href: 'https://github.com/OverLore/', iconClass: 'ri-github-line' },
-		{ href: 'https://www.tiktok.com/@_scottii/', iconClass: 'ri-tiktok-line' },
+		{
+			href: 'https://www.linkedin.com/in/luc-arnould/',
+			iconClass: 'ri-linkedin-box-line',
+			aria: 'Linkedin'
+		},
+		{ href: 'https://github.com/OverLore/', iconClass: 'ri-github-line', aria: 'GitHub' },
+		{ href: 'https://www.tiktok.com/@_scottii/', iconClass: 'ri-tiktok-line', aria: 'Tiktok' },
 		{
 			href: 'https://www.youtube.com/channel/UCYaQhULOHO684SKERsnf9nw/',
-			iconClass: 'ri-youtube-line'
+			iconClass: 'ri-youtube-line',
+			aria: 'YouTube'
 		},
-		{ href: 'https://www.instagram.com/lucarnould/', iconClass: 'ri-instagram-line' }
+		{
+			href: 'https://www.instagram.com/lucarnould/',
+			iconClass: 'ri-instagram-line',
+			aria: 'Instagram'
+		}
 	];
 
 	function handleSwitchDarkMode() {
@@ -97,6 +106,7 @@
 				<a
 					class="logo-container"
 					href="/"
+					aria-label="Accueil"
 					on:click|preventDefault={(event) => handleLinkClick(event)}
 				>
 					<svg
@@ -134,7 +144,7 @@
 					<span class="logo-text">Luc Arnould</span>
 				</a>
 			{:else}
-				<a class="logo-container" href="/">
+				<a class="logo-container" href="/" aria-label="Accueil">
 					<svg
 						version="1.2"
 						xmlns="http://www.w3.org/2000/svg"
@@ -171,10 +181,11 @@
 				</a>
 			{/if}
 			<ul class="main-link-list roboto-medium">
-				{#each links as { title, id, href, type }}
+				{#each links as { title, id, href, type, aria }}
 					<li>
 						{#if type === 'scroll'}
 							<a
+								aria-label={aria}
 								{href}
 								class:active={activeSection === id}
 								on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
@@ -182,7 +193,7 @@
 								{title}
 							</a>
 						{:else}
-							<a {href} class:active={activeSection === id}>
+							<a aria-label={aria} {href} class:active={activeSection === id}>
 								{title}
 							</a>
 						{/if}
@@ -192,9 +203,9 @@
 		</div>
 		<div class="social-container">
 			<ul class="main-social-list">
-				{#each socialLinks as { href, iconClass }}
+				{#each socialLinks as { href, iconClass, aria }}
 					<li>
-						<a {href} target="_blank">
+						<a aria-label={aria} {href} target="_blank">
 							<i class={iconClass}></i>
 						</a>
 					</li>
@@ -203,6 +214,7 @@
 					<button
 						class="theme-button"
 						style="margin-left: 1rem;"
+						aria-label={$darkMode ? 'Mode Clair' : 'Mode Sombre'}
 						on:click={() => handleSwitchDarkMode()}
 					>
 						<i class={$darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
@@ -212,7 +224,12 @@
 					<i class="ri-separator separator"></i>
 				</li>
 				<li>
-					<a class="contact-button" href="/CV.pdf" download="CV ARNOULD Luc.pdf">
+					<a
+						class="contact-button"
+						href="/CV.pdf"
+						download="CV ARNOULD Luc.pdf"
+						aria-label="Télécharger le CV"
+					>
 						<i class="ri-download-2-line"></i>
 						<span style="font-size: 1rem;">CV</span>
 					</a>

@@ -13,7 +13,7 @@
 	let carouselScroll = null;
 	const { project, pageTitle } = data;
 
-	let links = [{ title: 'Accueil', id: '', href: '/', type: 'redirect' }];
+	let links = [{ title: 'Accueil', id: '', href: '/', type: 'redirect', aria: 'Accueil' }];
 
 	function updateCarouselHeight() {
 		const carousel = document.querySelector('.carousel-main-image-container');
@@ -151,15 +151,15 @@
 						alt="{project.name} title"
 					/>
 					<div class="description-description">
-						<h5>{project.name}</h5>
+						<h2>{project.name}</h2>
 						<Separator marginTop="0.5rem" width="70%" />
 						<p style="margin-top: 0.5rem;">{project.description}</p>
 						<Separator marginTop="0.5rem" width="2%" />
 						{#if project.infos != null}
-							<h6 style="text-align: center; margin-top: 0.5rem;">Informations</h6>
+							<h3 style="text-align: center; margin-top: 0.5rem;">Informations</h3>
 							{#each project.infos as info, index (index)}
 								<div class="projet-info" style={index == 0 ? 'margin-top: 0.25rem;' : ''}>
-									<h6>{info.title}</h6>
+									<h3>{info.title}</h3>
 									<p>{info.value}</p>
 								</div>
 							{/each}
@@ -169,7 +169,7 @@
 							<div
 								style="display: flex; align-items: center; justify-content: center; margin-top: 0.5rem; flex-direction: column;"
 							>
-								<h6>Crédits</h6>
+								<h3>Crédits</h3>
 								<ul style="margin-top: 0.25rem">
 									{#each project.credits as credit}
 										<li class={credit.linkedin === '' ? 'credit' : ''}>
@@ -187,20 +187,24 @@
 							</div>
 							<Separator marginTop="2rem" width="2%" />
 						{/if}
-						<h6 style="text-align: center; margin-top: 0.5rem;">Compétences travaillées</h6>
+						<h3 style="text-align: center; margin-top: 0.5rem;">Compétences travaillées</h3>
 						<div class="techlist">
 							{#each project.stack as skill}
 								<SkillContainer
 									size="40px"
-									img="../../../skills-icons/{skill}.png"
+									img="../../../skills-icons/{skill}.webp"
 									alt="{skill} logo"
 								/>
 							{/each}
 						</div>
 					</div>
-					<a class="download-button" href="/CV.pdf">
-						<i class="ri-download-2-line"></i>
-						<span>Télécharger</span>
+					<a
+						class="download-button {project.link === '' ? 'disabled' : ''}"
+						href={project.link}
+						title={project.buttonTitle}
+					>
+						<i class={project.buttonTitleIcon}></i>
+						<span>{project.buttonText}</span>
 					</a>
 				</div>
 			</div>
@@ -239,13 +243,13 @@
 		font-size: clamp(0.5rem, 2.5vw, 1rem);
 	}
 
-	.description h5 {
+	.description h2 {
 		color: var(--black);
 		font-size: 1rem;
 		font-size: clamp(1rem, 4vw, 1.5rem);
 	}
 
-	.description h6 {
+	.description h3 {
 		color: var(--black);
 		font-size: 0.5rem;
 		font-size: clamp(0.5rem, 2.5vw, 1rem);
@@ -450,6 +454,12 @@
 
 	.download-button:hover {
 		background: var(--primary-light);
+	}
+
+	.download-button.disabled {
+		background: #a9a9a9;
+		color: #ffffff;
+		cursor: not-allowed;
 	}
 
 	.description-description {

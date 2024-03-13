@@ -5,14 +5,23 @@
 	let activeSection = '/';
 
 	const socialLinks = [
-		{ href: 'https://www.linkedin.com/in/luc-arnould/', iconClass: 'ri-linkedin-box-line' },
-		{ href: 'https://github.com/OverLore/', iconClass: 'ri-github-line' },
-		{ href: 'https://www.tiktok.com/@_scottii/', iconClass: 'ri-tiktok-line' },
+		{
+			href: 'https://www.linkedin.com/in/luc-arnould/',
+			iconClass: 'ri-linkedin-box-line',
+			aria: 'Linkedin'
+		},
+		{ href: 'https://github.com/OverLore/', iconClass: 'ri-github-line', aria: 'GitHub' },
+		{ href: 'https://www.tiktok.com/@_scottii/', iconClass: 'ri-tiktok-line', aria: 'Tiktok' },
 		{
 			href: 'https://www.youtube.com/channel/UCYaQhULOHO684SKERsnf9nw/',
-			iconClass: 'ri-youtube-line'
+			iconClass: 'ri-youtube-line',
+			aria: 'YouTube'
 		},
-		{ href: 'https://www.instagram.com/lucarnould/', iconClass: 'ri-instagram-line' }
+		{
+			href: 'https://www.instagram.com/lucarnould/',
+			iconClass: 'ri-instagram-line',
+			aria: 'Instagram'
+		}
 	];
 
 	function handleSwitchDarkMode() {
@@ -42,7 +51,7 @@
 <header>
 	<nav>
 		<div class="links-container">
-			<a class="logo-container" href="/">
+			<a class="logo-container" href="/" aria-label="Accueil">
 				<svg
 					version="1.2"
 					xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +90,7 @@
 		<div class="social-container">
 			<ul class="main-social-list">
 				<li>
-					<a href="/"> Accueil </a>
+					<a aria-label="Accueil" href="/"> Accueil </a>
 				</li>
 			</ul>
 		</div>

@@ -55,8 +55,8 @@ body {
 	--nav-filter: blur(15px) brightness(1.09) grayscale(20%) saturate(51%) sepia(5%);
 	--svg-filter: invert(92%);
 
-	--background-image: url($lib/Back2.png);
-	--background-image-contrast: url($lib/Back.png);
+	--background-image: url($lib/Back2.webp);
+	--background-image-contrast: url($lib/Back.webp);
 	--background-color-contrast: #151111;
 
 	--header-background-color: rgba(255, 255, 255, 0.36);
@@ -68,7 +68,7 @@ body {
 	--black-light: #f5f3f4;
 
 	--primary: #db0f13;
-	--primary-light: #e74548;
+	--primary-light: #ff2b2f;
 	--primary-darken: #a4161a;
 	--primary-dark: #660708;
 
@@ -81,8 +81,8 @@ body {
 	--nav-filter: blur(15px) brightness(0.7) grayscale(20%) saturate(51%) sepia(5%);
 	--svg-filter: invert(11%);
 
-	--background-image: url($lib/Back.png);
-	--background-image-contrast: url($lib/Back2.png);
+	--background-image: url($lib/Back.webp);
+	--background-image-contrast: url($lib/Back2.webp);
 	--background-color-contrast: #f5f3f4;
 
 	--header-background-color: rgba(255, 255, 255, 0);

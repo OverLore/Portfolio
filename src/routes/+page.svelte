@@ -7,19 +7,73 @@
 	import { onMount } from 'svelte';
 
 	let links = [
-		{ title: 'Accueil', id: '/', href: '/', type: 'scroll' },
-		{ title: 'Presentation', id: '/presentation', href: '#presentation', type: 'scroll' },
-		{ title: 'Web', id: '/web-skills', href: '#web-skills', type: 'scroll' },
-		{ title: 'Software', id: '/software-skills', href: '#software-skills', type: 'scroll' },
-		{ title: 'Jeux', id: '/game-skills', href: '#game-skills', type: 'scroll' },
-		{ title: 'Projects', id: '/projects', href: '#projects', type: 'scroll' },
-		{ title: 'Parcours', id: '/experience', href: '#experience', type: 'scroll' }
+		{ title: 'Accueil', id: '/', href: '/', type: 'scroll', aria: 'Accueil' },
+		{
+			title: 'Presentation',
+			id: '/presentation',
+			href: '#presentation',
+			type: 'scroll',
+			aria: 'Presentation'
+		},
+		{
+			title: 'Web',
+			id: '/web-skills',
+			href: '#web-skills',
+			type: 'scroll',
+			aria: 'Compétences Web'
+		},
+		{
+			title: 'Software',
+			id: '/software-skills',
+			href: '#software-skills',
+			type: 'scroll',
+			aria: 'Compétences Software'
+		},
+		{
+			title: 'Jeux',
+			id: '/game-skills',
+			href: '#game-skills',
+			type: 'scroll',
+			aria: 'Compétences Jeux'
+		},
+		{ title: 'Projets', id: '/projects', href: '#projects', type: 'scroll', aria: 'Projets' },
+		{ title: 'Parcours', id: '/experience', href: '#experience', type: 'scroll', aria: 'Parcours' }
 	];
 
 	onMount(() => {
 		document.title = 'Luc Arnould - Développeur';
 	});
 </script>
+
+<svelte:head>
+	<!-- Primary Meta Tags -->
+	<title>Luc Arnould - Développeur</title>
+	<meta name="title" content="Luc Arnould - Développeur" />
+	<meta
+		name="description"
+		content="Luc Arnould. Développeur Gameplay, Logiciel et Fullstack. Passionné d'informatique et de développement, je vous présente mon portfolio."
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://metatags.io/" />
+	<meta property="og:title" content="Luc Arnould - Développeur" />
+	<meta
+		property="og:description"
+		content="Luc Arnould. Développeur Gameplay, Logiciel et Fullstack. Passionné d'informatique et de développement, je vous présente mon portfolio."
+	/>
+	<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://metatags.io/" />
+	<meta property="twitter:title" content="Luc Arnould - Développeur" />
+	<meta
+		property="twitter:description"
+		content="Luc Arnould. Développeur Gameplay, Logiciel et Fullstack. Passionné d'informatique et de développement, je vous présente mon portfolio."
+	/>
+	<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+</svelte:head>
 
 <Header {links} mainButtonType="scroll" />
 <main>
@@ -58,7 +112,7 @@
 					solution sur mesure qui répond
 					<span class="important-text"> parfaitement à vos attentes</span>.
 				</p>
-				<button class="contact-button">
+				<button aria-label="Contact" class="contact-button">
 					<i class="ri-chat-3-line"></i>
 					<span>Un projet à réaliser ? Parlons-en !</span>
 				</button>
@@ -66,7 +120,7 @@
 		</article>
 		<div class="deep-0">
 			<div class="wave">
-				<img src="title-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+				<img src="waves/title-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
 			</div>
 		</div>
 		<article
@@ -97,6 +151,7 @@
 						du jeu vidéo et du web. Je suis actuellement Software Engineer chez
 						<span
 							><a
+								aria-label="Virtuos France"
 								class="important-text"
 								target="_blank"
 								href="https://www.virtuosgames.com/virtuos-labs-montpellier/">Virtuos France</a
@@ -125,7 +180,7 @@
 		</article>
 		<div class="deep-0">
 			<div class="subwave">
-				<img src="wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+				<img src="waves/wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
 			</div>
 		</div>
 		<article
@@ -146,36 +201,36 @@
 						<ul class="skill-list">
 							<li>
 								<SkillContainer
-									img="./skills-icons/svelte.png"
+									img="./skills-icons/svelte.webp"
 									alt="Svelte Logo"
 									title="Svelte.js"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/react.png" alt="React Logo" title="React.js" />
+								<SkillContainer img="./skills-icons/react.webp" alt="React Logo" title="React.js" />
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/vue.png" alt="Vue Logo" title="Vue.js" />
+								<SkillContainer img="./skills-icons/vue.webp" alt="Vue Logo" title="Vue.js" />
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/blazor.png" alt="Blazor Logo" title="Blazor" />
+								<SkillContainer img="./skills-icons/blazor.webp" alt="Blazor Logo" title="Blazor" />
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/bootstrap.png"
+									img="./skills-icons/bootstrap.webp"
 									alt="Bootstrap Logo"
 									title="Bootstrap"
 								/>
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/tailwind.png"
+									img="./skills-icons/tailwind.webp"
 									alt="Tailwind Logo"
 									title="Tailwind"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/vite.png" alt="Vite Logo" title="Vite" />
+								<SkillContainer img="./skills-icons/vite.webp" alt="Vite Logo" title="Vite" />
 							</li>
 						</ul>
 					</div>
@@ -183,37 +238,37 @@
 						<h3 class="skill-category-title important-text">Back End</h3>
 						<ul class="skill-list">
 							<li>
-								<SkillContainer img="./skills-icons/node.png" alt="Node.js Logo" title="Node.js" />
+								<SkillContainer img="./skills-icons/node.webp" alt="Node.js Logo" title="Node.js" />
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/mongodb.png"
+									img="./skills-icons/mongodb.webp"
 									alt="MongoDB Logo"
 									title="MongoDB"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/mysql.png" alt="MySQL Logo" title="MySQL" />
+								<SkillContainer img="./skills-icons/mysql.webp" alt="MySQL Logo" title="MySQL" />
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/graphql.png"
+									img="./skills-icons/graphql.webp"
 									alt="GraphQL Logo"
 									title="GraphQL"
 								/>
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/firebase.png"
+									img="./skills-icons/firebase.webp"
 									alt="Firebase Logo"
 									title="Firebase"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/azure.png" alt="Azure Logo" title="Azure" />
+								<SkillContainer img="./skills-icons/azure.webp" alt="Azure Logo" title="Azure" />
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/docker.png" alt="Docker Logo" title="Docker" />
+								<SkillContainer img="./skills-icons/docker.webp" alt="Docker Logo" title="Docker" />
 							</li>
 						</ul>
 					</div>
@@ -222,7 +277,7 @@
 		</article>
 		<div class="deep-0">
 			<div class="wave">
-				<img src="skill-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+				<img src="waves/skill-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
 			</div>
 		</div>
 		<article
@@ -243,7 +298,7 @@
 						<ul class="skill-list">
 							<li>
 								<SkillContainer
-									img="./skills-icons/wpf.png"
+									img="./skills-icons/wpf.webp"
 									alt="WPF Logo"
 									title="WPF"
 									invertColor={true}
@@ -251,7 +306,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/dotnet.png"
+									img="./skills-icons/dotnet.webp"
 									alt=".NET Logo"
 									title=".NET"
 									invertColor={true}
@@ -259,7 +314,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/aspdotnet.png"
+									img="./skills-icons/aspdotnet.webp"
 									alt="ASP.NET Logo"
 									title="ASP.NET"
 									invertColor={true}
@@ -267,7 +322,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/forms.png"
+									img="./skills-icons/forms.webp"
 									alt="Windows Forms Logo"
 									title="Windows Forms"
 									invertColor={true}
@@ -275,7 +330,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/restapi.png"
+									img="./skills-icons/restapi.webp"
 									alt="REST API Logo"
 									title="REST API"
 									invertColor={true}
@@ -283,7 +338,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/qt.png"
+									img="./skills-icons/qt.webp"
 									alt="Qt Logo"
 									title="Qt"
 									invertColor={true}
@@ -291,7 +346,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/csharp.png"
+									img="./skills-icons/csharp.webp"
 									alt="C# Logo"
 									title="C#"
 									invertColor={true}
@@ -299,7 +354,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/cpp.png"
+									img="./skills-icons/cpp.webp"
 									alt="C++ Logo"
 									title="C++"
 									invertColor={true}
@@ -307,7 +362,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/c.png"
+									img="./skills-icons/c.webp"
 									alt="C Logo"
 									title="C"
 									invertColor={true}
@@ -315,7 +370,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/lua.png"
+									img="./skills-icons/lua.webp"
 									alt="Lua Logo"
 									title="Lua"
 									invertColor={true}
@@ -323,7 +378,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/java.png"
+									img="./skills-icons/java.webp"
 									alt="Java Logo"
 									title="Java"
 									invertColor={true}
@@ -331,7 +386,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/js.png"
+									img="./skills-icons/js.webp"
 									alt="JavaScript Logo"
 									title="JavaScript"
 									invertColor={true}
@@ -339,7 +394,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/python.png"
+									img="./skills-icons/python.webp"
 									alt="Python Logo"
 									title="Python"
 									invertColor={true}
@@ -352,7 +407,7 @@
 						<ul class="skill-list">
 							<li>
 								<SkillContainer
-									img="./skills-icons/figma.png"
+									img="./skills-icons/figma.webp"
 									alt="Figma Logo"
 									title="Figma"
 									invertColor={true}
@@ -360,7 +415,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/git.png"
+									img="./skills-icons/git.webp"
 									alt="Git Logo"
 									title="Git"
 									invertColor={true}
@@ -368,7 +423,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/p4.png"
+									img="./skills-icons/p4.webp"
 									alt="Perforce Logo"
 									title="Perforce"
 									invertColor={true}
@@ -376,7 +431,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/vs.png"
+									img="./skills-icons/vs.webp"
 									alt="Visual Studio Logo"
 									title="Visual Studio"
 									invertColor={true}
@@ -384,7 +439,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/rider.png"
+									img="./skills-icons/rider.webp"
 									alt="Rider Logo"
 									title="Rider"
 									invertColor={true}
@@ -392,7 +447,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/idea.png"
+									img="./skills-icons/idea.webp"
 									alt="IntelliJ Idea Logo"
 									title="IntelliJ Idea"
 									invertColor={true}
@@ -400,7 +455,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/dottrace.png"
+									img="./skills-icons/dottrace.webp"
 									alt="DotTrace Logo"
 									title="DotTrace"
 									invertColor={true}
@@ -408,7 +463,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/teamcity.png"
+									img="./skills-icons/teamcity.webp"
 									alt="TeamCity Logo"
 									title="TeamCity"
 									invertColor={true}
@@ -416,7 +471,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/superluminal.png"
+									img="./skills-icons/superluminal.webp"
 									alt="Superluminal Logo"
 									title="Superluminal"
 									invertColor={true}
@@ -424,7 +479,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/postman.png"
+									img="./skills-icons/postman.webp"
 									alt="Postman Logo"
 									title="Postman"
 									invertColor={true}
@@ -432,7 +487,7 @@
 							</li>
 							<li>
 								<SkillContainer
-									img="./skills-icons/photoshop.png"
+									img="./skills-icons/photoshop.webp"
 									alt="Photoshop Logo"
 									title="Photoshop"
 									invertColor={true}
@@ -445,7 +500,12 @@
 		</article>
 		<div class="deep-0">
 			<div class="subwave">
-				<img src="skill-subwave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+				<img
+					src="waves/skill-subwave.svg"
+					alt=""
+					class="svg-filter"
+					style="width:100%; height:100%"
+				/>
 			</div>
 		</div>
 		<article class="deep-0" style="align-items: center; display:flex; flex-direction: column;">
@@ -463,39 +523,43 @@
 					<h3 class="skill-category-title important-text">Moteurs et outils</h3>
 					<ul class="skill-list">
 						<li>
-							<SkillContainer img="./skills-icons/unity.png" alt="Unity Logo" title="Unity" />
+							<SkillContainer img="./skills-icons/unity.webp" alt="Unity Logo" title="Unity" />
 						</li>
 						<li>
 							<SkillContainer
-								img="./skills-icons/unreal.png"
+								img="./skills-icons/unreal.webp"
 								alt="Unreal Engine Logo"
 								title="Unreal Engine"
 							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/sfml.png" alt="SFML Logo" title="SFML" />
+							<SkillContainer img="./skills-icons/sfml.webp" alt="SFML Logo" title="SFML" />
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/love2d.png" alt="Löve2D Logo" title="Löve2D" />
+							<SkillContainer img="./skills-icons/love2d.webp" alt="Löve2D Logo" title="Löve2D" />
 						</li>
 						<li>
 							<SkillContainer
-								img="./skills-icons/substance.png"
+								img="./skills-icons/substance.webp"
 								alt="Substance Logo"
 								title="Suite Substance"
 							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/blender.png" alt="Blender Logo" title="Blender" />
+							<SkillContainer
+								img="./skills-icons/blender.webp"
+								alt="Blender Logo"
+								title="Blender"
+							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/maya.png" alt="Maya Logo" title="Maya" />
+							<SkillContainer img="./skills-icons/maya.webp" alt="Maya Logo" title="Maya" />
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/wwise.png" alt="Wwise Logo" title="Wwise" />
+							<SkillContainer img="./skills-icons/wwise.webp" alt="Wwise Logo" title="Wwise" />
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/fmod.png" alt="Fmod Logo" title="Fmod" />
+							<SkillContainer img="./skills-icons/fmod.webp" alt="Fmod Logo" title="Fmod" />
 						</li>
 					</ul>
 				</div>
@@ -503,7 +567,7 @@
 		</article>
 		<div class="deep-0" style="margin-top: 2rem;">
 			<div class="wave">
-				<img src="exp-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+				<img src="waves/exp-wave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
 			</div>
 		</div>
 		<article
@@ -525,7 +589,12 @@
 		</article>
 		<div class="deep-0">
 			<div class="subwave">
-				<img src="exp-subwave.svg" alt="" class="svg-filter" style="width:100%; height:100%" />
+				<img
+					src="waves/exp-subwave.svg"
+					alt=""
+					class="svg-filter"
+					style="width:100%; height:100%"
+				/>
 			</div>
 		</div>
 		<article class="deep-0" style="display:flex; align-items: center; flex-direction: column;">
@@ -540,7 +609,7 @@
 						<div class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
-									<h5 class="cv-title">Software Engineer - Virtuos</h5>
+									<h3 class="cv-title">Software Engineer - Virtuos</h3>
 									<p class="cv-date">10/2023 - Maintenant</p>
 									<p class="cv-description">
 										Travail actuel, software engineering.<br /><br />
@@ -558,97 +627,97 @@
 									<div class="cv-skill-container">
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/wpf.png"
+											img="./skills-icons/wpf.webp"
 											alt="WPF Logo"
 											imgTitle="WPF"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/dotnet.png"
+											img="./skills-icons/dotnet.webp"
 											alt=".NET Logo"
 											imgTitle=".NET"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/aspdotnet.png"
+											img="./skills-icons/aspdotnet.webp"
 											alt="ASP.NET Logo"
 											imgTitle="ASP.NET"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/forms.png"
+											img="./skills-icons/forms.webp"
 											alt="Windows Forms Logo"
 											imgTitle="Windows Forms"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/restapi.png"
+											img="./skills-icons/restapi.webp"
 											alt="REST API Logo"
 											imgTitle="REST API"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/csharp.png"
+											img="./skills-icons/csharp.webp"
 											alt="C# Logo"
 											imgTitle="C#"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/cpp.png"
+											img="./skills-icons/cpp.webp"
 											alt="C++ Logo"
 											imgTitle="C++"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/js.png"
+											img="./skills-icons/js.webp"
 											alt="JavaScript Logo"
 											imgTitle="JavaScript"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/python.png"
+											img="./skills-icons/python.webp"
 											alt="Python Logo"
 											imgTitle="Python"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/p4.png"
+											img="./skills-icons/p4.webp"
 											alt="Perforce Logo"
 											imgTitle="Perforce"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/vs.png"
+											img="./skills-icons/vs.webp"
 											alt="Visual Studio Logo"
 											imgTitle="Visual Studio"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/rider.png"
+											img="./skills-icons/rider.webp"
 											alt="Rider Logo"
 											imgTitle="Rider"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/dottrace.png"
+											img="./skills-icons/dottrace.webp"
 											alt="DotTrace Logo"
 											imgTitle="DotTrace"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/teamcity.png"
+											img="./skills-icons/teamcity.webp"
 											alt="TeamCity Logo"
 											imgTitle="TeamCity"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/superluminal.png"
+											img="./skills-icons/superluminal.webp"
 											alt="Superluminal Logo"
 											imgTitle="Superluminal"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/postman.png"
+											img="./skills-icons/postman.webp"
 											alt="Postman Logo"
 											imgTitle="Postman"
 										/>
@@ -661,7 +730,7 @@
 						<div class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
-									<h5 class="cv-title">Eritaj - Gaya Player</h5>
+									<h3 class="cv-title">Eritaj - Gaya Player</h3>
 									<p class="cv-date">04/2023 - 08/2023</p>
 									<p class="cv-description">
 										Stage de fin d'études, développeur Gameplay / UI.<br /><br />
@@ -676,61 +745,61 @@
 									<div class="cv-skill-container">
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/unity.png"
+											img="./skills-icons/unity.webp"
 											alt="Unity Logo"
 											imgTitle="Unity"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/react.png"
+											img="./skills-icons/react.webp"
 											alt="React Logo"
 											imgTitle="React"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/git.png"
+											img="./skills-icons/git.webp"
 											alt="Git Logo"
 											imgTitle="Git"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/vite.png"
+											img="./skills-icons/vite.webp"
 											alt="Vite Logo"
 											imgTitle="Vite"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/js.png"
+											img="./skills-icons/js.webp"
 											alt="JavaScript Logo"
 											imgTitle="JavaScript"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/csharp.png"
+											img="./skills-icons/csharp.webp"
 											alt="C# Logo"
 											imgTitle="C#"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/node.png"
+											img="./skills-icons/node.webp"
 											alt="Node.js Logo"
 											imgTitle="Node.js"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/firebase.png"
+											img="./skills-icons/firebase.webp"
 											alt="Firebase Logo"
 											imgTitle="Firebase"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/figma.png"
+											img="./skills-icons/figma.webp"
 											alt="Figma Logo"
 											imgTitle="Figma"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/photoshop.png"
+											img="./skills-icons/photoshop.webp"
 											alt="Photoshop Logo"
 											imgTitle="Photoshop"
 										/>
@@ -743,7 +812,7 @@
 						<div class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
-									<h5 class="cv-title">Creajeux - Formation Programmeur Jeu Vidéo (RNCP 6)</h5>
+									<h3 class="cv-title">Creajeux - Formation Programmeur Jeu Vidéo (RNCP 6)</h3>
 									<p class="cv-date">2019 - 2023</p>
 
 									<p class="cv-description">
@@ -762,139 +831,139 @@
 									<div class="cv-skill-container">
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/unity.png"
+											img="./skills-icons/unity.webp"
 											alt="Unity Logo"
 											imgTitle="Unity"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/unreal.png"
+											img="./skills-icons/unreal.webp"
 											alt="Unreal Engine Logo"
 											imgTitle="Unreal Engine"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/sfml.png"
+											img="./skills-icons/sfml.webp"
 											alt="SFML Logo"
 											imgTitle="SFML"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/love2d.png"
+											img="./skills-icons/love2d.webp"
 											alt="Löve2D Logo"
 											imgTitle="Löve2D"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/substance.png"
+											img="./skills-icons/substance.webp"
 											alt="Substance Logo"
 											imgTitle="Substance"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/blender.png"
+											img="./skills-icons/blender.webp"
 											alt="Blender Logo"
 											imgTitle="Blender"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/maya.png"
+											img="./skills-icons/maya.webp"
 											alt="Maya Logo"
 											imgTitle="Maya"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/wwise.png"
+											img="./skills-icons/wwise.webp"
 											alt="Wwise Logo"
 											imgTitle="Wwise"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/fmod.png"
+											img="./skills-icons/fmod.webp"
 											alt="Fmod Logo"
 											imgTitle="Fmod"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/photoshop.png"
+											img="./skills-icons/photoshop.webp"
 											alt="Photoshop Logo"
 											imgTitle="Photoshop"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/postman.png"
+											img="./skills-icons/postman.webp"
 											alt="Postman Logo"
 											imgTitle="Postman"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/rider.png"
+											img="./skills-icons/rider.webp"
 											alt="Rider Logo"
 											imgTitle="Rider"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/vs.png"
+											img="./skills-icons/vs.webp"
 											alt="Visual Studio Logo"
 											imgTitle="Visual Studio"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/git.png"
+											img="./skills-icons/git.webp"
 											alt="Git Logo"
 											imgTitle="Git"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/python.png"
+											img="./skills-icons/python.webp"
 											alt="Python Logo"
 											imgTitle="Python"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/lua.png"
+											img="./skills-icons/lua.webp"
 											alt="Lua Logo"
 											imgTitle="Lua"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/c.png"
+											img="./skills-icons/c.webp"
 											alt="C Logo"
 											imgTitle="C"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/cpp.png"
+											img="./skills-icons/cpp.webp"
 											alt="C++ Logo"
 											imgTitle="C++"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/csharp.png"
+											img="./skills-icons/csharp.webp"
 											alt="C# Logo"
 											imgTitle="C#"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/qt.png"
+											img="./skills-icons/qt.webp"
 											alt="Qt Logo"
 											imgTitle="Qt"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/restapi.png"
+											img="./skills-icons/restapi.webp"
 											alt="REST API Logo"
 											imgTitle="REST API"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/forms.png"
+											img="./skills-icons/forms.webp"
 											alt="Windows Forms Logo"
 											imgTitle="Windows Forms"
 										/>
 										<SkillContainer
 											size="40px"
-											img="./skills-icons/wpf.png"
+											img="./skills-icons/wpf.webp"
 											alt="WPF Logo"
 											imgTitle="WPF"
 										/>
