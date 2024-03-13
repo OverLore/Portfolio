@@ -66,7 +66,7 @@
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://metatags.io/" />
+	<meta property="twitter:url" content="https://www.lucarnould.fr/" />
 	<meta property="twitter:title" content="Luc Arnould - Développeur" />
 	<meta
 		property="twitter:description"
