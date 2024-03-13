@@ -505,7 +505,7 @@ export const projects = [
 		buttonText: 'Accéder',
 		buttonTitle: 'Consulter le site web',
 		buttonTitleIcon: 'ri-links-fill',
-		link: 'http://localhost:5173/',
+		link: 'https://www.lucarnould.fr/',
 		name: 'Portfolio',
 		description:
 			'Le portfolio sur lequel vous vous trouvez tout simplement. Ce portfolio a été designé sur Figma puis réalisé avec SvelteKit et propulsé par Vite.',

@@ -56,13 +56,13 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://metatags.io/" />
+	<meta property="og:url" content="https://www.lucarnould.fr/" />
 	<meta property="og:title" content="Luc Arnould - Développeur" />
 	<meta
 		property="og:description"
 		content="Luc Arnould. Développeur Gameplay, Logiciel et Fullstack. Passionné d'informatique et de développement, je vous présente mon portfolio."
 	/>
-	<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+	<meta property="og:image" content="https://www.lucarnould.fr/Mwa.webp" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -72,7 +72,7 @@
 		property="twitter:description"
 		content="Luc Arnould. Développeur Gameplay, Logiciel et Fullstack. Passionné d'informatique et de développement, je vous présente mon portfolio."
 	/>
-	<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+	<meta property="twitter:image" content="https://www.lucarnould.fr/Mwa.webp" />
 </svelte:head>
 
 <Header {links} mainButtonType="scroll" />
