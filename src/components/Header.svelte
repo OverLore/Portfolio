@@ -376,4 +376,44 @@
 		opacity: 0.25;
 		margin-inline: 0.25rem;
 	}
+
+	@media screen and (max-width: 1085px) {
+		.logo-text {
+			margin-left: 0.5rem;
+			font-size: 1.5rem;
+		}
+
+		.main-link-list a {
+			font-size: 0.85rem;
+		}
+
+		.contact-button {
+			padding: 10px 20px;
+			border-radius: 8px;
+			font-size: 0.8rem;
+		}
+
+		.contact-button i {
+			margin-left: 0.2rem;
+			font-size: 1rem;
+		}
+
+		.theme-button {
+			font-size: 1.5rem;
+		}
+
+		.social-container li {
+			font-size: 1.2rem;
+		}
+
+		.main-social-list {
+			gap: 0.3rem;
+			align-items: center;
+		}
+
+		.main-link-list {
+			margin-left: 1.5rem;
+			gap: 0.75rem;
+		}
+	}
 </style>
