@@ -8,11 +8,17 @@
 
 	let activeSection = '/';
 
+	let isMenuOpen = false;
+
 	let remSize = 16;
 	let offset = 3.5 * remSize;
 
 	export let mainButtonType;
 	export let links = [];
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+	}
 
 	const socialLinks = [
 		{
@@ -99,7 +105,7 @@
 	});
 </script>
 
-<header>
+<header class:menu-open={isMenuOpen}>
 	<nav>
 		<div class="links-container">
 			{#if mainButtonType == 'scroll'}
@@ -201,6 +207,17 @@
 				{/each}
 			</ul>
 		</div>
+		<input
+			type="checkbox"
+			id="hamburger-checkbox"
+			class="hamburger-checkbox"
+			on:click={toggleMenu}
+		/>
+		<label for="hamburger-checkbox" class="hamburger" aria-label="Menu">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</label>
 		<div class="social-container">
 			<ul class="main-social-list">
 				{#each socialLinks as { href, iconClass, aria }}
@@ -254,10 +271,15 @@
 		backdrop-filter: var(--nav-filter);
 		transition:
 			background-color 0.15s ease-in-out,
-			border-bottom 0.15s ease-in-out;
+			border-bottom 0.15s ease-in-out,
+			height 0.3s ease-in-out;
 		z-index: 1000;
 		border-bottom: var(--light) solid 1px;
 		background-color: var(--header-background-color);
+	}
+
+	header.menu-open {
+		height: 100vh;
 	}
 
 	a {
@@ -267,8 +289,9 @@
 
 	nav {
 		display: flex;
-		width: 100%;
+		width: 95%;
 		justify-content: space-between;
+		align-items: center;
 		max-width: 80rem;
 	}
 
@@ -377,6 +400,42 @@
 		margin-inline: 0.25rem;
 	}
 
+	.hamburger-checkbox {
+		display: none;
+	}
+
+	.hamburger {
+		display: none;
+		position: absolute;
+		right: 1rem;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 30px;
+		height: 25px;
+	}
+
+	.hamburger .bar {
+		height: 3px;
+		width: 100%;
+		background-color: white;
+		transition: all 0.3s ease;
+	}
+
+	.hamburger-checkbox:checked + .hamburger .bar:nth-child(1) {
+		transform: translateY(8.5px) rotate(45deg);
+	}
+
+	.hamburger-checkbox:checked + .hamburger .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger-checkbox:checked + .hamburger .bar:nth-child(3) {
+		transform: translateY(-8.5px) rotate(-45deg);
+	}
+
 	@media screen and (max-width: 1085px) {
 		.logo-text {
 			margin-left: 0.5rem;
@@ -414,6 +473,20 @@
 		.main-link-list {
 			margin-left: 1.5rem;
 			gap: 0.75rem;
+		}
+	}
+
+	@media screen and (max-width: 950px) {
+		.hamburger {
+			display: flex;
+		}
+
+		.main-social-list {
+			display: none;
+		}
+
+		.main-link-list {
+			display: none;
 		}
 	}
 </style>
