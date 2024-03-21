@@ -8,7 +8,7 @@
 
 	let activeSection = '/';
 
-	let isMenuOpen = true;
+	let isMenuOpen = false;
 
 	let remSize = 16;
 	let offset = 3.5 * remSize;
@@ -106,8 +106,8 @@
 </script>
 
 <header class:menu-open={isMenuOpen}>
-	<nav>
-		<div class="links-container">
+	<div class="container">
+		<div class="logo-wrapper">
 			{#if mainButtonType == 'scroll'}
 				<a
 					class="logo-container"
@@ -186,77 +186,79 @@
 					<span class="logo-text">Luc Arnould</span>
 				</a>
 			{/if}
-			<ul class="main-link-list roboto-medium">
-				{#each links as { title, id, href, type, aria }}
-					<li>
-						{#if type === 'scroll'}
-							<a
-								aria-label={aria}
-								{href}
-								class:active={activeSection === id}
-								on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
-							>
-								{title}
-							</a>
-						{:else}
-							<a aria-label={aria} {href} class:active={activeSection === id}>
-								{title}
-							</a>
-						{/if}
-					</li>
-				{/each}
-			</ul>
+			<input
+				type="checkbox"
+				id="hamburger-checkbox"
+				class="hamburger-checkbox"
+				on:click={toggleMenu}
+			/>
+			<label for="hamburger-checkbox" class="hamburger" aria-label="Menu">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</label>
 		</div>
-		<input
-			type="checkbox"
-			id="hamburger-checkbox"
-			class="hamburger-checkbox"
-			on:click={toggleMenu}
-		/>
-		<label for="hamburger-checkbox" class="hamburger" aria-label="Menu">
-			<div class="bar"></div>
-			<div class="bar"></div>
-			<div class="bar"></div>
-		</label>
-		<div class="social-container">
-			<ul class="main-social-list">
-				{#each socialLinks as { href, iconClass, aria }}
-					<li class="social-icon">
-						<a aria-label={aria} {href} target="_blank">
-							<i class={iconClass}></i>
-						</a>
-					</li>
-				{/each}
-				<li class="break"></li>
-				<div class="te">
-					<li class="theme-button-container">
-						<button
-							class="theme-button"
-							style="margin-left: 1rem;"
-							aria-label={$darkMode ? 'Mode Clair' : 'Mode Sombre'}
-							on:click={() => handleSwitchDarkMode()}
-						>
-							<i class={$darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
-						</button>
-					</li>
-					<li>
-						<i class="ri-separator separator"></i>
-					</li>
-					<li>
-						<a
-							class="contact-button"
-							href="/CV.pdf"
-							download="CV ARNOULD Luc.pdf"
-							aria-label="Télécharger le CV"
-						>
-							<i class="ri-download-2-line"></i>
-							<span style="font-size: 1rem;">CV</span>
-						</a>
-					</li>
+		<div class="navigation-main" class:menu-open={isMenuOpen}>
+			<nav class="main-nav">
+				<ul class="main-link-list roboto-medium">
+					{#each links as { title, id, href, type, aria }}
+						<li>
+							{#if type === 'scroll'}
+								<a
+									aria-label={aria}
+									{href}
+									class:active={activeSection === id}
+									on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
+								>
+									{title}
+								</a>
+							{:else}
+								<a aria-label={aria} {href} class:active={activeSection === id}>
+									{title}
+								</a>
+							{/if}
+						</li>
+					{/each}
+				</ul>
+			</nav>
+			<div class="social-container">
+				<ul class="main-social-list">
+					{#each socialLinks as { href, iconClass, aria }}
+						<li class="social-icon">
+							<a aria-label={aria} {href} target="_blank">
+								<i class={iconClass}></i>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+			<div class="more-btns">
+				<div class="theme-switcher">
+					<button
+						class="theme-button"
+						aria-label={$darkMode ? 'Mode Clair' : 'Mode Sombre'}
+						on:click={() => handleSwitchDarkMode()}
+					>
+						<i class={$darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
+					</button>
 				</div>
-			</ul>
+				<div class="separation">
+					<i class="ri-separator separator"></i>
+				</div>
+				<div class="call-to-action">
+					<a
+						class="contact-button"
+						href="/CV.pdf"
+						download="CV ARNOULD Luc.pdf"
+						aria-label="Télécharger le CV"
+					>
+						<i class="ri-download-2-line"></i>
+						<span class="cv-title">CV</span>
+					</a>
+				</div>
+			</div>
 		</div>
-	</nav>
+	</div>
 </header>
 
 <style>
@@ -281,22 +283,64 @@
 		background-color: var(--header-background-color);
 	}
 
-	header.menu-open {
-		height: 100vh;
-	}
-
-	a {
-		text-decoration: none;
-		color: var(--black);
-	}
-
-	nav {
+	.more-btns {
 		display: flex;
-		width: 95%;
-		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.container {
+		display: flex;
+		width: 100%;
 		align-items: center;
 		max-width: 80rem;
 		margin-top: 0.55rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.logo-wrapper {
+		align-items: center;
+		display: flex;
+		flex: 0 1;
+		height: 100%;
+		justify-content: space-between;
+	}
+
+	.navigation-main {
+		align-items: center;
+		display: flex;
+		flex: 1 1;
+		flex-direction: row;
+		gap: 0.5rem;
+		left: inherit;
+		padding: 0;
+		position: static;
+		top: inherit;
+		z-index: inherit;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.logo-text {
+		margin-left: 0.5rem;
+		font-size: 1.5rem;
+		font-weight: bold;
+		white-space: nowrap;
+	}
+
+	.main-nav {
+		flex-grow: 1;
+		margin-left: 2rem;
+	}
+
+	.main-link-list {
+		gap: 1rem;
+		align-items: center;
+		display: flex;
 	}
 
 	ul,
@@ -311,18 +355,21 @@
 		flex-direction: row;
 	}
 
+	header.menu-open {
+		height: 100vh;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--black);
+	}
+
 	.social-container li {
 		font-size: 1.5rem;
 	}
 
 	.main-social-list {
 		gap: 0.5rem;
-		align-items: center;
-	}
-
-	.main-link-list {
-		margin-left: 2rem;
-		gap: 1rem;
 		align-items: center;
 	}
 
@@ -338,12 +385,6 @@
 	.main-social-list a:hover,
 	.main-link-list a:hover {
 		color: var(--primary-light);
-	}
-
-	.logo-text {
-		margin-left: 0.5rem;
-		font-size: 1.5rem;
-		font-weight: bold;
 	}
 
 	.social-container,
@@ -392,6 +433,7 @@
 		cursor: pointer;
 		transition: color 0.15s ease-in-out;
 		color: var(--black);
+		margin-left: 1rem;
 	}
 
 	.theme-button:hover {
@@ -447,6 +489,18 @@
 		gap: 0.5rem;
 	}
 
+	.cv-title {
+		font-size: 1rem;
+	}
+
+	.more-btns {
+		gap: 0.5rem;
+	}
+
+	.separation i {
+		font-size: 1.5rem;
+	}
+
 	@media screen and (max-width: 1085px) {
 		.logo-text {
 			margin-left: 0.5rem;
@@ -482,7 +536,6 @@
 		}
 
 		.main-link-list {
-			margin-left: 1.5rem;
 			gap: 0.75rem;
 		}
 	}
@@ -492,58 +545,75 @@
 			display: flex;
 		}
 
-		.main-social-list {
-			position: fixed;
-			bottom: 0%;
-			left: 0%;
-			display: flex;
-			flex-direction: row;
-			align-items: flex-start;
-			justify-content: center;
-			gap: 1rem;
-			height: 35vh;
-			margin: 0;
-		}
-
-		.main-link-list {
-			position: fixed;
-			top: 0%;
-			left: 0%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: flex-end;
-			gap: 1rem;
-			width: 100%;
-			height: 65vh;
-			margin: 0;
-		}
-
-		.main-link-list li {
-			display: block;
-		}
-
-		.main-link-list a {
-			font-size: 2rem;
-		}
-
-		.social-icon i {
-			font-size: 2rem;
-		}
-
 		header {
 			overflow: hidden;
 		}
 
-		.break {
-			flex-basis: 100%;
-			height: 0;
+		.navigation-main {
+			position: fixed;
+			top: 0%;
+			left: 50%;
+			transform: translate(-50%, -100%);
+			width: auto;
+			height: 100vh;
+			flex-direction: column;
+			display: none;
+			display: flex;
+			align-items: center;
+			transition: transform 0.2s ease-in-out;
 		}
 
-		.te {
-			position: fixed;
-			top: 0.5rem;
-			right: 6rem;
+		.navigation-main.menu-open {
+			transform: translate(-50%, 0%);
+		}
+
+		.main-nav {
+			margin-left: 0;
+			order: 1;
+			flex-grow: 0;
+		}
+
+		.main-link-list {
+			flex-direction: column;
+		}
+
+		.main-link-list a {
+			font-size: 2.5rem;
+		}
+
+		.social-container a {
+			font-size: 2.5rem;
+		}
+
+		.separation i {
+			font-size: 2.5rem;
+		}
+
+		.contact-button i {
+			font-size: 1.5rem;
+		}
+
+		.theme-button {
+			margin-left: 0;
+		}
+
+		.theme-button i {
+			font-size: 2.5rem;
+		}
+
+		.social-container {
+			order: 2;
+		}
+
+		.more-btns {
+			margin-top: 4rem;
+			order: 0;
+			gap: 1rem;
+		}
+
+		.cv-title {
+			font-size: 1.5rem;
+			margin-right: 0.5rem;
 		}
 	}
 </style>
