@@ -8,7 +8,7 @@
 
 	let activeSection = '/';
 
-	let isMenuOpen = false;
+	let isMenuOpen = true;
 
 	let remSize = 16;
 	let offset = 3.5 * remSize;
@@ -221,36 +221,39 @@
 		<div class="social-container">
 			<ul class="main-social-list">
 				{#each socialLinks as { href, iconClass, aria }}
-					<li>
+					<li class="social-icon">
 						<a aria-label={aria} {href} target="_blank">
 							<i class={iconClass}></i>
 						</a>
 					</li>
 				{/each}
-				<li>
-					<button
-						class="theme-button"
-						style="margin-left: 1rem;"
-						aria-label={$darkMode ? 'Mode Clair' : 'Mode Sombre'}
-						on:click={() => handleSwitchDarkMode()}
-					>
-						<i class={$darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
-					</button>
-				</li>
-				<li>
-					<i class="ri-separator separator"></i>
-				</li>
-				<li>
-					<a
-						class="contact-button"
-						href="/CV.pdf"
-						download="CV ARNOULD Luc.pdf"
-						aria-label="Télécharger le CV"
-					>
-						<i class="ri-download-2-line"></i>
-						<span style="font-size: 1rem;">CV</span>
-					</a>
-				</li>
+				<li class="break"></li>
+				<div class="te">
+					<li class="theme-button-container">
+						<button
+							class="theme-button"
+							style="margin-left: 1rem;"
+							aria-label={$darkMode ? 'Mode Clair' : 'Mode Sombre'}
+							on:click={() => handleSwitchDarkMode()}
+						>
+							<i class={$darkMode ? 'ri-moon-line' : 'ri-sun-line'}></i>
+						</button>
+					</li>
+					<li>
+						<i class="ri-separator separator"></i>
+					</li>
+					<li>
+						<a
+							class="contact-button"
+							href="/CV.pdf"
+							download="CV ARNOULD Luc.pdf"
+							aria-label="Télécharger le CV"
+						>
+							<i class="ri-download-2-line"></i>
+							<span style="font-size: 1rem;">CV</span>
+						</a>
+					</li>
+				</div>
 			</ul>
 		</div>
 	</nav>
@@ -260,7 +263,7 @@
 	header {
 		height: 3.5rem;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		position: fixed;
 		top: 0;
@@ -293,6 +296,7 @@
 		justify-content: space-between;
 		align-items: center;
 		max-width: 80rem;
+		margin-top: 0.55rem;
 	}
 
 	ul,
@@ -436,6 +440,13 @@
 		transform: translateY(-8.5px) rotate(-45deg);
 	}
 
+	.te {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
 	@media screen and (max-width: 1085px) {
 		.logo-text {
 			margin-left: 0.5rem;
@@ -482,11 +493,57 @@
 		}
 
 		.main-social-list {
-			display: none;
+			position: fixed;
+			bottom: 0%;
+			left: 0%;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: center;
+			gap: 1rem;
+			height: 35vh;
+			margin: 0;
 		}
 
 		.main-link-list {
-			display: none;
+			position: fixed;
+			top: 0%;
+			left: 0%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 1rem;
+			width: 100%;
+			height: 65vh;
+			margin: 0;
+		}
+
+		.main-link-list li {
+			display: block;
+		}
+
+		.main-link-list a {
+			font-size: 2rem;
+		}
+
+		.social-icon i {
+			font-size: 2rem;
+		}
+
+		header {
+			overflow: hidden;
+		}
+
+		.break {
+			flex-basis: 100%;
+			height: 0;
+		}
+
+		.te {
+			position: fixed;
+			top: 0.5rem;
+			right: 6rem;
 		}
 	}
 </style>
