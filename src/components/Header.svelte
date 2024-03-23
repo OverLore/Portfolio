@@ -18,6 +18,14 @@
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
+
+		if (isMenuOpen) {
+        // Empêcher le défilement
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Réactiver le défilement
+        document.body.style.overflow = '';
+    }
 	}
 
 	const socialLinks = [
@@ -452,26 +460,25 @@
 
 	.hamburger {
 		display: none;
-		position: absolute;
 		right: 1rem;
 		border: none;
 		background-color: transparent;
 		cursor: pointer;
 		flex-direction: column;
 		justify-content: space-around;
-		width: 30px;
-		height: 25px;
+		width: 1rem;
+		height: .8rem;
 	}
 
 	.hamburger .bar {
-		height: 3px;
+		height: 2px;
 		width: 100%;
 		background-color: white;
 		transition: all 0.3s ease;
 	}
 
 	.hamburger-checkbox:checked + .hamburger .bar:nth-child(1) {
-		transform: translateY(8.5px) rotate(45deg);
+		transform: translateY(4px) rotate(45deg);
 	}
 
 	.hamburger-checkbox:checked + .hamburger .bar:nth-child(2) {
@@ -479,7 +486,7 @@
 	}
 
 	.hamburger-checkbox:checked + .hamburger .bar:nth-child(3) {
-		transform: translateY(-8.5px) rotate(-45deg);
+		transform: translateY(-4px) rotate(-45deg);
 	}
 
 	.te {
@@ -578,19 +585,19 @@
 		}
 
 		.main-link-list a {
-			font-size: 2.5rem;
+			font-size: 1.5rem;
 		}
 
 		.social-container a {
-			font-size: 2.5rem;
+			font-size: 1.5rem;
 		}
 
 		.separation i {
-			font-size: 2.5rem;
+			font-size: 1rem;
 		}
 
 		.contact-button i {
-			font-size: 1.5rem;
+			font-size: 1rem;
 		}
 
 		.theme-button {
@@ -598,22 +605,27 @@
 		}
 
 		.theme-button i {
-			font-size: 2.5rem;
+			font-size: 1.5rem;
 		}
 
 		.social-container {
 			order: 2;
+			margin-bottom: 50px;
 		}
 
 		.more-btns {
 			margin-top: 4rem;
 			order: 0;
-			gap: 1rem;
+			gap: 0.5rem;
 		}
 
 		.cv-title {
-			font-size: 1.5rem;
+			font-size: 1rem;
 			margin-right: 0.5rem;
+		}
+
+		.logo-wrapper {
+			flex: 1 1;
 		}
 	}
 </style>
