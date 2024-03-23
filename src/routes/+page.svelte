@@ -6,6 +6,12 @@
 	import { projects } from '../projects.js';
 	import { onMount } from 'svelte';
 
+	let skillIconSize = '100px';
+
+	const adjustSkillIconSize = () => {
+		skillIconSize = window.innerWidth > 950 ? '100px' : '75px';
+	};
+
 	let links = [
 		{ title: 'Accueil', id: '/', href: '/', type: 'scroll', aria: 'Accueil' },
 		{
@@ -42,6 +48,13 @@
 
 	onMount(() => {
 		document.title = 'Luc Arnould - Développeur';
+
+		adjustSkillIconSize();
+		window.addEventListener('resize', adjustSkillIconSize);
+
+		return () => {
+			window.removeEventListener('resize', adjustSkillIconSize);
+		};
 	});
 </script>
 
@@ -128,11 +141,8 @@
 			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="presentation"
 		>
-			<div
-				class="deep-1"
-				style="display: flex; flex-direction: row; justify-content: space-between;"
-			>
-				<div style="width: 47%;">
+			<div class="deep-1 about-me">
+				<div class="who-am-i">
 					<h2 class="question-title important-text">Qui je suis</h2>
 					<p class="question-paragraph">
 						Je m'appelle <span class="important-text">Luc</span>, je suis un jeune développeur
@@ -159,7 +169,7 @@
 						> où je travaille sur des projets de AAA.
 					</p>
 				</div>
-				<div style="width: 47%; margin-top:15rem">
+				<div class="what-i-do">
 					<h2 class="question-title important-text">Ce que je fais</h2>
 					<p class="question-paragraph">
 						Je me spécialise en <span class="important-text">développement logiciel</span>, avec un
@@ -188,35 +198,49 @@
 			style="align-items: center; display:flex; flex-direction: column;"
 			id="web-skills"
 		>
-			<div
-				class="deep-1"
-				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
-			>
+			<div class="deep-1 web-skills">
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences web
 				</h2>
-				<div style="display: flex; justify-content: space-between; width: 100%; margin-top: 2rem;">
-					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+				<div class="web-skills-container">
+					<div class="web-skills-front">
 						<h3 class="skill-category-title important-text">Front End</h3>
 						<ul class="skill-list">
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/svelte.webp"
 									alt="Svelte Logo"
 									title="Svelte.js"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/react.webp" alt="React Logo" title="React.js" />
-							</li>
-							<li>
-								<SkillContainer img="./skills-icons/vue.webp" alt="Vue Logo" title="Vue.js" />
-							</li>
-							<li>
-								<SkillContainer img="./skills-icons/blazor.webp" alt="Blazor Logo" title="Blazor" />
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/react.webp"
+									alt="React Logo"
+									title="React.js"
+								/>
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/vue.webp"
+									alt="Vue Logo"
+									title="Vue.js"
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/blazor.webp"
+									alt="Blazor Logo"
+									title="Blazor"
+								/>
+							</li>
+							<li>
+								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/bootstrap.webp"
 									alt="Bootstrap Logo"
 									title="Bootstrap"
@@ -224,34 +248,52 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/tailwind.webp"
 									alt="Tailwind Logo"
 									title="Tailwind"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/vite.webp" alt="Vite Logo" title="Vite" />
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/vite.webp"
+									alt="Vite Logo"
+									title="Vite"
+								/>
 							</li>
 						</ul>
 					</div>
-					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+					<div class="web-skills-back">
 						<h3 class="skill-category-title important-text">Back End</h3>
 						<ul class="skill-list">
 							<li>
-								<SkillContainer img="./skills-icons/node.webp" alt="Node.js Logo" title="Node.js" />
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/node.webp"
+									alt="Node.js Logo"
+									title="Node.js"
+								/>
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/mongodb.webp"
 									alt="MongoDB Logo"
 									title="MongoDB"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/mysql.webp" alt="MySQL Logo" title="MySQL" />
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/mysql.webp"
+									alt="MySQL Logo"
+									title="MySQL"
+								/>
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/graphql.webp"
 									alt="GraphQL Logo"
 									title="GraphQL"
@@ -259,16 +301,27 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/firebase.webp"
 									alt="Firebase Logo"
 									title="Firebase"
 								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/azure.webp" alt="Azure Logo" title="Azure" />
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/azure.webp"
+									alt="Azure Logo"
+									title="Azure"
+								/>
 							</li>
 							<li>
-								<SkillContainer img="./skills-icons/docker.webp" alt="Docker Logo" title="Docker" />
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/docker.webp"
+									alt="Docker Logo"
+									title="Docker"
+								/>
 							</li>
 						</ul>
 					</div>
@@ -285,19 +338,17 @@
 			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="software-skills"
 		>
-			<div
-				class="deep-1"
-				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
-			>
+			<div class="deep-1 software-skills">
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences software
 				</h2>
-				<div style="display: flex; justify-content: space-between; width: 100%; margin-top: 2rem;">
-					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+				<div class="software-skills-container">
+					<div class="software-skills-techs">
 						<h3 class="skill-category-title important-text">Technologies</h3>
 						<ul class="skill-list">
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/wpf.webp"
 									alt="WPF Logo"
 									title="WPF"
@@ -306,6 +357,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/dotnet.webp"
 									alt=".NET Logo"
 									title=".NET"
@@ -314,6 +366,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/aspdotnet.webp"
 									alt="ASP.NET Logo"
 									title="ASP.NET"
@@ -322,6 +375,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/forms.webp"
 									alt="Windows Forms Logo"
 									title="Windows Forms"
@@ -330,6 +384,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/restapi.webp"
 									alt="REST API Logo"
 									title="REST API"
@@ -338,6 +393,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/qt.webp"
 									alt="Qt Logo"
 									title="Qt"
@@ -346,6 +402,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/csharp.webp"
 									alt="C# Logo"
 									title="C#"
@@ -354,6 +411,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/cpp.webp"
 									alt="C++ Logo"
 									title="C++"
@@ -362,6 +420,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/c.webp"
 									alt="C Logo"
 									title="C"
@@ -370,6 +429,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/lua.webp"
 									alt="Lua Logo"
 									title="Lua"
@@ -378,6 +438,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/java.webp"
 									alt="Java Logo"
 									title="Java"
@@ -386,6 +447,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/js.webp"
 									alt="JavaScript Logo"
 									title="JavaScript"
@@ -394,6 +456,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/python.webp"
 									alt="Python Logo"
 									title="Python"
@@ -402,11 +465,12 @@
 							</li>
 						</ul>
 					</div>
-					<div style="width: 47%; display: flex; align-items: center; flex-direction: column;">
+					<div class="software-skills-tools">
 						<h3 class="skill-category-title important-text">Outils</h3>
 						<ul class="skill-list">
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/figma.webp"
 									alt="Figma Logo"
 									title="Figma"
@@ -415,6 +479,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/git.webp"
 									alt="Git Logo"
 									title="Git"
@@ -423,6 +488,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/p4.webp"
 									alt="Perforce Logo"
 									title="Perforce"
@@ -431,6 +497,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/vs.webp"
 									alt="Visual Studio Logo"
 									title="Visual Studio"
@@ -439,6 +506,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/rider.webp"
 									alt="Rider Logo"
 									title="Rider"
@@ -447,6 +515,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/idea.webp"
 									alt="IntelliJ Idea Logo"
 									title="IntelliJ Idea"
@@ -455,6 +524,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/dottrace.webp"
 									alt="DotTrace Logo"
 									title="DotTrace"
@@ -463,6 +533,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/teamcity.webp"
 									alt="TeamCity Logo"
 									title="TeamCity"
@@ -471,6 +542,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/superluminal.webp"
 									alt="Superluminal Logo"
 									title="Superluminal"
@@ -479,6 +551,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/postman.webp"
 									alt="Postman Logo"
 									title="Postman"
@@ -487,6 +560,7 @@
 							</li>
 							<li>
 								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/photoshop.webp"
 									alt="Photoshop Logo"
 									title="Photoshop"
@@ -509,11 +583,7 @@
 			</div>
 		</div>
 		<article class="deep-0" style="align-items: center; display:flex; flex-direction: column;">
-			<div
-				class="deep-1"
-				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
-				id="game-skills"
-			>
+			<div class="deep-1 game-skills" id="game-skills">
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences jeux
 				</h2>
@@ -523,23 +593,40 @@
 					<h3 class="skill-category-title important-text">Moteurs et outils</h3>
 					<ul class="skill-list">
 						<li>
-							<SkillContainer img="./skills-icons/unity.webp" alt="Unity Logo" title="Unity" />
+							<SkillContainer
+								size={skillIconSize}
+								img="./skills-icons/unity.webp"
+								alt="Unity Logo"
+								title="Unity"
+							/>
 						</li>
 						<li>
 							<SkillContainer
+								size={skillIconSize}
 								img="./skills-icons/unreal.webp"
 								alt="Unreal Engine Logo"
 								title="Unreal Engine"
 							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/sfml.webp" alt="SFML Logo" title="SFML" />
-						</li>
-						<li>
-							<SkillContainer img="./skills-icons/love2d.webp" alt="Löve2D Logo" title="Löve2D" />
+							<SkillContainer
+								size={skillIconSize}
+								img="./skills-icons/sfml.webp"
+								alt="SFML Logo"
+								title="SFML"
+							/>
 						</li>
 						<li>
 							<SkillContainer
+								size={skillIconSize}
+								img="./skills-icons/love2d.webp"
+								alt="Löve2D Logo"
+								title="Löve2D"
+							/>
+						</li>
+						<li>
+							<SkillContainer
+								size={skillIconSize}
 								img="./skills-icons/substance.webp"
 								alt="Substance Logo"
 								title="Suite Substance"
@@ -547,19 +634,35 @@
 						</li>
 						<li>
 							<SkillContainer
+								size={skillIconSize}
 								img="./skills-icons/blender.webp"
 								alt="Blender Logo"
 								title="Blender"
 							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/maya.webp" alt="Maya Logo" title="Maya" />
+							<SkillContainer
+								size={skillIconSize}
+								img="./skills-icons/maya.webp"
+								alt="Maya Logo"
+								title="Maya"
+							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/wwise.webp" alt="Wwise Logo" title="Wwise" />
+							<SkillContainer
+								size={skillIconSize}
+								img="./skills-icons/wwise.webp"
+								alt="Wwise Logo"
+								title="Wwise"
+							/>
 						</li>
 						<li>
-							<SkillContainer img="./skills-icons/fmod.webp" alt="Fmod Logo" title="Fmod" />
+							<SkillContainer
+								size={skillIconSize}
+								img="./skills-icons/fmod.webp"
+								alt="Fmod Logo"
+								title="Fmod"
+							/>
 						</li>
 					</ul>
 				</div>
@@ -575,12 +678,9 @@
 			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="projects"
 		>
-			<div
-				class="deep-1"
-				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
-			>
+			<div class="projects">
 				<h2 class="question-title important-text">Mes projets</h2>
-				<div class="grid-container">
+				<div class="deep-1 grid-container">
 					{#each projects as project}
 						<ProjectCard {project} />
 					{/each}
@@ -598,11 +698,7 @@
 			</div>
 		</div>
 		<article class="deep-0" style="display:flex; align-items: center; flex-direction: column;">
-			<div
-				class="deep-1"
-				style="width: 100%; display:flex; align-items: center; flex-direction: column;"
-				id="experience"
-			>
+			<div class="deep-1 experience" id="experience">
 				<h2 class="question-title important-text">Mon parcours</h2>
 				<div style="margin-top: 2rem;">
 					<div class="alternating-container">
@@ -988,6 +1084,92 @@
 		background-size: 50vw;
 	}
 
+	.who-am-i {
+		width: 47%;
+	}
+
+	.what-i-do {
+		width: 47%;
+		margin-top: 15rem;
+	}
+
+	.web-skills {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.web-skills-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 2rem;
+	}
+
+	.web-skills-front {
+		width: 47%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.web-skills-back {
+		width: 47%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.software-skills {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.software-skills-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 2rem;
+	}
+
+	.software-skills-tools {
+		width: 47%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.software-skills-techs {
+		width: 47%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.game-skills {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.projects {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.experience {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
 	.main-container {
 		display: flex;
 		flex-direction: column;
@@ -1014,6 +1196,12 @@
 		margin-top: 25px;
 		list-style-type: none;
 		padding: 0;
+	}
+
+	.about-me {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 
 	.skill-list li {
@@ -1261,6 +1449,7 @@
 
 	.grid-container {
 		width: 100%;
+		width: auto;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-column-gap: 2rem;
@@ -1288,6 +1477,7 @@
 	}
 
 	.cv-card {
+		box-sizing: border-box;
 		border: var(--primary) solid 3px;
 		border-radius: 1rem;
 		-webkit-box-shadow: 5px 5px 13px 4px rgba(0, 0, 0, 0.5);
@@ -1332,5 +1522,166 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 0.75rem;
+	}
+
+	@media screen and (max-width: 950px) {
+		.deep-1 {
+			margin-inline: 1rem;
+			padding-inline: 0;
+		}
+
+		.landing-article {
+			flex-direction: column-reverse;
+			height: auto;
+			margin-top: 125px;
+			margin-bottom: 75px;
+			gap: 5rem;
+		}
+
+		.landing-title {
+			text-align: center;
+		}
+
+		.anim1,
+		.anim2,
+		.anim3 {
+			width: 100%;
+		}
+
+		.landing-paragraph {
+			text-align: justify;
+			font-size: 1rem;
+		}
+
+		.contact-button {
+			margin-top: 2rem;
+		}
+
+		.photo-container {
+			width: 100%;
+		}
+
+		.description-container {
+			width: 100%;
+		}
+
+		.about-me {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+
+		.who-am-i {
+			width: 100%;
+		}
+
+		.what-i-do {
+			width: 100%;
+			margin-top: 4rem;
+		}
+
+		.question-title {
+			font-size: 2.5rem;
+		}
+
+		.question-paragraph {
+			margin-top: 1rem;
+			font-size: 1rem;
+		}
+
+		.web-skills {
+			width: auto;
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+
+		.web-skills-container {
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.web-skills-front {
+			width: auto;
+		}
+
+		.web-skills-back {
+			width: auto;
+		}
+
+		.skill-category-title {
+			font-size: 1.5rem;
+		}
+
+		.software-skills {
+			width: auto;
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+
+		.software-skills-container {
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.software-skills-tools {
+			width: auto;
+		}
+
+		.software-skills-techs {
+			width: auto;
+		}
+
+		.game-skills {
+			width: auto;
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+
+		.projects {
+			width: auto;
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+
+		.experience {
+			width: auto;
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+
+		.alternating-container {
+			margin-bottom: 2rem;
+		}
+
+		.alternating-container:nth-child(even) {
+			justify-content: flex-start;
+			text-align: start;
+		}
+
+		.alternating-content {
+			width: 100%;
+		}
+
+		.cv-description {
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.cv-date {
+			font-size: 1.25rem;
+			text-align: center;
+		}
+
+		.cv-title {
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		.grid-container {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 </style>

@@ -55,4 +55,14 @@
 		align-items: center;
 		gap: 20px;
 	}
+
+	@media screen and (max-width: 950px) {
+		.title {
+			font-size: 0.75rem;
+		}
+
+		.inverted {
+			font-size: 0.75rem;
+		}
+	}
 </style>

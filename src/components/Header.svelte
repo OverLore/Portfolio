@@ -20,12 +20,10 @@
 		isMenuOpen = !isMenuOpen;
 
 		if (isMenuOpen) {
-        // Empêcher le défilement
-        document.body.style.overflow = 'hidden';
-    } else {
-        // Réactiver le défilement
-        document.body.style.overflow = '';
-    }
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
 	}
 
 	const socialLinks = [
@@ -467,7 +465,7 @@
 		flex-direction: column;
 		justify-content: space-around;
 		width: 1rem;
-		height: .8rem;
+		height: 0.8rem;
 	}
 
 	.hamburger .bar {
@@ -487,13 +485,6 @@
 
 	.hamburger-checkbox:checked + .hamburger .bar:nth-child(3) {
 		transform: translateY(-4px) rotate(-45deg);
-	}
-
-	.te {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 0.5rem;
 	}
 
 	.cv-title {

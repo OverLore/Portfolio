@@ -54,6 +54,7 @@
 		margin-bottom: 0.75rem;
 	}
 	.custom-card {
+		box-sizing: border-box;
 		border: var(--primary) solid 3px;
 		border-radius: 1rem;
 		-webkit-box-shadow: 0 13px 4px rgba(0, 0, 0, 0.5);
