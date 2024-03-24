@@ -3,13 +3,48 @@
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import Separator from '../components/Separator.svelte';
 	import SkillContainer from '../components/SkillContainer.svelte';
+	import { scrollToSection } from '../scrollUtils';
 	import { projects } from '../projects.js';
 	import { onMount } from 'svelte';
 
 	let skillIconSize = '100px';
+	let showMoreProject = false;
+	let moreSize = 0;
+
+	let initialHeight = 0;
 
 	const adjustSkillIconSize = () => {
 		skillIconSize = window.innerWidth > 950 ? '100px' : '75px';
+	};
+
+	const switchShowMoreProjects = () => {
+		if (showMoreProject) {
+			let heightDiff =
+				Math.max(
+					document.body.scrollHeight,
+					document.documentElement.scrollHeight,
+					document.body.offsetHeight,
+					document.documentElement.offsetHeight,
+					document.body.clientHeight,
+					document.documentElement.clientHeight
+				) - initialHeight;
+
+			window.scrollBy({
+				top: -heightDiff,
+				left: 0
+			});
+		} else {
+			initialHeight = Math.max(
+				document.body.scrollHeight,
+				document.documentElement.scrollHeight,
+				document.body.offsetHeight,
+				document.documentElement.offsetHeight,
+				document.body.clientHeight,
+				document.documentElement.clientHeight
+			);
+		}
+
+		showMoreProject = !showMoreProject;
 	};
 
 	let links = [
@@ -681,10 +716,21 @@
 			<div class="projects">
 				<h2 class="question-title important-text">Mes projets</h2>
 				<div class="deep-1 grid-container">
-					{#each projects as project}
-						<ProjectCard {project} />
-					{/each}
+					{#if showMoreProject}
+						{#each projects as project}
+							<ProjectCard {project} />
+						{/each}
+					{:else}
+						{#each projects.slice(0, 5) as project}
+							<ProjectCard {project} />
+						{/each}
+					{/if}
 				</div>
+				<button class="show-more-btn" on:click={() => switchShowMoreProjects()}>
+					<i class={`ri-arrow-${showMoreProject ? 'up' : 'down'}-s-fill`}></i>
+					<span>{`Afficher ${showMoreProject ? 'moins' : 'plus'}`}</span>
+					<i class={`ri-arrow-${showMoreProject ? 'up' : 'down'}-s-fill`}></i>
+				</button>
 			</div>
 		</article>
 		<div class="deep-0">
@@ -1094,10 +1140,10 @@
 	}
 
 	.web-skills {
-		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		gap: 3%;
 	}
 
 	.web-skills-container {
@@ -1108,24 +1154,22 @@
 	}
 
 	.web-skills-front {
-		width: 47%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	.web-skills-back {
-		width: 47%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	.software-skills {
-		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		gap: 3%;
 	}
 
 	.software-skills-container {
@@ -1136,35 +1180,30 @@
 	}
 
 	.software-skills-tools {
-		width: 47%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	.software-skills-techs {
-		width: 47%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	.game-skills {
-		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	.projects {
-		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	.experience {
-		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -1525,6 +1564,10 @@
 		margin-bottom: 0.75rem;
 	}
 
+	.show-more-btn {
+		display: none;
+	}
+
 	@media screen and (max-width: 950px) {
 		.deep-1 {
 			margin-inline: 1rem;
@@ -1684,6 +1727,36 @@
 		.grid-container {
 			display: flex;
 			flex-direction: column;
+		}
+
+		.show-more-btn {
+			display: block;
+			box-sizing: border-box;
+			color: var(--primary);
+			background: transparent;
+			border: solid var(--primary) 3px;
+			padding: 10px 25px;
+			box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+			border-radius: 8px;
+			transition:
+				color 0.15s ease-in-out,
+				border 0.15s ease-in-out;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			cursor: pointer;
+			font-size: 1rem;
+			font-weight: 600;
+			margin-top: 1rem;
+		}
+
+		.show-more-btn:hover {
+			border: solid var(--primary-light) 3px;
+			color: var(--primary-light);
+		}
+
+		.show-more-btn span {
+			margin-inline: 1rem;
 		}
 	}
 </style>

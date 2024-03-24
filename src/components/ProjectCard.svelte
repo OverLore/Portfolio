@@ -1,8 +1,24 @@
 <script>
 	// @ts-nocheck
 	import SkillContainer from './SkillContainer.svelte';
+	import { onMount } from 'svelte';
 
 	export let project;
+
+	let skillIconSize = '50px';
+
+	const adjustSkillIconSize = () => {
+		skillIconSize = window.innerWidth > 950 ? '50px' : '40px';
+	};
+
+	onMount(() => {
+		adjustSkillIconSize();
+		window.addEventListener('resize', adjustSkillIconSize);
+
+		return () => {
+			window.removeEventListener('resize', adjustSkillIconSize);
+		};
+	});
 </script>
 
 <main>
@@ -33,7 +49,11 @@
 			</p>
 			<div class="techlist">
 				{#each project.stack as skill}
-					<SkillContainer size="50px" img="./skills-icons/{skill}.webp" alt="{skill} logo" />
+					<SkillContainer
+						size={skillIconSize}
+						img="./skills-icons/{skill}.webp"
+						alt="{skill} logo"
+					/>
 				{/each}
 			</div>
 			<a href="projects/{project.id}" data-sveltekit-preload-data class="custom-btn"
@@ -143,5 +163,26 @@
 		right: 0.5rem;
 		color: var(--primary);
 		font-size: 2rem;
+	}
+
+	@media screen and (max-width: 950px) {
+		.custom-card-text {
+			font-size: 1rem;
+		}
+
+		.custom-card-body {
+			padding: 10px;
+			padding-bottom: 20px;
+		}
+
+		.custom-card:hover {
+			-webkit-transform: scale(1, 1);
+			transform: scale(1, 1);
+		}
+
+		.custom-bg-image img {
+			aspect-ratio: 21/9;
+			object-fit: cover;
+		}
 	}
 </style>
