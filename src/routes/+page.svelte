@@ -140,10 +140,10 @@
 <main>
 	<div class="main-container">
 		<article class="landing-article deep-1">
-			<div class="photo-container">
+			<div data-aos="fade-right" class="photo-container">
 				<img src="Mwa.webp" alt="Luc Arnould" title="Moi" />
 			</div>
-			<div class="description-container">
+			<div data-aos="fade-left" data-aos-delay="100" class="description-container">
 				<h1 class="landing-title">Développeur</h1>
 				<div class="content-slider">
 					<div class="slider">
