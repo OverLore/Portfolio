@@ -362,7 +362,7 @@
 	}
 
 	header.menu-open {
-		height: calc(100vh - env(safe-area-inset-bottom));
+		height: 100svh;
 	}
 
 	a {
@@ -553,7 +553,7 @@
 			left: 50%;
 			transform: translate(-50%, -100%);
 			width: auto;
-			height: calc(100vh - env(safe-area-inset-bottom));
+			height: 100svh;
 			flex-direction: column;
 			display: none;
 			display: flex;
@@ -601,7 +601,7 @@
 
 		.social-container {
 			order: 2;
-			margin-bottom: 50px;
+			margin-bottom: 15px;
 		}
 
 		.more-btns {
