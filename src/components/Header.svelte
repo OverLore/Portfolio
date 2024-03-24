@@ -466,12 +466,14 @@
 		justify-content: space-around;
 		width: 1rem;
 		height: 0.8rem;
+		padding: 15px;
+		margin: -15px;
 	}
 
 	.hamburger .bar {
 		height: 2px;
 		width: 100%;
-		background-color: white;
+		background-color: var(--black);
 		transition: all 0.3s ease;
 	}
 

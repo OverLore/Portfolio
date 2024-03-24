@@ -3,18 +3,27 @@
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import Separator from '../components/Separator.svelte';
 	import SkillContainer from '../components/SkillContainer.svelte';
-	import { scrollToSection } from '../scrollUtils';
 	import { projects } from '../projects.js';
 	import { onMount } from 'svelte';
 
 	let skillIconSize = '100px';
 	let showMoreProject = false;
-	let moreSize = 0;
+	let previousWidth = 0;
 
 	let initialHeight = 0;
 
 	const adjustSkillIconSize = () => {
 		skillIconSize = window.innerWidth > 950 ? '100px' : '75px';
+
+		if (window.innerWidth > 950) {
+			showMoreProject = true;
+		}
+
+		if (window.innerWidth <= 950 && previousWidth > 950) {
+			showMoreProject = false;
+		}
+
+		previousWidth = window.innerWidth;
 	};
 
 	const switchShowMoreProjects = () => {
