@@ -362,7 +362,7 @@
 	}
 
 	header.menu-open {
-		height: 100svh;
+		height: 100vh;
 	}
 
 	a {
