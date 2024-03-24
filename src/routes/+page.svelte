@@ -5,6 +5,8 @@
 	import SkillContainer from '../components/SkillContainer.svelte';
 	import { projects } from '../projects.js';
 	import { onMount } from 'svelte';
+	import AOS from 'aos';
+	import 'aos/dist/aos.css';
 
 	let skillIconSize = '100px';
 	let showMoreProject = false;
@@ -92,6 +94,8 @@
 
 	onMount(() => {
 		document.title = 'Luc Arnould - Développeur';
+
+		AOS.init();
 
 		adjustSkillIconSize();
 		window.addEventListener('resize', adjustSkillIconSize);
@@ -186,7 +190,7 @@
 			id="presentation"
 		>
 			<div class="deep-1 about-me">
-				<div class="who-am-i">
+				<div data-aos="fade-right" class="who-am-i">
 					<h2 class="question-title important-text">Qui je suis</h2>
 					<p class="question-paragraph">
 						Je m'appelle <span class="important-text">Luc</span>, je suis un jeune développeur
@@ -213,7 +217,7 @@
 						> où je travaille sur des projets de AAA.
 					</p>
 				</div>
-				<div class="what-i-do">
+				<div data-aos="fade-left" class="what-i-do">
 					<h2 class="question-title important-text">Ce que je fais</h2>
 					<p class="question-paragraph">
 						Je me spécialise en <span class="important-text">développement logiciel</span>, avec un
@@ -242,7 +246,7 @@
 			style="align-items: center; display:flex; flex-direction: column;"
 			id="web-skills"
 		>
-			<div class="deep-1 web-skills">
+			<div data-aos="fade-up" class="deep-1 web-skills">
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences web
 				</h2>
@@ -250,7 +254,7 @@
 					<div class="web-skills-front">
 						<h3 class="skill-category-title important-text">Front End</h3>
 						<ul class="skill-list">
-							<li>
+							<li data-aos="zoom-in">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/svelte.webp"
@@ -258,7 +262,7 @@
 									title="Svelte.js"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/react.webp"
@@ -266,7 +270,7 @@
 									title="React.js"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="100">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/vue.webp"
@@ -274,7 +278,7 @@
 									title="Vue.js"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="150">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/blazor.webp"
@@ -282,7 +286,7 @@
 									title="Blazor"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="200">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/bootstrap.webp"
@@ -290,7 +294,7 @@
 									title="Bootstrap"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="250">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/tailwind.webp"
@@ -298,7 +302,7 @@
 									title="Tailwind"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="300">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/vite.webp"
@@ -311,7 +315,7 @@
 					<div class="web-skills-back">
 						<h3 class="skill-category-title important-text">Back End</h3>
 						<ul class="skill-list">
-							<li>
+							<li data-aos="zoom-in">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/node.webp"
@@ -319,7 +323,7 @@
 									title="Node.js"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/mongodb.webp"
@@ -327,7 +331,7 @@
 									title="MongoDB"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="100">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/mysql.webp"
@@ -335,7 +339,7 @@
 									title="MySQL"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="150">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/graphql.webp"
@@ -343,7 +347,7 @@
 									title="GraphQL"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="200">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/firebase.webp"
@@ -351,7 +355,7 @@
 									title="Firebase"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="250">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/azure.webp"
@@ -359,7 +363,7 @@
 									title="Azure"
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="300">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/docker.webp"
@@ -382,7 +386,7 @@
 			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="software-skills"
 		>
-			<div class="deep-1 software-skills">
+			<div data-aos="fade-up" class="deep-1 software-skills">
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences software
 				</h2>
@@ -390,7 +394,7 @@
 					<div class="software-skills-techs">
 						<h3 class="skill-category-title important-text">Technologies</h3>
 						<ul class="skill-list">
-							<li>
+							<li data-aos="zoom-in">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/wpf.webp"
@@ -399,7 +403,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/dotnet.webp"
@@ -408,7 +412,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="150">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/aspdotnet.webp"
@@ -417,7 +421,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="200">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/forms.webp"
@@ -426,7 +430,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="250">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/restapi.webp"
@@ -435,7 +439,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="300">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/qt.webp"
@@ -444,7 +448,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="350">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/csharp.webp"
@@ -453,7 +457,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="400">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/cpp.webp"
@@ -462,7 +466,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="450">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/c.webp"
@@ -471,7 +475,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="500">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/lua.webp"
@@ -480,7 +484,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="550">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/java.webp"
@@ -489,7 +493,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="600">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/js.webp"
@@ -498,7 +502,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="650">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/python.webp"
@@ -512,7 +516,7 @@
 					<div class="software-skills-tools">
 						<h3 class="skill-category-title important-text">Outils</h3>
 						<ul class="skill-list">
-							<li>
+							<li data-aos="zoom-in">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/figma.webp"
@@ -521,7 +525,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/git.webp"
@@ -530,7 +534,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="150">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/p4.webp"
@@ -539,7 +543,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="200">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/vs.webp"
@@ -548,7 +552,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="250">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/rider.webp"
@@ -557,7 +561,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="300">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/idea.webp"
@@ -566,7 +570,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="350">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/dottrace.webp"
@@ -575,7 +579,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="400">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/teamcity.webp"
@@ -584,7 +588,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="450">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/superluminal.webp"
@@ -593,7 +597,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="500">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/postman.webp"
@@ -602,7 +606,7 @@
 									invertColor={true}
 								/>
 							</li>
-							<li>
+							<li data-aos="zoom-in" data-aos-delay="550">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/photoshop.webp"
@@ -627,7 +631,7 @@
 			</div>
 		</div>
 		<article class="deep-0" style="align-items: center; display:flex; flex-direction: column;">
-			<div class="deep-1 game-skills" id="game-skills">
+			<div data-aos="fade-up" class="deep-1 game-skills" id="game-skills">
 				<h2 class="question-title important-text" style="text-align: center;">
 					Mes compétences jeux
 				</h2>
@@ -636,7 +640,7 @@
 				>
 					<h3 class="skill-category-title important-text">Moteurs et outils</h3>
 					<ul class="skill-list">
-						<li>
+						<li data-aos="zoom-in">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/unity.webp"
@@ -644,7 +648,7 @@
 								title="Unity"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="50">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/unreal.webp"
@@ -652,7 +656,7 @@
 								title="Unreal Engine"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="150">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/sfml.webp"
@@ -660,7 +664,7 @@
 								title="SFML"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="200">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/love2d.webp"
@@ -668,7 +672,7 @@
 								title="Löve2D"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="250">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/substance.webp"
@@ -676,7 +680,7 @@
 								title="Suite Substance"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="300">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/blender.webp"
@@ -684,7 +688,7 @@
 								title="Blender"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="350">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/maya.webp"
@@ -692,7 +696,7 @@
 								title="Maya"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="400">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/wwise.webp"
@@ -700,7 +704,7 @@
 								title="Wwise"
 							/>
 						</li>
-						<li>
+						<li data-aos="zoom-in" data-aos-delay="450">
 							<SkillContainer
 								size={skillIconSize}
 								img="./skills-icons/fmod.webp"
@@ -722,7 +726,7 @@
 			style="align-items: center; background-color: var(--black-background); display:flex; flex-direction: column;"
 			id="projects"
 		>
-			<div class="projects">
+			<div data-aos="fade-up" class="projects">
 				<h2 class="question-title important-text">Mes projets</h2>
 				<div class="deep-1 grid-container">
 					{#if showMoreProject}
@@ -757,7 +761,7 @@
 				<h2 class="question-title important-text">Mon parcours</h2>
 				<div style="margin-top: 2rem;">
 					<div class="alternating-container">
-						<div class="alternating-content">
+						<div data-aos="fade-right" class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
 									<h3 class="cv-title">Software Engineer - Virtuos</h3>
@@ -877,7 +881,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="alternating-container">
+					<div data-aos="fade-left" class="alternating-container">
 						<div class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
@@ -959,7 +963,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="alternating-container">
+					<div data-aos="fade-right" class="alternating-container">
 						<div class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
