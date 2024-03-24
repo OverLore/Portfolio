@@ -1220,6 +1220,7 @@
 	}
 
 	.photo-container img {
+		box-sizing: border-box;
 		object-fit: cover;
 		border-radius: 1rem;
 		height: 500px;
@@ -1558,6 +1559,7 @@
 		}
 
 		.photo-container {
+			box-sizing: border-box;
 			width: 100%;
 		}
 

@@ -362,7 +362,7 @@
 	}
 
 	header.menu-open {
-		height: 100vh;
+		height: calc(100vh - env(safe-area-inset-bottom));
 	}
 
 	a {
@@ -553,7 +553,7 @@
 			left: 50%;
 			transform: translate(-50%, -100%);
 			width: auto;
-			height: 100vh;
+			height: calc(100vh - env(safe-area-inset-bottom));
 			flex-direction: column;
 			display: none;
 			display: flex;
