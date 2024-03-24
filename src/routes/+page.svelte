@@ -95,7 +95,7 @@
 	onMount(() => {
 		document.title = 'Luc Arnould - Développeur';
 
-		AOS.init();
+		AOS.init({ offset: 60 });
 
 		adjustSkillIconSize();
 		window.addEventListener('resize', adjustSkillIconSize);
