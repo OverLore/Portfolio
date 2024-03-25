@@ -20,8 +20,13 @@
 		const carouselScroll = document.querySelector('.div-scroll');
 		const description = document.querySelector('.description');
 		if (carousel && carouselScroll && description) {
+			if (window.innerWidth <= 950) {
+				description.style.height = null;
+				return;
+			}
+
 			const carouselHeight = `${carousel.offsetHeight + carouselScroll.offsetHeight}px`;
-			console.log(carouselHeight);
+
 			description.style.height = carouselHeight;
 		}
 	}
@@ -80,8 +85,15 @@
 		: 255}, {$darkMode ? 0 : 255}, {project.opacity})), url('/{project.image}');"
 />
 <main>
+	<div class="mobile-image">
+		<img
+			src="/{project.image}"
+			style="width: 100%; aspect-ratio: 16/9"
+			alt="{project.name} title"
+		/>
+	</div>
 	<div class="main-container">
-		<div style="width: 100%;">
+		<div class="main-div">
 			<h1 class="gradient-text">{project?.name}</h1>
 			<div
 				class="display"
@@ -145,30 +157,30 @@
 					</div>
 				</div>
 				<div class="description">
-					<img
-						src="/{project.image}"
-						style="width: 100%; aspect-ratio: 16/9"
-						alt="{project.name} title"
-					/>
+					<img class="description-image" src="/{project.image}" alt="{project.name} title" />
 					<div class="description-description">
-						<h2>{project.name}</h2>
-						<Separator marginTop="0.5rem" width="70%" />
-						<p style="margin-top: 0.5rem;">{project.description}</p>
-						<Separator marginTop="0.5rem" width="2%" />
-						{#if project.infos != null}
-							<h3 style="text-align: center; margin-top: 0.5rem;">Informations</h3>
-							{#each project.infos as info, index (index)}
-								<div class="projet-info" style={index == 0 ? 'margin-top: 0.25rem;' : ''}>
-									<h3>{info.title}</h3>
-									<p>{info.value}</p>
-								</div>
-							{/each}
+						<h2 class="description-description-title">{project.name}</h2>
+						<div class="description-description-separator-1">
+							<Separator marginTop="0.5rem" width="70%" />
+						</div>
+						<p class="description-description-description">{project.description}</p>
+						<div class="description-description-separator-2">
 							<Separator marginTop="0.5rem" width="2%" />
+						</div>
+						{#if project.infos != null}
+							<div class="description-infos">
+								<h3 style="text-align: center;">Informations</h3>
+								{#each project.infos as info, index (index)}
+									<div class="projet-info" style={index == 0 ? 'margin-top: 0.25rem;' : ''}>
+										<h3>{info.title}</h3>
+										<p>{info.value}</p>
+									</div>
+								{/each}
+								<Separator marginTop="0.5rem" width="2%" />
+							</div>
 						{/if}
 						{#if project.credits != null}
-							<div
-								style="display: flex; align-items: center; justify-content: center; margin-top: 0.5rem; flex-direction: column;"
-							>
+							<div class="description-credits">
 								<h3>Crédits</h3>
 								<ul style="margin-top: 0.25rem">
 									{#each project.credits as credit}
@@ -184,8 +196,8 @@
 										</li>
 									{/each}
 								</ul>
+								<Separator marginTop="2rem" width="2%" />
 							</div>
-							<Separator marginTop="2rem" width="2%" />
 						{/if}
 						<h3 style="text-align: center; margin-top: 0.5rem;">Compétences travaillées</h3>
 						<div class="techlist">
@@ -221,6 +233,18 @@
 		z-index: 1;
 	}
 
+	.description-credits {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 0.5rem;
+		flex-direction: column;
+	}
+
+	.main-div {
+		width: 100%;
+	}
+
 	.techlist {
 		margin-top: 0.25rem;
 		display: flex;
@@ -235,6 +259,11 @@
 	.projet-info {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.description-image {
+		width: 100%;
+		aspect-ratio: 16/9;
 	}
 
 	.description p {
@@ -469,6 +498,10 @@
 		padding-right: 1rem;
 	}
 
+	.description-description-description {
+		margin-top: 0.5rem;
+	}
+
 	iframe {
 		border: 0;
 	}
@@ -491,5 +524,88 @@
 		color: white;
 		font-size: 3rem;
 		filter: drop-shadow(2px 2px 3px #000);
+	}
+
+	.mobile-image {
+		display: none;
+	}
+
+	@media screen and (max-width: 950px) {
+		.main-container {
+			margin-top: 1rem;
+			display: flex;
+			flex-direction: column;
+			align-items: normal;
+			justify-content: flex-start;
+			padding-inline: 1rem;
+			width: auto;
+		}
+
+		.description-infos {
+			margin-top: 0.5rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			margin-bottom: 0;
+		}
+
+		.description h3 {
+			font-size: 1rem;
+		}
+
+		.mobile-image {
+			display: block;
+			margin-top: 3.5rem;
+			width: auto;
+		}
+
+		main {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		.display {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.carousel {
+			order: 2;
+			margin-top: 1rem;
+		}
+
+		.description {
+			order: 1;
+		}
+
+		.description p {
+			font-size: 1rem;
+		}
+
+		.description-image {
+			display: none;
+		}
+
+		.description-description {
+			overflow: visible;
+			margin-top: 0;
+		}
+
+		.description-description-title,
+		.description-description-separator-1,
+		.description-credits {
+			display: none;
+		}
+
+		.div-scroll {
+			height: 75px;
+		}
+
+		.download-button {
+			display: none;
+		}
 	}
 </style>
