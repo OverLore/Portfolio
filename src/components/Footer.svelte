@@ -55,7 +55,7 @@
 
 	let usefulLinks = [
 		{ title: 'Accueil', href: '/', aria: 'Accueil' },
-		{ title: 'Mention légales', href: '/mention-legales', aria: 'Mention légales' },
+		{ title: 'Mentions légales', href: '/mentions-legales', aria: 'Mentions légales' },
 		{ title: 'GitHub', href: 'https://github.com/OverLore/', aria: 'GitHub' },
 		{ title: 'LinkedIn', href: 'https://www.linkedin.com/in/luc-arnould/', aria: 'LinkedIn' }
 	];
@@ -176,7 +176,7 @@
 	.social-icons a {
 		transition: color 0.15s ease-in-out;
 		text-decoration: none;
-		color: var(--black);
+		color: white;
 	}
 
 	.social-icons li {
@@ -197,28 +197,28 @@
 	.copyright-container {
 		display: flex;
 		justify-content: center;
-		background-color: var(--primary-dark);
+		background-color: var(--light-darken);
 		padding: 0.5rem;
 	}
 
 	.copyright-container p {
-		color: white;
+		color: var(--black);
 		font-size: 0.75rem;
 	}
 
 	.category-header {
-		color: white;
+		color: var(--black);
 		font-size: 1.25rem;
 		font-weight: bold;
 	}
 
 	.category-1-content {
-		color: white;
+		color: var(--black);
 		margin-top: 2rem;
 	}
 
 	.category-2-content {
-		color: white;
+		color: var(--black);
 		margin-top: 2rem;
 	}
 
@@ -228,12 +228,12 @@
 	}
 
 	.category-2-content a {
-		color: white;
+		color: var(--black);
 		text-decoration: none;
 	}
 
 	.category-3-content {
-		color: white;
+		color: var(--black);
 		margin-top: 2rem;
 	}
 
@@ -243,12 +243,12 @@
 	}
 
 	.category-3-content a {
-		color: white;
+		color: var(--black);
 		text-decoration: none;
 	}
 
 	.category-4-content {
-		color: white;
+		color: var(--black);
 		margin-top: 2rem;
 	}
 
