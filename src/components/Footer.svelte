@@ -57,7 +57,8 @@
 		{ title: 'Accueil', href: '/', aria: 'Accueil' },
 		{ title: 'Mentions légales', href: '/mentions-legales', aria: 'Mentions légales' },
 		{ title: 'GitHub', href: 'https://github.com/OverLore/', aria: 'GitHub' },
-		{ title: 'LinkedIn', href: 'https://www.linkedin.com/in/luc-arnould/', aria: 'LinkedIn' }
+		{ title: 'LinkedIn', href: 'https://www.linkedin.com/in/luc-arnould/', aria: 'LinkedIn' },
+		{ title: 'Code source', href: 'https://github.com/OverLore/Portfolio', aria: 'Code source' }
 	];
 
 	let contact = [
