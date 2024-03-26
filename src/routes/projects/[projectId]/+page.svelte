@@ -222,6 +222,16 @@
 			</div>
 		</div>
 	</div>
+	<div class="mobile-download-div">
+		<a
+			class="mobile-download-button {project.link === '' ? 'disabled' : ''}"
+			href={project.link}
+			title={project.buttonTitle}
+		>
+			<i class={project.buttonTitleIcon}></i>
+			<span>{project.buttonText}</span>
+		</a>
+	</div>
 </main>
 
 <style>
@@ -343,6 +353,7 @@
 		justify-content: center;
 		max-width: 80rem;
 		width: 100%;
+		padding-inline: 4rem;
 	}
 
 	.gradient-text {
@@ -455,6 +466,10 @@
 		background-color: var(--primary-darken);
 	}
 
+	.mobile-download-div {
+		display: none;
+	}
+
 	.download-button {
 		color: #fff;
 		background: var(--primary);
@@ -530,6 +545,10 @@
 		display: none;
 	}
 
+	.description-infos {
+		margin-top: 0.5rem;
+	}
+
 	@media screen and (max-width: 950px) {
 		.main-container {
 			margin-top: 1rem;
@@ -539,10 +558,6 @@
 			justify-content: flex-start;
 			padding-inline: 1rem;
 			width: auto;
-		}
-
-		.description-infos {
-			margin-top: 0.5rem;
 		}
 
 		h1 {
@@ -606,6 +621,51 @@
 
 		.download-button {
 			display: none;
+		}
+
+		.mobile-download-button {
+			color: #fff;
+			background: var(--primary);
+			padding: 10px 20px;
+			border: none;
+			box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+			border-radius: 8px;
+			transition: background 0.15s ease-in-out;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			cursor: pointer;
+			font-size: 1.5rem;
+			font-weight: 600;
+			height: 2rem;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			margin-top: 1rem;
+			margin-right: 1rem;
+			margin-bottom: 0.75rem;
+			display: block;
+		}
+
+		.mobile-download-button i {
+			margin-left: 0.25rem;
+		}
+
+		.mobile-download-button:hover {
+			background: var(--primary-light);
+		}
+
+		.mobile-download-button.disabled {
+			background: #a9a9a9;
+			color: #ffffff;
+			cursor: not-allowed;
+		}
+
+		.mobile-download-div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 1rem;
 		}
 	}
 </style>

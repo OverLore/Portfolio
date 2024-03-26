@@ -384,7 +384,7 @@ export const projects = [
 		],
 		infos: [
 			{ title: 'Plateforme', value: 'PC' },
-			{ title: 'Genre', value: "Jeu de plateau" },
+			{ title: 'Genre', value: 'Jeu de plateau' },
 			{ title: 'Durée de production', value: '2 semaines' },
 			{ title: 'Langues', value: 'Anglais' }
 		],
@@ -473,9 +473,9 @@ export const projects = [
 		type: 'game',
 		button: 'download',
 		buttonText: 'Télécharger',
-		buttonTitle: 'Indisponible pour le moment...',
+		buttonTitle: 'Télécharger FlappyClone (.apk)',
 		buttonTitleIcon: 'ri-download-2-line',
-		link: '',
+		link: 'https://download1078.mediafire.com/hp712sw5b3wgYzCfFWYNIo9rbBuCe8sKqcPY_eYBnpJEDnH6Bu-fUk6B7_KPfseiMwD1eaaPUdXsj98LZSlOIH1Wew1gkdbM1Q4cq_niWlni8XV9-KgfDh3cABjKOkDdb7g69Rx9jSLXElGksWPE83jBUsfTQybKR5Iwx9bWH95R0Q/z9ku3cbgmttgpmk/Flappy+bird+Arnould.apk',
 		name: 'Flappy Clone',
 		description:
 			'Flappy Clone est une copie du jeu iconique Flappy Bird jouable en solo sur android réalisée avec la libraire Löve2D.',
