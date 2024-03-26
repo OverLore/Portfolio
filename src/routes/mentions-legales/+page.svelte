@@ -1,4 +1,5 @@
 <script>
+	// @ts-nocheck
 	import Header from '../../components/Header.svelte';
 
 	let links = [{ title: 'Accueil', id: '', href: '/', type: 'redirect', aria: 'Accueil' }];

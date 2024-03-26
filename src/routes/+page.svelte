@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
+	import Footer from '../components/Footer.svelte';
 
 	let skillIconSize = '100px';
 	let showMoreProject = false;
@@ -1132,6 +1133,7 @@
 		</article>
 	</div>
 </main>
+<Footer />
 
 <style>
 	main {
@@ -1226,6 +1228,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin-bottom: 2rem;
 	}
 
 	.deep-0 {
