@@ -143,7 +143,7 @@
 			</div>
 		</div>
 		<div class="copyright-container">
-			<p>&copy; 2024 Copyright: Luc Arnould</p>
+			<p>Copyright &copy; 2024 Luc Arnould. Tous droits réservés</p>
 		</div>
 	</footer>
 </main>
