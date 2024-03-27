@@ -174,10 +174,14 @@
 					solution sur mesure qui répond
 					<span class="important-text"> parfaitement à vos attentes</span>.
 				</p>
-				<button aria-label="Contact" class="contact-button">
+				<a
+					aria-label="Contact: Envoyer un mail"
+					class="contact-button"
+					href="mailto:luc.arnould08@gmail.com?subject=Contact depuis portfolio"
+				>
 					<i class="ri-chat-3-line"></i>
 					<span>Un projet à réaliser ? Parlons-en !</span>
-				</button>
+				</a>
 			</div>
 		</article>
 		<div class="deep-0">
@@ -1305,6 +1309,8 @@
 		font-size: 1rem;
 		font-weight: 600;
 		margin-top: 4rem;
+		width: fit-content;
+		text-decoration: none;
 	}
 
 	.contact-button i {
@@ -1582,6 +1588,12 @@
 
 	.show-more-btn {
 		display: none;
+	}
+
+	@media screen and (min-width: 2000px) {
+		.photo-container img {
+			height: 620px;
+		}
 	}
 
 	@media screen and (max-width: 950px) {

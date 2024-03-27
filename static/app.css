@@ -164,3 +164,9 @@ body {
 .svg-filter {
 	filter: var(--svg-filter);
 }
+
+@media screen and (min-width: 2000px) {
+	html {
+		font-size: 20px;
+	}
+}
