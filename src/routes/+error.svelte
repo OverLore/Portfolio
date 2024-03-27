@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import ErrorHeader from '../components/ErrorHeader.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	onMount(() => {
 		document.title = 'Page introuvable';
@@ -18,9 +19,12 @@
 		</div>
 	</div>
 </main>
+<Footer />
 
 <style>
 	main {
+		margin-top: 3.5rem;
+
 		display: flex;
 		justify-content: center;
 
@@ -28,7 +32,9 @@
 		background-repeat: repeat;
 		background-size: 50vw;
 
-		height: 100vh;
+		text-align: center;
+
+		height: calc(100svh - 3rem - 3.5rem);
 	}
 
 	.main-container {

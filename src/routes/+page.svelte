@@ -59,7 +59,7 @@
 		showMoreProject = !showMoreProject;
 	};
 
-	let links = [
+	const links = [
 		{ title: 'Accueil', id: '/', href: '/', type: 'scroll', aria: 'Accueil' },
 		{
 			title: 'Presentation',
@@ -91,6 +91,40 @@
 		},
 		{ title: 'Projets', id: '/projects', href: '#projects', type: 'scroll', aria: 'Projets' },
 		{ title: 'Parcours', id: '/experience', href: '#experience', type: 'scroll', aria: 'Parcours' }
+	];
+
+	const footerLinks = [
+		{ title: 'Accueil', id: '/', href: '/', aria: 'Accueil', type: 'scroll' },
+		{
+			title: 'Presentation',
+			id: '/presentation',
+			href: '#presentation',
+			aria: 'Presentation',
+			type: 'scroll'
+		},
+		{
+			title: 'Web',
+			id: '/web-skills',
+			href: '#web-skills',
+			aria: 'Compétences Web',
+			type: 'scroll'
+		},
+		{
+			title: 'Software',
+			id: '/software-skills',
+			href: '#software-skills',
+			aria: 'Compétences Software',
+			type: 'scroll'
+		},
+		{
+			title: 'Jeux',
+			id: '/game-skills',
+			href: '#game-skills',
+			aria: 'Compétences Jeux',
+			type: 'scroll'
+		},
+		{ title: 'Projets', id: '/projects', href: '#projects', aria: 'Projets', type: 'scroll' },
+		{ title: 'Parcours', id: '/experience', href: '#experience', aria: 'Parcours', type: 'scroll' }
 	];
 
 	onMount(() => {
@@ -1137,7 +1171,7 @@
 		</article>
 	</div>
 </main>
-<Footer />
+<Footer links={footerLinks} />
 
 <style>
 	main {

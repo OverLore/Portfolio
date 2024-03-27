@@ -128,6 +128,7 @@
 		width: 100%;
 		justify-content: space-between;
 		max-width: 80rem;
+		padding: 1rem;
 	}
 
 	ul,
@@ -143,7 +144,6 @@
 	}
 
 	.main-social-list {
-		gap: 0.5rem;
 		align-items: center;
 	}
 

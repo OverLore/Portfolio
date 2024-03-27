@@ -23,34 +23,38 @@
 		}
 	];
 
-	let links = [
-		{ title: 'Accueil', id: '/', href: '/', aria: 'Accueil' },
+	export let links = [
+		{ title: 'Accueil', id: '/', href: '/', aria: 'Accueil', type: 'link' },
 		{
 			title: 'Presentation',
 			id: '/presentation',
 			href: '#presentation',
-			aria: 'Presentation'
+			aria: 'Presentation',
+			type: 'link'
 		},
 		{
 			title: 'Web',
 			id: '/web-skills',
 			href: '#web-skills',
-			aria: 'Compétences Web'
+			aria: 'Compétences Web',
+			type: 'link'
 		},
 		{
 			title: 'Software',
 			id: '/software-skills',
 			href: '#software-skills',
-			aria: 'Compétences Software'
+			aria: 'Compétences Software',
+			type: 'link'
 		},
 		{
 			title: 'Jeux',
 			id: '/game-skills',
 			href: '#game-skills',
-			aria: 'Compétences Jeux'
+			aria: 'Compétences Jeux',
+			type: 'link'
 		},
-		{ title: 'Projets', id: '/projects', href: '#projects', aria: 'Projets' },
-		{ title: 'Parcours', id: '/experience', href: '#experience', aria: 'Parcours' }
+		{ title: 'Projets', id: '/projects', href: '#projects', aria: 'Projets', type: 'link' },
+		{ title: 'Parcours', id: '/experience', href: '#experience', aria: 'Parcours', type: 'link' }
 	];
 
 	let usefulLinks = [
@@ -107,13 +111,19 @@
 				<ul class="category-2-content">
 					{#each links as { title, id, href, type, aria }}
 						<li>
-							<a
-								aria-label={aria}
-								{href}
-								on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
-							>
-								{title}
-							</a>
+							{#if type === 'scroll'}
+								<a
+									aria-label={aria}
+									{href}
+									on:click|preventDefault={(event) => handleLinkClick(event, id.slice(1))}
+								>
+									{title}
+								</a>
+							{:else}
+								<a aria-label={aria} href={`/${href}`}>
+									{title}
+								</a>
+							{/if}
 						</li>
 					{/each}
 				</ul>

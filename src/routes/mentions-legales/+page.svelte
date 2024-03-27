@@ -1,5 +1,6 @@
 <script>
 	// @ts-nocheck
+	import Footer from '../../components/Footer.svelte';
 	import Header from '../../components/Header.svelte';
 
 	let links = [{ title: 'Accueil', id: '', href: '/', type: 'redirect', aria: 'Accueil' }];
@@ -39,10 +40,12 @@
 	</p>
 	<a class="back" href="/">Retour à l'accueil</a>
 </main>
+<Footer />
 
 <style>
 	.container {
 		margin-top: 6rem;
+		margin-bottom: 4rem;
 		display: flex;
 		flex-direction: column;
 		align-content: center;

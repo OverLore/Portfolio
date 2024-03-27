@@ -7,6 +7,7 @@
 	import { fade } from 'svelte/transition';
 	import Separator from '../../../components/Separator.svelte';
 	import SkillContainer from '../../../components/SkillContainer.svelte';
+	import Footer from '../../../components/Footer.svelte';
 
 	export let data;
 	let selected = 0;
@@ -28,20 +29,6 @@
 			const carouselHeight = `${carousel.offsetHeight + carouselScroll.offsetHeight}px`;
 
 			description.style.height = carouselHeight;
-		}
-	}
-
-	function scrollCarousel(e) {
-		if (scrollable) {
-			scrollable.addEventListener(
-				'wheel',
-				(e) => {
-					e.preventDefault();
-
-					scrollable.scrollLeft += e.deltaY;
-				},
-				{ passive: false }
-			);
 		}
 	}
 
@@ -233,6 +220,7 @@
 		</a>
 	</div>
 </main>
+<Footer />
 
 <style>
 	main {
@@ -241,6 +229,7 @@
 		justify-content: center;
 		min-height: 100vh;
 		z-index: 1;
+		margin-bottom: 4rem;
 	}
 
 	.description-credits {

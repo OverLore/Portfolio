@@ -56,8 +56,8 @@ body {
 	--nav-filter: blur(15px) brightness(1.09) grayscale(20%) saturate(51%) sepia(5%);
 	--svg-filter: invert(92%);
 
-	--background-image: url(https://www.lucarnould.fr/Back2.webp);
-	--background-image-contrast: url(https://www.lucarnould.fr/Back.webp);
+	--background-image: url(/Back2.webp);
+	--background-image-contrast: url(/Back.webp);
 	--background-color-contrast: #151111;
 
 	--header-background-color: rgba(255, 255, 255, 0.36);
@@ -82,8 +82,8 @@ body {
 	--nav-filter: blur(15px) brightness(0.7) grayscale(20%) saturate(51%) sepia(5%);
 	--svg-filter: invert(11%);
 
-	--background-image: url(https://www.lucarnould.fr/Back.webp);
-	--background-image-contrast: url(https://www.lucarnould.fr/Back2.webp);
+	--background-image: url(/Back.webp);
+	--background-image-contrast: url(/Back2.webp);
 	--background-color-contrast: #f5f3f4;
 
 	--header-background-color: rgba(255, 255, 255, 0);
