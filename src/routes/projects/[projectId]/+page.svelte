@@ -200,6 +200,7 @@
 					<a
 						class="download-button {project.link === '' ? 'disabled' : ''}"
 						href={project.link}
+						target="_blank"
 						title={project.buttonTitle}
 					>
 						<i class={project.buttonTitleIcon}></i>

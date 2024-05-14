@@ -72,9 +72,9 @@ export const projects = [
 		type: 'game',
 		button: 'download',
 		buttonText: 'Télécharger',
-		buttonTitle: 'Indisponible pour le moment...',
+		buttonTitle: 'Télécharger sur itch.io',
 		buttonTitleIcon: 'ri-download-2-line',
-		link: '',
+		link: 'https://deusgames.itch.io/ligne-13',
 		name: 'Ligne 13',
 		description:
 			"Vous vous réveillez dans un métro français après l'extinction de l'humanité. Votre seul espoir est de parcourir les ruines de la ligne 13 et d'atteindre le terminus. Ligne 13 est un jeu de survie solo jouable sur PC réalisé sur Unity par une équipe de 13 personnes.",
@@ -169,9 +169,9 @@ export const projects = [
 		type: 'game',
 		button: 'download',
 		buttonText: 'Télécharger',
-		buttonTitle: 'Indisponible pour le moment...',
+		buttonTitle: 'Télécharger le jeu',
 		buttonTitleIcon: 'ri-download-2-line',
-		link: '',
+		link: 'https://www.mediafire.com/file/2mjs1q022awazch/KurageFinal3.apk/file',
 		name: 'Kurage',
 		description:
 			'Incarnez une méduse et sauvez les océans de vagues de poissons aux projets sombres. Kurage est un jeu android solo réalisé sur Unity par une équipe de 9 personnes.',
@@ -244,9 +244,9 @@ export const projects = [
 		type: 'game',
 		button: 'download',
 		buttonText: 'Télécharger',
-		buttonTitle: 'Indisponible pour le moment...',
+		buttonTitle: 'Télécharger le jeu',
 		buttonTitleIcon: 'ri-download-2-line',
-		link: '',
+		link: 'https://deus-games-studio.itch.io/naukar',
 		name: 'Naukar',
 		description:
 			'Incarnez Naukar, un lapin mage venu sauver son maître des tentacules de la vile Veyshia. Naukar est un roguelite jouable en solo réalisé avec la librairie C-SFML par un groupe de 9 personnes.',
@@ -342,10 +342,10 @@ export const projects = [
 		id: 'vr-playground',
 		type: 'game',
 		button: 'download',
-		buttonText: 'Télécharger',
-		buttonTitle: 'Indisponible pour le moment...',
-		buttonTitleIcon: 'ri-download-2-line',
-		link: '',
+		buttonText: 'Voir le jeu',
+		buttonTitle: 'Voir sur GitHub',
+		buttonTitleIcon: 'ri-links-fill',
+		link: 'https://github.com/OverLore/VR-Playground/',
 		name: 'VR Playground',
 		description:
 			"VR Playground est un mini jeu de démo de technologie VR sur Unity. Intéragissez avec l'environnement ou bien jouer à Danger Ball, un clone minimaliste du jeu du même nom sorti sur Playstation VR World.",
@@ -442,9 +442,9 @@ export const projects = [
 		type: 'game',
 		button: 'download',
 		buttonText: 'Télécharger',
-		buttonTitle: 'Indisponible pour le moment...',
+		buttonTitle: 'Télécharger le jeu',
 		buttonTitleIcon: 'ri-download-2-line',
-		link: '',
+		link: 'https://www.mediafire.com/file/kvq54tv9kco4wya/CookieMaker_ARNOULD.apk/file',
 		name: 'Cookie Maker',
 		description:
 			'Cookie Maker est une maquette de jeu hyper-casual où vous devez créer le plus gros cookie possible. Cette maquette à été réalisée en 3 heures sur Unity.',
@@ -519,6 +519,29 @@ export const projects = [
 			{ type: 'image', link: 'portfolio/5.webp' },
 			{ type: 'image', link: 'portfolio/6.webp' },
 			{ type: 'image', link: 'portfolio/preview.webp' }
+		],
+		opacity: 0.85
+	},
+	{
+		id: 'burger-evasion',
+		type: 'site',
+		button: 'view',
+		buttonText: 'Accéder',
+		buttonTitle: 'Consulter le site web',
+		buttonTitleIcon: 'ri-links-fill',
+		link: 'https://burgers.lucarnould.fr/',
+		name: 'Burger Evasion',
+		description:
+			"Site d'un restaurant fictif commercialisant des burgers. Ce portfolio a été designé sur Figma puis réalisé avec SvelteKit et propulsé par Vite.",
+		image: 'projects/burgers/preview.webp',
+		stack: ['svelte', 'vite', 'node', 'figma'],
+		screenshots: [
+			{ type: 'image', link: 'burgers/1.webp' },
+			{ type: 'image', link: 'burgers/2.webp' },
+			{ type: 'image', link: 'burgers/3.webp' },
+			{ type: 'image', link: 'burgers/4.webp' },
+			{ type: 'image', link: 'burgers/5.webp' },
+			{ type: 'image', link: 'burgers/preview.webp' }
 		],
 		opacity: 0.85
 	},
