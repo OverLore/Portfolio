@@ -301,6 +301,14 @@
 									title="Svelte.js"
 								/>
 							</li>
+							<li data-aos="zoom-in">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/angular.webp"
+									alt="Angular Logo"
+									title="Angular.js"
+								/>
+							</li>
 							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
@@ -384,6 +392,14 @@
 									img="./skills-icons/graphql.webp"
 									alt="GraphQL Logo"
 									title="GraphQL"
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="150">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/spring.webp"
+									alt="Spring Logo"
+									title="Spring"
 								/>
 							</li>
 							<li data-aos="zoom-in" data-aos-delay="200">
