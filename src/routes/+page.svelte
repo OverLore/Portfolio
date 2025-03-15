@@ -312,6 +312,14 @@
 							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
+									img="./skills-icons/symfony.webp"
+									alt="Symfony Logo"
+									title="Symfony"
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="50">
+								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/react.webp"
 									alt="React Logo"
 									title="React.js"
@@ -410,6 +418,14 @@
 									title="Firebase"
 								/>
 							</li>
+							<li data-aos="zoom-in" data-aos-delay="200">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/scality.webp"
+									alt="Scality Logo"
+									title="Scality"
+								/>
+							</li>
 							<li data-aos="zoom-in" data-aos-delay="250">
 								<SkillContainer
 									size={skillIconSize}
@@ -473,6 +489,15 @@
 									img="./skills-icons/aspdotnet.webp"
 									alt="ASP.NET Logo"
 									title="ASP.NET"
+									invertColor={true}
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="150">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/maui.webp"
+									alt=".NET MAUI Logo"
+									title=".NET MAUI"
 									invertColor={true}
 								/>
 							</li>
@@ -551,6 +576,24 @@
 							<li data-aos="zoom-in" data-aos-delay="600">
 								<SkillContainer
 									size={skillIconSize}
+									img="./skills-icons/html.webp"
+									alt="HTML 5 Logo"
+									title="HTML"
+									invertColor={true}
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="600">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/css.webp"
+									alt="CSS 3 Logo"
+									title="CSS"
+									invertColor={true}
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="600">
+								<SkillContainer
+									size={skillIconSize}
 									img="./skills-icons/js.webp"
 									alt="JavaScript Logo"
 									title="JavaScript"
@@ -589,12 +632,30 @@
 									invertColor={true}
 								/>
 							</li>
+							<li data-aos="zoom-in" data-aos-delay="50">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/sourcetree.webp"
+									alt="SourceTree Logo"
+									title="SourceTree"
+									invertColor={true}
+								/>
+							</li>
 							<li data-aos="zoom-in" data-aos-delay="150">
 								<SkillContainer
 									size={skillIconSize}
 									img="./skills-icons/p4.webp"
 									alt="Perforce Logo"
 									title="Perforce"
+									invertColor={true}
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="150">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/heidisql.webp"
+									alt="HeidiSQL Logo"
+									title="HeidiSQL"
 									invertColor={true}
 								/>
 							</li>
@@ -815,14 +876,106 @@
 			<div class="deep-1 experience" id="experience">
 				<h2 class="question-title important-text">Mon parcours</h2>
 				<div style="margin-top: 2rem;">
+					<div data-aos="fade-left" class="alternating-container">
+						<div class="alternating-content">
+							<div class="cv-card">
+								<div style="padding: 2rem;">
+									<h3 class="cv-title">Développeur - Inetum</h3>
+									<p class="cv-date">11/2024 - Actuellement</p>
+									<p class="cv-description">
+										Développement fullstack.<br /><br />
+										Développeur fullstack chez Inetum, je travaille principalement sur des applications
+										internes pour Orange sur le framework Symfony. Il m'arrive également de travailler
+										sur des applications Android avec .NET MAUI.<br /><br />
+										Travail en agilité pour répondre à des demandes de fonctionnalités variées.
+									</p>
+									<Separator />
+									<div class="cv-skill-container">
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/symfony.webp"
+											alt="Symfony Logo"
+											imgTitle="Symfony"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/maui.webp"
+											alt="MAUI Logo"
+											imgTitle="MAUI"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/git.webp"
+											alt="Git Logo"
+											imgTitle="Git"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/sourcetree.webp"
+											alt="SourceTree Logo"
+											imgTitle="SourceTree"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/html.webp"
+											alt="HTML 5 Logo"
+											imgTitle="HTML"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/css.webp"
+											alt="CSS 3 Logo"
+											imgTitle="CSS"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/js.webp"
+											alt="JavaScript Logo"
+											imgTitle="JavaScript"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/csharp.webp"
+											alt="C# Logo"
+											imgTitle="C#"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/scality.webp"
+											alt="Scality Logo"
+											imgTitle="Scality"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/heidisql.webp"
+											alt="HeidiSQL Logo"
+											imgTitle="HeidiSQL"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/postman.webp"
+											alt="Postman Logo"
+											imgTitle="Postman"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/bootstrap.webp"
+											alt="Bootstrap Logo"
+											imgTitle="Bootstrap"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="alternating-container">
 						<div data-aos="fade-right" class="alternating-content">
 							<div class="cv-card">
 								<div style="padding: 2rem;">
 									<h3 class="cv-title">Software Engineer - Virtuos</h3>
-									<p class="cv-date">10/2023 - Maintenant</p>
+									<p class="cv-date">10/2023 - 10/2024</p>
 									<p class="cv-description">
-										Travail actuel, software engineering.<br /><br />
+										Software engineering et développement UI.<br /><br />
 
 										Ingénieur logiciel chez Virtuos Labs à Montpellier, je navigue entre diverses
 										responsabilités techniques, soumises à la confidentialité due à des accords de
@@ -876,6 +1029,18 @@
 											img="./skills-icons/cpp.webp"
 											alt="C++ Logo"
 											imgTitle="C++"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/html.webp"
+											alt="HTML 5 Logo"
+											imgTitle="HTML"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/css.webp"
+											alt="CSS 3 Logo"
+											imgTitle="CSS"
 										/>
 										<SkillContainer
 											size="40px"
@@ -976,6 +1141,18 @@
 											img="./skills-icons/vite.webp"
 											alt="Vite Logo"
 											imgTitle="Vite"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/html.webp"
+											alt="HTML 5 Logo"
+											imgTitle="HTML"
+										/>
+										<SkillContainer
+											size="40px"
+											img="./skills-icons/css.webp"
+											alt="CSS 3 Logo"
+											imgTitle="CSS"
 										/>
 										<SkillContainer
 											size="40px"
