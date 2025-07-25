@@ -76,6 +76,14 @@
 		event.preventDefault();
 		scrollToSection(sectionId);
 	}
+
+	const birthDate = new Date('2001-09-27');
+	const today = new Date();
+	let age = today.getFullYear() - birthDate.getFullYear();
+	const m = today.getMonth() - birthDate.getMonth();
+	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+		age--;
+	}
 </script>
 
 <main>
@@ -97,12 +105,12 @@
 				<p class="category-header">LUC ARNOULD</p>
 				<Separator align="normal" marginTop="0" width="4rem" />
 				<p class="category-1-content">
-					Jeune développeur de 22 ans, je me passione pour l'informatique et notamment dans le
-					développement de jeux vidéos, de logiciels et de sites web. Vous êtes ici sur mon
-					portfolio.<br />
-					Je travailles actuellement en tant que Software Engineer chez Virtuos la journée et en tant
-					que développeur Fullstack en freelance la nuit. N'hésitez-pas à me contacter pour toute demande
-					de projet. À très bientôt j'espère !
+					Jeune développeur de {age} ans, passionné par l’informatique, je me consacre aujourd’hui au
+					développement web, d’applications et de logiciels. Vous êtes ici sur mon portfolio.<br />
+					Après des expériences en studio sur des projets de jeux vidéo AAA, je travaille désormais à
+					mon compte en tant que développeur fullstack freelance, pour accompagner mes clients dans la
+					réalisation de leurs sites et applications.<br />
+					N’hésitez pas à me contacter pour toute demande de projet. À très bientôt j’espère !
 				</p>
 			</div>
 			<div class="footer-category">
