@@ -312,14 +312,6 @@
 							<li data-aos="zoom-in" data-aos-delay="50">
 								<SkillContainer
 									size={skillIconSize}
-									img="./skills-icons/symfony.webp"
-									alt="Symfony Logo"
-									title="Symfony"
-								/>
-							</li>
-							<li data-aos="zoom-in" data-aos-delay="50">
-								<SkillContainer
-									size={skillIconSize}
 									img="./skills-icons/react.webp"
 									alt="React Logo"
 									title="React.js"
@@ -376,6 +368,14 @@
 									img="./skills-icons/node.webp"
 									alt="Node.js Logo"
 									title="Node.js"
+								/>
+							</li>
+							<li data-aos="zoom-in" data-aos-delay="50">
+								<SkillContainer
+									size={skillIconSize}
+									img="./skills-icons/symfony.webp"
+									alt="Symfony Logo"
+									title="Symfony"
 								/>
 							</li>
 							<li data-aos="zoom-in" data-aos-delay="50">
@@ -884,11 +884,15 @@
 									<p class="cv-date">11/2024 - Actuellement</p>
 									<p class="cv-description">
 										Développement fullstack.<br /><br />
-										Développeur fullstack chez Inetum, je travaille principalement sur des applications
-										internes pour Orange sur le framework Symfony. Il m'arrive également de travailler
-										sur des applications Android avec .NET MAUI.<br /><br />
-										Travail en agilité pour répondre à des demandes de fonctionnalités variées.
+										Expérience chez Inetum sur des projets internes pour Orange, avec un focus sur des
+										applications web développées en Symfony et Angular. Des outils mobiles ont également
+										été conçus en .NET MAUI et Xamarin, principalement pour des besoins internes.<br
+										/><br />
+										Le contexte agile et les enjeux opérationnels ont permis d’aborder divers aspects
+										du cycle de vie logiciel : mises en production régulières, automatisation d’outils
+										internes, gestion de tickets et traitement d’incidents techniques.
 									</p>
+
 									<Separator />
 									<div class="cv-skill-container">
 										<SkillContainer
@@ -976,16 +980,17 @@
 									<p class="cv-date">10/2023 - 10/2024</p>
 									<p class="cv-description">
 										Software engineering et développement UI.<br /><br />
-
-										Ingénieur logiciel chez Virtuos Labs à Montpellier, je navigue entre diverses
-										responsabilités techniques, soumises à la confidentialité due à des accords de
-										non-divulgation.<br /><br />
-										Mon expertise s'étend principalement autour de WPF pour le développement, l'optimisation,
-										et la maintenance de logiciels, tout en enrichissant mon savoir-faire avec ASP.NET,
-										API REST, et les outils de CI/CD comme TeamCity.<br /><br />
-										Agile et SCRUM guident mes méthodes de travail, me permettant d'ajuster dynamiquement
-										mes contributions aux projets face aux changements imprévus.
+										Expérience chez Virtuos Labs Montpellier sur des projets soumis à accords de non-divulgation,
+										dont la participation au remaster d’un jeu AAA iconique, notamment
+										<strong>Oblivion</strong>.<br /><br />
+										Intervention sur des logiciels internes et outils techniques, principalement en WPF,
+										avec un travail sur l’optimisation, la maintenance et l’évolution des interfaces.
+										Compétences élargies à ASP.NET, aux APIs REST, ainsi qu'à l’intégration continue
+										avec des outils comme TeamCity.<br /><br />
+										Méthodologies agiles (SCRUM) et adaptation continue dans des environnements techniques
+										en évolution rapide.
 									</p>
+
 									<Separator />
 									<div class="cv-skill-container">
 										<SkillContainer
@@ -1108,14 +1113,17 @@
 									<h3 class="cv-title">Eritaj - Gaya Player</h3>
 									<p class="cv-date">04/2023 - 08/2023</p>
 									<p class="cv-description">
-										Stage de fin d'études, développeur Gameplay / UI.<br /><br />
-										Chez Eritaj Studio, j'ai contribué à plusieurs projets, avec deux réalisations majeures.<br
+										Stage de fin d'études – Développement Gameplay & UI.<br /><br />
+										Participation à plusieurs projets au sein d’Eritaj Studio, avec un focus particulier
+										sur le portage de l’application mobile Gaya Explorer, initialement développée en
+										React Native, vers Unity. L’ensemble du travail a couvert la programmation de l’interface
+										utilisateur, des mécaniques de gameplay et la création d’outils de production.<br
 										/><br />
-										Portage sur Unity de Gaya Explorer, initialement développé en React Native. Mon rôle
-										a englobé la programmation UI, Gameplay et d'outils.<br /><br />
-										Amélioration du jeu initial, avec le développement de nouvelles fonctionnalités en
-										React Native.
+										En parallèle, des améliorations ont été apportées à la version React Native d’origine,
+										avec le développement de nouvelles fonctionnalités. L’expérience a permis de naviguer
+										entre Unity et React Native dans un contexte de production mobile multiplateforme.
 									</p>
+
 									<Separator />
 									<div class="cv-skill-container">
 										<SkillContainer
@@ -1204,16 +1212,16 @@
 
 									<p class="cv-description">
 										Études supérieures en développement de jeux vidéo.<br /><br />
-										Ces 4 années ont été cruciales pour l'acquisition de mes compétences en programmation.<br
-										/><br />
-										La formation m'a appris à maîtriser divers moteurs de jeu, comme Unity et Unreal
-										Engine, et à comprendre les méthodologies de création de jeux et de programmes.<br
-										/><br />
-										J'ai aussi acquis des connaissances en graphisme (Photoshop, Blender, Substance)
+										Formation pluridisciplinaire sur quatre ans axée sur la programmation, la conception
+										et la production de jeux vidéo. Enseignement des principaux moteurs tels qu’Unity
+										et Unreal Engine, avec une approche concrète des méthodologies de développement logiciel
+										appliquées au jeu vidéo.<br /><br />
+										Le cursus inclut également des bases solides en graphisme (Photoshop, Blender, Substance)
 										et en intégration sonore (Wwise, FMOD).<br /><br />
-										J'ai réalisé plusieurs projets, tant individuels qu'en équipe, dont certains sont
-										présentés dans la section Projets de ce portfolio.
+										Plusieurs projets ont été menés, en solo comme en équipe, dont certains sont présentés
+										dans la section dédiée de ce portfolio.
 									</p>
+
 									<Separator />
 									<div class="cv-skill-container">
 										<SkillContainer
