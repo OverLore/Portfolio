@@ -237,40 +237,39 @@
 						<span class="important-text">web</span>.<br />
 						Doté de compétences solides en <span class="important-text">C#</span>,
 						<span class="important-text">C++</span>
-						et <span class="important-text">Javascript</span>, je me suis impliqué dans divers
-						projets de jeux, où j'ai allié développement de
-						<span class="important-text">gameplay</span>
-						et conception d'<span class="important-text">outils</span>. Mon intérêt ne se limite pas
-						au domaine ludique: je suis également attiré par le
-						<span class="important-text">développement web</span>, ce qui enrichit ma polyvalence et
-						ma compréhension des technologies numériques.<br />
-						Toujours en quête de nouvelles compétences, je m'efforce de rester à la pointe dans l'industrie
-						du jeu vidéo et du web. Je suis actuellement Software Engineer chez
-						<span
-							><a
-								aria-label="Virtuos France"
-								class="important-text"
-								target="_blank"
-								href="https://www.virtuosgames.com/virtuos-labs-montpellier/">Virtuos France</a
-							></span
-						> où je travaille sur des projets de AAA.
+						et <span class="important-text">JavaScript</span>, je me suis impliqué dans divers
+						projets de jeux, alliant développement de <span class="important-text">gameplay</span>
+						et conception d'<span class="important-text">outils</span>. Mon intérêt pour le
+						<span class="important-text">développement web</span>
+						enrichit ma polyvalence et ma compréhension des technologies numériques.<br />
+						Après une expérience chez <span class="important-text">Virtuos</span>, où j’ai participé
+						au remaster d’un titre AAA emblématique, <strong>Oblivion</strong>, puis chez
+						<span class="important-text">Inetum</span>
+						sur des projets internes pour <strong>Orange</strong>, je me consacre désormais à
+						l’accompagnement de clients dans le développement de leurs
+						<span class="important-text">applications</span>
+						et <span class="important-text">sites web</span>.<br />
+						Toujours en quête de nouvelles compétences, je m’efforce de rester à la pointe dans l’industrie
+						du jeu vidéo et du web.
 					</p>
 				</div>
 				<div data-aos="fade-left" class="what-i-do">
 					<h2 class="question-title important-text">Ce que je fais</h2>
 					<p class="question-paragraph">
-						Je me spécialise en <span class="important-text">développement logiciel</span>, avec un
-						accent particulier sur le <span class="important-text">gameplay</span>, l'<span
-							class="important-text">ingénierie logicielle</span
-						>
-						et le <span class="important-text">développement full-stack</span>. Je suis apte à
-						travailler aussi bien sur des projets de gameplay qu'à la mise en place de
-						<span class="important-text">structures de données</span>
-						et d'<span class="important-text">architectures complexes</span>, ou encore au
-						développement de <span class="important-text">sites web</span> utilisant les derniers
-						frameworks JavaScript. Ma passion pour le développement me pousse constamment à explorer
-						de <span class="important-text">nouveaux domaines</span> et à
-						<span class="important-text">élargir mon champ de compétences</span>.
+						Je me spécialise en <span class="important-text">développement web</span> et en
+						<span class="important-text">ingénierie logicielle</span>, avec un parcours mêlant
+						<span class="important-text">full-stack</span>,
+						<span class="important-text">frontend moderne</span>
+						et <span class="important-text">backends robustes</span>. J’interviens dans la
+						conception d’<span class="important-text">applications web</span> performantes, la mise
+						en place d’<span class="important-text">architectures scalables</span> et l’intégration
+						de solutions modernes avec les derniers frameworks.<br /><br />
+						Mon expérience dans le jeu vidéo m’a également permis de développer des compétences solides
+						en <span class="important-text">développement gameplay</span> et en
+						<span class="important-text">programmation d’outils</span>, que je continue à valoriser
+						sur des projets techniques. Curieux et polyvalent, je reste en veille constante pour
+						<span class="important-text">explorer de nouveaux domaines</span>
+						et <span class="important-text">approfondir mon expertise</span>.
 					</p>
 				</div>
 			</div>
