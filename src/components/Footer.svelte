@@ -66,7 +66,7 @@
 	];
 
 	let contact = [
-		{ content: "510 rue de l'Hostellerie, 30900 Nîmes", icon: 'ri-home-line' },
+		{ content: '2335 route de Courbessac, 30000 Nîmes', icon: 'ri-home-line' },
 		{ content: 'luc.arnould08@gmail.com', icon: 'ri-mail-line' },
 		{ content: '(+33)6 61 88 47 21', icon: 'ri-phone-line' },
 		{ content: 'www.lucarnould.fr', icon: 'ri-global-line' }

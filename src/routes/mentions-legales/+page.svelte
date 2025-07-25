@@ -21,7 +21,7 @@
 	<h2>Edition du site</h2>
 	<p>Le présent site, accessible à l’URL www.lucarnould.fr (le « Site »), est édité par :</p>
 	<p>
-		Luc Arnould, résidant 510 rue de l'Hostellerie 30900 NÎMES, de nationalité Française (France),
+		Luc Arnould, résidant 2335 route de Courbessac, 30000 NÎMES, de nationalité Française (France),
 		né(e) le 27/09/2001
 	</p>
 	<h2>Hébergement</h2>
@@ -34,7 +34,7 @@
 	<h2>Nous contacter</h2>
 	<p>Par téléphone : +33661884721</p>
 	<p>Par email : luc.arnould08@gmail.com</p>
-	<p>Par courrier : 510 rue de l'Hostellerie 30900 NÎMES</p>
+	<p>Par courrier : 2335 route de Courbessac, 30000 NÎMES</p>
 	<p class="source">
 		Génération des mentions légales par <a href="https://www.legalstart.fr/">Legalstart</a>.
 	</p>
